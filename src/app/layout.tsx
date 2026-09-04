@@ -57,6 +57,9 @@ export const metadata: Metadata = {
     description: siteConfig.subheadline,
     images: ["https://img.youtube.com/vi/W6-glP7Ct5o/maxresdefault.jpg"],
   },
+  verification: {
+    google: "google7fedbc811ad45851",
+  },
   robots: {
     index: true,
     follow: true,
