@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Ali",
   brandName: "EXPLAINERACE",
   shortBrand: "ExplainerAce",
-  siteUrl: "https://explainerace.com",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://explainerace.up.railway.app",
   taglineBrand: "EXPLAINERACE · by Ali",
   title: "EXPLAINERACE | Software Tutorials, SaaS Walkthroughs & App Demos by Ali",
   description:
