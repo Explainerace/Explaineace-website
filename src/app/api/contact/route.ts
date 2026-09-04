@@ -4,7 +4,15 @@ import { siteConfig } from "@/data/siteConfig";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, company, projectType, videoLength, message } = body;
+    const {
+      name,
+      email,
+      company,
+      projectType,
+      videoLength,
+      selectedPackage,
+      message,
+    } = body;
 
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -14,13 +22,16 @@ export async function POST(request: Request) {
     }
 
     const payload = {
-      name,
-      email,
-      company: company || "Not provided",
-      projectType: projectType || "General Inquiry",
-      videoLength: videoLength || "Not specified",
-      message,
-      _subject: `🎬 New EXPLAINERACE Inquiry: ${name} (${company || "Direct Client"})`,
+      "Selected Package": selectedPackage || "Custom / General Inquiry",
+      "Client Name": name,
+      "Work Email": email,
+      "Company / Website": company || "Not provided",
+      "Project Category": projectType || "General Inquiry",
+      "Requested Video Length": videoLength || "Not specified",
+      "Project Details": message,
+      _subject: selectedPackage
+        ? `🎬 New Lead: ${name} inquiring about [${selectedPackage}]`
+        : `🎬 New EXPLAINERACE Inquiry from ${name} (${company || "Direct Client"})`,
       _replyto: email,
       _template: "table",
     };
