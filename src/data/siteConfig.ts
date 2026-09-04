@@ -62,8 +62,8 @@ export const siteConfig = {
   youtube: {
     playlistUrl:
       "https://www.youtube.com/watch?v=W6-glP7Ct5o&list=PLoKiP4P61SFx80H6XDpHN7gd0QJJ4TgYM",
-    featuredVideoId: "W6-glP7Ct5o", // Muscle Coach App final
-    secondaryFeaturedVideoId: "4E72rncOnBc", // Green Medicine Final
+    featuredVideoId: "2ZtQX_lXHOs", // Prim Automation Workflow Demo
+    secondaryFeaturedVideoId: "W6-glP7Ct5o", // Muscle Coach App
   },
   stats: [
     { value: "4.8 / 5", label: "Client Rating", sub: "Based on verified feedback" },
@@ -74,6 +74,7 @@ export const siteConfig = {
   navLinks: [
     { name: "Work", href: "/work" },
     { name: "Services", href: "/services" },
+    { name: "Pricing", href: "/pricing" },
     { name: "About", href: "/about" },
     { name: "Process", href: "/process" },
     { name: "Contact", href: "/contact" },

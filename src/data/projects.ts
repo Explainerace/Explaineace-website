@@ -25,8 +25,46 @@ import { Project } from "@/types";
 
 export const projects: Project[] = [
   {
+    id: "prim-automation",
+    title: "Prim Automation Workflow Demo",
+    category: "SaaS",
+    order: 1,
+    client: "Prim Automation",
+    industry: "Operations & Workflow Automation",
+    description:
+      "A technical walkthrough showcasing multi-step trigger automations, node connections, and execution logs in an enterprise automation tool.",
+    videoUrl: "https://www.youtube.com/watch?v=2ZtQX_lXHOs",
+    videoId: "2ZtQX_lXHOs",
+    thumbnail: "https://img.youtube.com/vi/2ZtQX_lXHOs/hqdefault.jpg",
+    duration: "2:10",
+    services: [
+      "SaaS Walkthrough",
+      "Cursor Tracking",
+      "Visual Annotations",
+      "Sound Design",
+    ],
+    featured: true,
+    caseStudy: {
+      overview:
+        "Demonstrated how non-technical operators can build, test, and deploy automated business processes using Prim Automation's canvas interface.",
+      challenge:
+        "Canvas-based workflow builders have numerous connectors and configuration sidebars that can easily disorient viewers if not tracked carefully.",
+      approach:
+        "Used targeted zoom-ins on each automation trigger and action block, accompanied by clear highlighted cursor paths.",
+      production: [
+        "Canvas pan and zoom post-production",
+        "Visual connector highlight animations",
+        "Clean audio narration alignment",
+      ],
+      finalResult:
+        "A concise, high-converting product demo that clearly communicates automation value in minutes.",
+    },
+    tags: ["SaaS", "Automation", "Workflow", "Explainer", "Tech"],
+  },
+  {
     id: "muscle-coach-app",
     title: "Muscle Coach App Walkthrough",
+    order: 2,
     category: "Mobile Apps",
     client: "Muscle Coach",
     industry: "Health & Fitness / Mobile Software",
@@ -99,42 +137,6 @@ export const projects: Project[] = [
         "Delivered a confidence-building SaaS walkthrough that simplifies complex healthcare admin flows.",
     },
     tags: ["SaaS", "Healthcare", "Web App", "Onboarding", "Tour"],
-  },
-  {
-    id: "prim-automation",
-    title: "Prim Automation Workflow Demo",
-    category: "SaaS",
-    client: "Prim Automation",
-    industry: "Operations & Workflow Automation",
-    description:
-      "A technical walkthrough showcasing multi-step trigger automations, node connections, and execution logs in an enterprise automation tool.",
-    videoUrl: "https://www.youtube.com/watch?v=2ZtQX_lXHOs",
-    videoId: "2ZtQX_lXHOs",
-    thumbnail: "https://img.youtube.com/vi/2ZtQX_lXHOs/hqdefault.jpg",
-    duration: "2:10",
-    services: [
-      "SaaS Walkthrough",
-      "Cursor Tracking",
-      "Visual Annotations",
-      "Sound Design",
-    ],
-    featured: true,
-    caseStudy: {
-      overview:
-        "Demonstrated how non-technical operators can build, test, and deploy automated business processes using Prim Automation's canvas interface.",
-      challenge:
-        "Canvas-based workflow builders have numerous connectors and configuration sidebars that can easily disorient viewers if not tracked carefully.",
-      approach:
-        "Used targeted zoom-ins on each automation trigger and action block, accompanied by clear highlighted cursor paths.",
-      production: [
-        "Canvas pan and zoom post-production",
-        "Visual connector highlight animations",
-        "Clean audio narration alignment",
-      ],
-      finalResult:
-        "A concise, high-converting product demo that clearly communicates automation value in minutes.",
-    },
-    tags: ["SaaS", "Automation", "Workflow", "Explainer", "Tech"],
   },
   {
     id: "metrade-promo",
