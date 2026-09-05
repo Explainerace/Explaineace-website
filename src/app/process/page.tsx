@@ -11,14 +11,16 @@ import {
   ShieldCheck,
   Clock,
   Sparkles,
+  Layers,
 } from "lucide-react";
 import { processSteps, processFaqs } from "@/data/process";
+import { ProcessInfographic } from "@/components/ProcessInfographic";
 import { CTA } from "@/components/CTA";
 
 export const metadata: Metadata = {
   title: "Production Process | From Product to Polished Video",
   description:
-    "Explore the 4-step production framework Ali uses to turn complex software into clear, high-converting video walkthroughs and tutorials.",
+    "Explore the 5-stage interactive production pipeline Ali uses to turn complex software into clear, high-converting video walkthroughs and tutorials.",
 };
 
 const ICONS = [KeyRound, FileText, Video, CheckCircle2];
@@ -28,15 +30,34 @@ export default function ProcessPage() {
     <div className="pt-28 sm:pt-36">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="max-w-3xl mb-16">
-          <span className="text-xs font-semibold uppercase tracking-wider text-brand-400">
-            Production Framework
+        <div className="max-w-3xl mb-12">
+          <span className="text-xs font-semibold uppercase tracking-wider text-brand-400 flex items-center gap-1.5">
+            <Sparkles className="w-3.5 h-3.5 text-accent-cyan" />
+            <span>Production Framework</span>
           </span>
-          <h1 className="mt-2 text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
+          <h1 className="mt-2 text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
             From product to polished video.
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
-            A battle-tested production sequence designed for speed, clarity, and zero hassle. Here is how your software transitions from raw interface to a master video.
+            A battle-tested production sequence designed for speed, clarity, and zero hassle. Explore the interactive production pipeline below to see how your interface transforms from raw screen capture into a master video.
+          </p>
+        </div>
+
+        {/* 1. Centerpiece: Interactive Visual Infographic Animation */}
+        <div className="mb-24">
+          <ProcessInfographic />
+        </div>
+
+        {/* 2. Detailed Breakdown Header */}
+        <div className="max-w-3xl mb-12">
+          <span className="text-xs font-semibold uppercase tracking-wider text-brand-400">
+            Step-by-Step Breakdown
+          </span>
+          <h2 className="mt-1 text-3xl font-bold tracking-tight text-white">
+            What happens behind each stage
+          </h2>
+          <p className="mt-2 text-slate-400 text-sm">
+            Everything is structured so you get maximum quality with minimal time required from your product team.
           </p>
         </div>
 
@@ -68,9 +89,9 @@ export default function ProcessPage() {
                       </span>
                     </div>
 
-                    <h2 className="text-2xl font-bold text-white group-hover:text-brand-300 transition-colors">
+                    <h3 className="text-2xl font-bold text-white group-hover:text-brand-300 transition-colors">
                       {step.title}
-                    </h2>
+                    </h3>
 
                     <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
                       {step.description}
