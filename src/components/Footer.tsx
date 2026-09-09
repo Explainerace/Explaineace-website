@@ -94,6 +94,20 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
 
+              {/* Fiverr Active Gig */}
+              <li>
+                <a
+                  href={siteConfig.fiverr.gigUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-slate-300 hover:text-white transition-colors group text-sm"
+                >
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span className="font-medium text-emerald-300 group-hover:text-emerald-200">Order Fiverr Gig (4.8★)</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-emerald-400 group-hover:text-white transition-colors" />
+                </a>
+              </li>
+
               {/* Fiverr Profile 1: video_supermacy */}
               <li>
                 <a
@@ -102,8 +116,8 @@ export const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-slate-300 hover:text-white transition-colors group text-sm"
                 >
-                  <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-                  <span>Fiverr: @{siteConfig.fiverrProfiles[0].username} (Level 2 · 4.8★)</span>
+                  <span className="w-2 h-2 rounded-full bg-slate-400"></span>
+                  <span>Fiverr: @{siteConfig.fiverrProfiles[0].username} (Level 2)</span>
                   <ExternalLink className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-colors" />
                 </a>
               </li>

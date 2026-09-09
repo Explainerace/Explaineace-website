@@ -29,6 +29,17 @@ export const TrustBlock: React.FC = () => {
               {/* Verified Profiles & Contract CTAs */}
               <div className="pt-2 flex flex-wrap gap-3">
                 <a
+                  href={siteConfig.fiverr.gigUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-white bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/40 px-4 py-2.5 rounded-full transition-all duration-200 group"
+                >
+                  <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                  <span>Order on Fiverr Gig</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-emerald-400" />
+                </a>
+
+                <a
                   href={siteConfig.fiverrProfiles[0].url}
                   target="_blank"
                   rel="noopener noreferrer"

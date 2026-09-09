@@ -39,6 +39,7 @@ export const siteConfig = {
   fiverr: {
     username: "video_supermacy",
     profileUrl: "https://www.fiverr.com/video_supermacy",
+    gigUrl: "https://www.fiverr.com/s/BbB9Ax7",
     portfolioUrl: "https://www.fiverr.com/s/vmwoBe",
     secondProfileUrl: "https://www.fiverr.com/explainerace",
     rating: "4.8",

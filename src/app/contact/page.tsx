@@ -484,19 +484,40 @@ function ContactForm() {
           </p>
         </div>
 
-        {/* 2 Vetted Fiverr Profiles */}
+        {/* 2 Vetted Fiverr Profiles & Active Gig */}
         <div className="p-6 rounded-3xl bg-surface-card border border-white/[0.08] space-y-3">
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-              Marketplace Profiles
+              Marketplace Profiles & Gig
             </span>
             <span className="text-xs font-bold text-amber-400 flex items-center gap-1">
               <Star className="w-3.5 h-3.5 fill-amber-400" /> 4.8★ (157 Reviews)
             </span>
           </div>
           <p className="text-xs text-slate-300">
-            Order through either of our verified Fiverr seller profiles:
+            Order directly through our active Fiverr Gig or visit our verified seller profiles:
           </p>
+
+          {/* Active Gig Highlight */}
+          <a
+            href={siteConfig.fiverr.gigUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3.5 rounded-xl bg-gradient-to-r from-emerald-500/15 to-brand-500/15 hover:from-emerald-500/25 hover:to-brand-500/25 border border-emerald-500/30 transition-all block group"
+          >
+            <div className="flex items-center justify-between">
+              <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                Featured Fiverr Gig
+              </span>
+              <span className="text-[10px] text-slate-300 font-medium">Level 2 Seller</span>
+            </div>
+            <div className="text-xs font-bold text-white group-hover:text-emerald-300 transition-colors flex items-center justify-between mt-1">
+              <span>Order on Fiverr: Software & SaaS Explainer Gig</span>
+              <ExternalLink className="w-3.5 h-3.5 text-emerald-400" />
+            </div>
+          </a>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
             {siteConfig.fiverrProfiles.map((p) => (
               <a

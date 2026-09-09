@@ -45,13 +45,13 @@ export const CTA: React.FC = () => {
         {/* Secondary Direct Channels */}
         <div className="mt-12 pt-8 border-t border-white/[0.06] flex flex-wrap items-center justify-center gap-6 sm:gap-8 text-xs sm:text-sm text-slate-400">
           <a
-            href={siteConfig.fiverr.profileUrl}
+            href={siteConfig.fiverr.gigUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-slate-300 hover:text-white transition-colors group"
           >
             <span className="w-2 h-2 rounded-full bg-emerald-400" />
-            <span>Order via Fiverr (Level 2 Seller · 4.8★)</span>
+            <span>Order via Fiverr Gig (Level 2 Seller · 4.8★)</span>
             <ExternalLink className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-colors" />
           </a>
 

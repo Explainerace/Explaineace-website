@@ -10,6 +10,7 @@ import {
   ShieldCheck,
   Zap,
   HelpCircle,
+  ExternalLink,
 } from "lucide-react";
 import { pricingTiers, pricingFaqs } from "@/data/pricing";
 import { siteConfig } from "@/data/siteConfig";
@@ -233,21 +234,31 @@ export default function PricingPage() {
               </p>
             </div>
 
-            {/* Fiverr Profile */}
-            <div className="p-6 rounded-2xl bg-surface-subtle border border-white/[0.06] space-y-3">
+            {/* Fiverr Gig & Profile */}
+            <a
+              href={siteConfig.fiverr.gigUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-6 rounded-2xl bg-surface-subtle hover:bg-surface-hover border border-white/[0.06] hover:border-emerald-500/40 transition-all duration-200 space-y-3 group block"
+            >
               <div className="flex items-center justify-between">
                 <span className="text-xs font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/20">
                   4.8★ (157 Reviews)
                 </span>
-                <Sparkles className="w-5 h-5 text-amber-400" />
+                <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-emerald-400 transition-colors" />
               </div>
-              <h3 className="text-lg font-semibold text-white">
-                Fiverr Level 2
+              <h3 className="text-lg font-semibold text-white group-hover:text-emerald-300 transition-colors flex items-center justify-between">
+                <span>Fiverr Gig Order</span>
+                <span className="text-[10px] uppercase font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">Level 2</span>
               </h3>
               <p className="text-xs text-slate-400 leading-relaxed">
-                Prefer standard freelance platform ordering? Hire through our vetted Fiverr profiles with verified track record.
+                Prefer standard freelance platform ordering with escrow protection? Hire directly through our active Fiverr Gig with 157+ verified 5-star reviews.
               </p>
-            </div>
+              <div className="pt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 group-hover:underline">
+                <span>Order on Fiverr Gig</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </div>
+            </a>
           </div>
         </div>
 

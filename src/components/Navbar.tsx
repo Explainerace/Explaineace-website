@@ -147,6 +147,18 @@ export const Navbar: React.FC = () => {
 
               <div className="pt-2 flex flex-col gap-2 text-xs text-slate-400">
                 <a
+                  href={siteConfig.fiverr.gigUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between p-2.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/15 border border-emerald-500/20 text-emerald-300 font-medium transition-colors"
+                >
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                    <span>Order via Fiverr Gig (4.8★)</span>
+                  </span>
+                  <ExternalLink className="w-3.5 h-3.5 text-emerald-400" />
+                </a>
+                <a
                   href={siteConfig.fiverrProfiles[0].url}
                   target="_blank"
                   rel="noopener noreferrer"

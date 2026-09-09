@@ -68,15 +68,24 @@ export default function AboutPage() {
                 <span className="text-slate-400">Verified Reviews</span>
                 <span className="text-white font-medium">157 Reviews</span>
               </div>
-              <div className="pt-2 border-t border-white/[0.06]">
+              <div className="pt-2 border-t border-white/[0.06] space-y-2">
+                <a
+                  href={siteConfig.fiverr.gigUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-2 px-3 rounded-lg bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/30 text-xs font-semibold text-emerald-300 flex items-center justify-center gap-1.5 transition-colors"
+                >
+                  <span>Order on Fiverr Gig</span>
+                  <ExternalLink className="w-3 h-3 text-emerald-400" />
+                </a>
                 <a
                   href={siteConfig.fiverr.profileUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-2 px-3 rounded-lg bg-white/[0.06] hover:bg-white/[0.1] text-xs font-medium text-slate-200 flex items-center justify-center gap-1.5 transition-colors"
+                  className="w-full py-1.5 px-3 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-[11px] font-medium text-slate-300 flex items-center justify-center gap-1.5 transition-colors"
                 >
-                  <span>Verify on Fiverr</span>
-                  <ExternalLink className="w-3 h-3" />
+                  <span>Verify Profile on Fiverr</span>
+                  <ExternalLink className="w-3 h-3 text-slate-500" />
                 </a>
               </div>
             </div>
