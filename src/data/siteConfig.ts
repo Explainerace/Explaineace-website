@@ -14,7 +14,7 @@ export const siteConfig = {
     "I create clear, professional videos that help users understand software, apps and digital products.",
   aboutBio:
     "I'm Ali, founder of EXPLAINERACE and a video specialist focused on software tutorials, app demos, walkthroughs and instructional content. I help SaaS companies, startups, software teams and app developers turn complicated products and workflows into clear, professional videos.",
-  contactEmail: "alihamzatech.fiverr@gmail.com",
+  contactEmail: "explaineracepro@gmail.com",
   whatsapp: {
     number: "+923139110721",
     display: "+92 313 9110721",

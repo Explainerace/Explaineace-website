@@ -17,9 +17,9 @@ import { siteConfig } from "@/data/siteConfig";
 import { WhatsAppIcon, UpworkIcon } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "Pricing | Transparent SaaS & Software Video Rates",
+  title: "Pricing & Video Scopes | Custom SaaS & Software Video Packages",
   description:
-    "Simple, fixed-price packages for software walkthroughs, SaaS product tours, and animated explainers. From $99 for under 60 seconds to comprehensive 4K productions.",
+    "Professional production packages for software walkthroughs, SaaS platform tours, and animated explainers. DM, email, or contact for pricing.",
 };
 
 export default function PricingPage() {
@@ -34,15 +34,15 @@ export default function PricingPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300 text-xs font-semibold uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300 text-xs font-semibold uppercase tracking-wider mb-4">
             <Sparkles className="w-3.5 h-3.5 text-accent-cyan" />
-            <span>Simple, Predictable Pricing</span>
+            <span>Video Production Packages</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-            Transparent pricing for software teams.
+            DM, email or contact for pricing.
           </h1>
-          <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
-            Zero hidden fees, zero agency markups. Fixed-rate production packages for software walkthroughs, SaaS platform tours, and animated explainers.
+          <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto">
+            Every software product and workflow is unique. Drop a DM on WhatsApp, email <span className="text-white font-medium underline">{siteConfig.contactEmail}</span>, or submit an inquiry for a fast custom quote tailored to your exact video scope.
           </p>
 
           {/* Quick trust reassurance */}
@@ -54,7 +54,7 @@ export default function PricingPage() {
             <span>•</span>
             <span className="flex items-center gap-1.5 text-slate-300">
               <RotateCcw className="w-3.5 h-3.5 text-brand-400" />
-              Revisions Included in Every Tier
+              Revisions Included in Every Project
             </span>
             <span>•</span>
             <span className="flex items-center gap-1.5 text-slate-300">
@@ -106,12 +106,12 @@ export default function PricingPage() {
                   </div>
 
                   {/* Price Display */}
-                  <div className="my-6 pb-6 border-b border-white/[0.08] flex items-baseline gap-1">
-                    <span className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
-                      {tier.price}
+                  <div className="my-6 pb-6 border-b border-white/[0.08] space-y-1">
+                    <span className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight block">
+                      Custom Quote
                     </span>
-                    <span className="text-xs text-slate-400 font-medium">
-                      / per video
+                    <span className="text-xs text-brand-300 font-medium block">
+                      DM, email or contact for pricing
                     </span>
                   </div>
 
@@ -162,24 +162,24 @@ export default function PricingPage() {
                   </div>
 
                   <Link
-                    href={`/contact?package=${tier.id}&price=${encodeURIComponent(tier.price)}`}
+                    href={`/contact?package=${tier.id}`}
                     className={`w-full py-3.5 px-5 rounded-full text-xs font-semibold flex items-center justify-center gap-2 transition-all duration-200 ${
                       isPopular
                         ? "bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white shadow-glow hover:shadow-glow-lg"
                         : "bg-white/[0.08] hover:bg-white/[0.14] text-white border border-white/[0.1]"
                     }`}
                   >
-                    <span>{tier.ctaText}</span>
+                    <span>DM / Email for Pricing</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
 
                   <a
-                    href={`https://wa.me/923139110721?text=Hi%20Ali,%20I%20am%20interested%20in%20the%20${encodeURIComponent(tier.name)}%20(${encodeURIComponent(tier.price)}).`}
+                    href={`https://wa.me/923139110721?text=Hi%20Ali,%20I%20am%20interested%20in%20pricing%20for%20the%20${encodeURIComponent(tier.name)}.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full text-center block text-[11px] text-slate-400 hover:text-emerald-400 transition-colors"
                   >
-                    Quick WhatsApp inquiry →
+                    Quick WhatsApp DM →
                   </a>
                 </div>
               </div>

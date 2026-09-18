@@ -23,32 +23,32 @@ import { pricingTiers } from "@/data/pricing";
 const PACKAGE_OPTIONS = [
   {
     id: "simple-walkthrough",
-    name: "Simple Walkthrough ($99 - Under 60s)",
-    price: "$99",
+    name: "Simple Walkthrough (Under 60s)",
+    price: "Custom Quote",
     duration: "Under 60 seconds",
   },
   {
     id: "standard-walkthrough",
-    name: "Standard Product Walkthrough ($199 - Up to 2.5m)",
-    price: "$199",
+    name: "Standard Product Walkthrough (Up to 2.5m)",
+    price: "Custom Quote",
     duration: "Up to 2.5 minutes",
   },
   {
     id: "comprehensive-saas",
-    name: "Comprehensive SaaS Walkthrough ($299 - 3 to 4m)",
-    price: "$299",
+    name: "Comprehensive SaaS Walkthrough (3 to 4m)",
+    price: "Custom Quote",
     duration: "3 to 4 minutes",
   },
   {
     id: "animated-advanced-saas",
-    name: "Animated Explainer & Advance SaaS (Starts $300)",
-    price: "Starts $300",
+    name: "Animated Explainer & Advance SaaS",
+    price: "Custom Quote",
     duration: "Custom Scope",
   },
   {
     id: "custom",
     name: "Custom Scope / Flexible Video Retainer",
-    price: "Custom",
+    price: "Custom Quote",
     duration: "Flexible",
   },
 ];

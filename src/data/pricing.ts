@@ -2,7 +2,6 @@ export interface PricingTier {
   id: string;
   name: string;
   price: string;
-  numericPrice: number;
   duration: string;
   popular?: boolean;
   description: string;
@@ -18,8 +17,7 @@ export const pricingTiers: PricingTier[] = [
   {
     id: "simple-walkthrough",
     name: "Simple Walkthrough",
-    price: "$99",
-    numericPrice: 99,
+    price: "Custom Quote",
     duration: "Under 60 seconds",
     description:
       "A fast, punchy screen recording walkthrough focused on a single key feature, micro-tour, or quick product action.",
@@ -35,13 +33,12 @@ export const pricingTiers: PricingTier[] = [
     ],
     turnaround: "48 – 72 Hours",
     revisions: "2 Rounds included",
-    ctaText: "Order 60s Walkthrough ($99)",
+    ctaText: "DM / Email for Pricing",
   },
   {
     id: "standard-walkthrough",
     name: "Standard Product Walkthrough",
-    price: "$199",
-    numericPrice: 199,
+    price: "Custom Quote",
     duration: "Up to 2.5 minutes",
     popular: true,
     badge: "Most Popular",
@@ -60,13 +57,12 @@ export const pricingTiers: PricingTier[] = [
     ],
     turnaround: "3 – 4 Days",
     revisions: "2 Rounds included",
-    ctaText: "Order 2.5m Walkthrough ($199)",
+    ctaText: "DM / Email for Pricing",
   },
   {
     id: "comprehensive-saas",
     name: "Comprehensive SaaS Walkthrough",
-    price: "$299",
-    numericPrice: 299,
+    price: "Custom Quote",
     duration: "3 to 4 minutes",
     description:
       "In-depth, structured walkthrough explaining multi-module systems, complex dashboards, settings, and integrations without losing viewer focus.",
@@ -83,13 +79,12 @@ export const pricingTiers: PricingTier[] = [
     ],
     turnaround: "4 – 5 Days",
     revisions: "3 Rounds included",
-    ctaText: "Order 3-4m Walkthrough ($299)",
+    ctaText: "DM / Email for Pricing",
   },
   {
     id: "animated-advanced-saas",
     name: "Animated Explainer & Advance SaaS",
-    price: "$300+",
-    numericPrice: 300,
+    price: "Custom Quote",
     duration: "Custom Scope / 60s – 3m+",
     badge: "Premium Motion",
     description:
@@ -107,11 +102,15 @@ export const pricingTiers: PricingTier[] = [
     ],
     turnaround: "5 – 8 Days (depending on scope)",
     revisions: "Unlimited during milestone stages",
-    ctaText: "Get a Custom Quote (Starts $300)",
+    ctaText: "DM / Email for Pricing",
   },
 ];
 
 export const pricingFaqs = [
+  {
+    q: "How does pricing work?",
+    a: "Every software video is custom-scoped based on your product complexity, duration, and animation requirements. Simply DM us on WhatsApp, email explaineracepro@gmail.com, or submit a brief inquiry for a fast, custom quote.",
+  },
   {
     q: "How do we handle payment safely?",
     a: "You have 4 safe options: Upwork Direct Contract (0% buyer marketplace fee, full escrow protection), Payoneer business invoice, direct international bank transfer, or our vetted Fiverr Level 2 profiles.",
@@ -121,11 +120,11 @@ export const pricingFaqs = [
     a: "Usually just access to a test/demo account of your software, a bulleted list of features or workflow steps you want to show, and your brand logo/colors. If you don't have a script, I can outline one for you.",
   },
   {
-    q: "What if my video is 75 seconds or between tiers?",
-    a: "We can easily customize the package to your exact second count or milestone. Reach out via WhatsApp or email for an immediate fixed-price quote.",
+    q: "What if my video is between lengths or requires custom animation?",
+    a: "We tailor every project to your exact needs. Contact us via DM or email, and we'll provide a transparent proposal within hours.",
   },
   {
-    q: "Are revisions included in these prices?",
-    a: "Yes! Every tier includes dedicated revision rounds to adjust pacing, zooms, text callouts, or audio balance until you are completely satisfied.",
+    q: "Are revisions included in projects?",
+    a: "Yes! Every project includes dedicated revision rounds to adjust pacing, zooms, callouts, or audio balance until you are completely satisfied.",
   },
 ];
