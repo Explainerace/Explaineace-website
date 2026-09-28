@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     images: ["https://img.youtube.com/vi/W6-glP7Ct5o/maxresdefault.jpg"],
   },
   verification: {
-    google: "google7fedbc811ad45851",
+    google: "wg_6qxRwz-Q9S7_d3SPwA7j6vmlHrxuZEX8v_fQuBMk",
   },
   robots: {
     index: true,
