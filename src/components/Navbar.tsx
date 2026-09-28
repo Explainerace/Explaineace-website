@@ -7,6 +7,8 @@ import { Play, Menu, X, ArrowRight, ExternalLink, Video, MessageCircle } from "l
 import { WhatsAppIcon } from "@/components/Icons";
 import { siteConfig } from "@/data/siteConfig";
 
+import { BrandLogo } from "@/components/BrandLogo";
+
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -37,20 +39,10 @@ export const Navbar: React.FC = () => {
         {/* Brand Logo: EXPLAINERACE */}
         <Link
           href="/"
-          className="group flex items-center gap-2.5 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-lg"
+          className="focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-lg"
           aria-label="EXPLAINERACE Home"
         >
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-600 via-indigo-600 to-accent-cyan flex items-center justify-center shadow-glow group-hover:scale-105 transition-transform">
-            <Video className="w-5 h-5 text-white" />
-          </div>
-          <div className="flex flex-col">
-            <span className="font-extrabold text-lg tracking-wider text-white group-hover:text-brand-300 transition-colors uppercase font-mono">
-              EXPLAINERACE
-            </span>
-            <span className="text-[10px] tracking-wider uppercase font-medium text-slate-400">
-              Software & SaaS Videos by Ali
-            </span>
-          </div>
+          <BrandLogo size="md" />
         </Link>
 
         {/* Desktop Navigation Links */}

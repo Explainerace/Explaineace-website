@@ -4,6 +4,8 @@ import { Video, Star, ExternalLink, Mail, ShieldCheck, CheckCircle2 } from "luci
 import { YoutubeIcon, WhatsAppIcon, UpworkIcon } from "@/components/Icons";
 import { siteConfig } from "@/data/siteConfig";
 
+import { BrandLogo } from "@/components/BrandLogo";
+
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
@@ -15,19 +17,9 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-2 space-y-4">
             <Link
               href="/"
-              className="inline-flex items-center gap-2.5 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-lg"
+              className="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-lg"
             >
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-600 via-indigo-600 to-accent-cyan flex items-center justify-center shadow-glow">
-                <Video className="w-5 h-5 text-white" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-extrabold text-lg text-white font-mono tracking-wider">
-                  EXPLAINERACE
-                </span>
-                <span className="text-[10px] tracking-wider uppercase font-medium text-slate-400">
-                  Software Tutorials & SaaS Walkthroughs by Ali
-                </span>
-              </div>
+              <BrandLogo size="md" />
             </Link>
 
             <p className="text-slate-400 text-sm leading-relaxed max-w-md">
