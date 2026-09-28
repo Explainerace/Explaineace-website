@@ -45,7 +45,7 @@ export default function BlogListingPage() {
 
         {/* Featured Post Hero */}
         {blogPosts.length > 0 && (
-          <div className="mb-16">
+          <div className="mb-14">
             {blogPosts.slice(0, 1).map((post) => (
               <div
                 key={post.slug}
@@ -55,7 +55,7 @@ export default function BlogListingPage() {
                   <div className="lg:col-span-7 space-y-4">
                     <div className="flex flex-wrap items-center gap-3">
                       <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-brand-500/20 text-brand-300 border border-brand-500/30">
-                        {post.category}
+                        Featured · {post.category}
                       </span>
                       <span className="text-xs text-slate-400 flex items-center gap-1">
                         <Clock className="w-3.5 h-3.5 text-slate-500" />
@@ -113,13 +113,97 @@ export default function BlogListingPage() {
                     <div className="absolute bottom-4 left-4 right-4">
                       <span className="text-xs font-semibold text-white bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 inline-flex items-center gap-1.5">
                         <Sparkles className="w-3.5 h-3.5 text-accent-cyan" />
-                        Comprehensive 2026 Guide
+                        Comprehensive Guide
                       </span>
                     </div>
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+        )}
+
+        {/* Additional Articles Grid */}
+        {blogPosts.length > 1 && (
+          <div className="space-y-8 mb-20">
+            <div className="flex items-center justify-between border-b border-white/[0.06] pb-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                All Strategy Guides & Case Studies
+              </h3>
+              <span className="text-xs text-slate-400 font-medium">
+                {blogPosts.length} articles published
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+              {blogPosts.slice(1).map((post) => (
+                <div
+                  key={post.slug}
+                  className="group rounded-3xl bg-surface-card border border-white/[0.08] hover:border-brand-500/40 transition-all duration-300 overflow-hidden shadow-card flex flex-col justify-between"
+                >
+                  <div className="p-6 sm:p-7 space-y-4">
+                    <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/[0.06] bg-[#0E111A] mb-4">
+                      <img
+                        src={post.featuredImage}
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute top-3 left-3">
+                        <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-black/70 backdrop-blur-md text-brand-300 border border-white/10">
+                          {post.category}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3 text-xs text-slate-400">
+                      <span className="flex items-center gap-1">
+                        <Clock className="w-3.5 h-3.5 text-slate-500" />
+                        {post.readingTime}
+                      </span>
+                      <span>•</span>
+                      <span>
+                        {new Date(post.publishedAt).toLocaleDateString("en-US", {
+                          month: "short",
+                          day: "numeric",
+                          year: "numeric",
+                        })}
+                      </span>
+                    </div>
+
+                    <Link href={`/blog/${post.slug}`}>
+                      <h4 className="text-xl font-bold text-white group-hover:text-brand-300 transition-colors leading-snug">
+                        {post.title}
+                      </h4>
+                    </Link>
+
+                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-3">
+                      {post.excerpt}
+                    </p>
+
+                    <div className="flex flex-wrap gap-1.5 pt-1">
+                      {post.tags.slice(0, 3).map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2 py-0.5 rounded-md bg-surface-subtle text-[10px] font-medium text-slate-400 border border-white/[0.04]"
+                        >
+                          #{tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="p-6 pt-0 border-t border-white/[0.04]">
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="inline-flex items-center gap-2 text-xs font-semibold text-brand-300 hover:text-white transition-colors group-hover:translate-x-1 duration-200"
+                    >
+                      <span>Read Breakdown</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         )}
 
