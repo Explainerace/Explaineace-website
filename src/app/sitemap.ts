@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { projects } from "@/data/projects";
+import { blogPosts } from "@/data/blog";
 import { siteConfig } from "@/data/siteConfig";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -10,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/work",
     "/services",
     "/pricing",
+    "/blog",
     "/about",
     "/process",
     "/contact",
@@ -17,7 +19,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
-    priority: route === "" ? 1.0 : 0.8,
+    priority: route === "" ? 1.0 : route === "/blog" ? 0.9 : 0.8,
+  }));
+
+  const blogPages = blogPosts.map((p) => ({
+    url: `${baseUrl}/blog/${p.slug}`,
+    lastModified: new Date(p.updatedAt),
+    changeFrequency: "weekly" as const,
+    priority: 0.85,
   }));
 
   const projectPages = projects.map((p) => ({
@@ -27,5 +36,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...projectPages];
+  return [...staticPages, ...blogPages, ...projectPages];
 }
