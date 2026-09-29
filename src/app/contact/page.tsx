@@ -22,45 +22,45 @@ import { pricingTiers } from "@/data/pricing";
 
 const PACKAGE_OPTIONS = [
   {
-    id: "simple-walkthrough",
-    name: "Simple Walkthrough (Under 60s)",
-    price: "Custom Quote",
-    duration: "Under 60 seconds",
+    id: "simple-screencast",
+    name: "Simple Screencast Tutorial ($120 / 60s)",
+    price: "$120 / 60s",
+    duration: "60 seconds base",
   },
   {
-    id: "standard-walkthrough",
-    name: "Standard Product Walkthrough (Up to 2.5m)",
-    price: "Custom Quote",
-    duration: "Up to 2.5 minutes",
+    id: "fancy-saas-explainer",
+    name: "Fancy SaaS Explainer ($220 / 60s)",
+    price: "$220 / 60s",
+    duration: "60 seconds base",
   },
   {
-    id: "comprehensive-saas",
-    name: "Comprehensive SaaS Walkthrough (3 to 4m)",
-    price: "Custom Quote",
-    duration: "3 to 4 minutes",
+    id: "ai-product-ugc-ads",
+    name: "AI Product & UGC Ads ($200 – $300 / ad)",
+    price: "$200 – $300",
+    duration: "15s – 60s short-form",
   },
   {
-    id: "animated-advanced-saas",
-    name: "Animated Explainer & Advance SaaS",
-    price: "Custom Quote",
-    duration: "Custom Scope",
+    id: "custom-ui-motion-explainer",
+    name: "Custom UI Motion Explainer ($800 – $1,200)",
+    price: "$800 – $1,200",
+    duration: "60s – 90s+ custom scope",
   },
   {
     id: "custom",
-    name: "Custom Scope / Flexible Video Retainer",
-    price: "Custom Quote",
+    name: "Custom Project / Bulk Multi-Video Batch (Inbox for Discount)",
+    price: "Volume Discount",
     duration: "Flexible",
   },
 ];
 
 const PROJECT_TYPES = [
-  "SaaS Walkthrough",
-  "Software Tutorial",
+  "Fancy SaaS Explainer ($220/60s)",
+  "Simple Screencast Tutorial ($120/60s)",
+  "AI UGC & Product Ad ($200–$300/ad)",
+  "Custom UI Motion Explainer ($800–$1,200)",
   "Mobile App Video",
-  "Animated Explainer",
-  "Training Video",
-  "Website Demo",
-  "Other",
+  "Customer Training / Academy Series",
+  "Other / Multi-Video Batch",
 ];
 
 const LENGTH_OPTIONS = [
@@ -102,12 +102,10 @@ function ContactForm() {
           ...prev,
           selectedPackage: match.name,
           videoLength:
-            match.id === "simple-walkthrough"
+            match.id === "simple-screencast" || match.id === "ai-product-ugc-ads"
               ? LENGTH_OPTIONS[0]
-              : match.id === "standard-walkthrough"
+              : match.id === "fancy-saas-explainer"
               ? LENGTH_OPTIONS[1]
-              : match.id === "comprehensive-saas"
-              ? LENGTH_OPTIONS[2]
               : prev.videoLength,
         }));
       }
@@ -121,12 +119,10 @@ function ContactForm() {
       ...prev,
       selectedPackage: packageName,
       videoLength:
-        match?.id === "simple-walkthrough"
+        match?.id === "simple-screencast" || match?.id === "ai-product-ugc-ads"
           ? LENGTH_OPTIONS[0]
-          : match?.id === "standard-walkthrough"
+          : match?.id === "fancy-saas-explainer"
           ? LENGTH_OPTIONS[1]
-          : match?.id === "comprehensive-saas"
-          ? LENGTH_OPTIONS[2]
           : prev.videoLength,
     }));
   };

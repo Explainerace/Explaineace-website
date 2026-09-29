@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
             </Link>
 
             <p className="text-slate-400 text-sm leading-relaxed max-w-md">
-              Specialized in software tutorials, SaaS walkthroughs, mobile app demos, and instructional videos that clarify complicated products.
+              Specialized in SaaS walkthroughs, AI UGC &amp; product ads, screencast tutorials, and custom UI motion graphics that turn viewers into paying users.
             </p>
 
             {/* Payment & Contract Guarantees */}

@@ -4,16 +4,16 @@ export const siteConfig = {
   shortBrand: "ExplainerAce",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://explainerace.com",
   taglineBrand: "EXPLAINERACE · by Ali",
-  title: "EXPLAINERACE | Software Tutorials, SaaS Walkthroughs & App Demos by Ali",
+  title: "EXPLAINERACE | SaaS Walkthroughs, AI UGC & Product Videos by Ali",
   description:
-    "Professional tutorial, training, walkthrough and explainer videos for websites, SaaS platforms, mobile apps and digital products by Ali.",
+    "Professional SaaS walkthroughs, AI UGC & product ad videos, screencasts and custom UI explainers by Ali. Transparent rates from $120/60s.",
   headline: "Software is complicated. Your videos shouldn't be.",
   subheadline:
-    "Professional tutorial, training, walkthrough and explainer videos for websites, SaaS platforms, mobile apps and digital products.",
+    "High-converting SaaS walkthroughs, AI UGC product ads, and crystal-clear tutorials for software teams, startups, and digital products.",
   alternativeCopy:
-    "I create clear, professional videos that help users understand software, apps and digital products.",
+    "I create clear, high-converting video walkthroughs and AI product ads that help users understand and buy software and digital products.",
   aboutBio:
-    "I'm Ali, founder of EXPLAINERACE and a video specialist focused on software tutorials, app demos, walkthroughs and instructional content. I help SaaS companies, startups, software teams and app developers turn complicated products and workflows into clear, professional videos.",
+    "I'm Ali, founder of EXPLAINERACE and a video specialist focused on SaaS walkthroughs, AI UGC & product ads, and instructional content. I help software companies, startups, and digital brands turn complex products into high-converting, crystal-clear video assets.",
   contactEmail: "explaineracepro@gmail.com",
   whatsapp: {
     number: "+923139110721",
@@ -83,12 +83,12 @@ export const siteConfig = {
   ],
   targetAudiences: [
     "SaaS Companies",
+    "AI Startups & Tools",
     "Software Companies",
-    "Startups",
     "App Developers",
-    "Product Agencies",
-    "Product Teams",
-    "Training Teams",
-    "Customer-Success Teams",
+    "E-Commerce & DTC Brands",
+    "Growth & Marketing Agencies",
+    "Product & Training Teams",
+    "Customer-Success Academies",
   ],
 };

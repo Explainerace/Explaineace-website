@@ -17,6 +17,7 @@ interface VideoGridProps {
 const CATEGORIES: CategoryFilter[] = [
   "All",
   "SaaS",
+  "AI UGC & Product Ads",
   "Web Apps",
   "Mobile Apps",
   "Tutorials",

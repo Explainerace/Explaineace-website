@@ -8,57 +8,66 @@ import {
   Sparkles,
   Laptop,
   ArrowRight,
+  Bot,
+  Video,
 } from "lucide-react";
 
 interface CategoryCard {
   title: string;
   description: string;
+  priceTag?: string;
   icon: React.ElementType;
   filterSlug: string;
 }
 
 const CARDS: CategoryCard[] = [
   {
-    title: "Software Tutorials",
+    title: "AI UGC & Product Ads",
     description:
-      "Step-by-step instructional screencasts that guide users through technical workflows and configuration settings.",
-    icon: MonitorPlay,
-    filterSlug: "Tutorials",
+      "High-converting short ads featuring hyper-realistic AI creators, kinetic captions, and product motion for TikTok, Reels, & Shorts.",
+    priceTag: "$200 – $300 / ad",
+    icon: Bot,
+    filterSlug: "AI UGC & Product Ads",
   },
   {
-    title: "SaaS Walkthroughs",
+    title: "Fancy SaaS Walkthroughs",
     description:
-      "High-converting platform tours designed to onboard new accounts and showcase value-driving features.",
+      "Polished platform tours with dynamic 3D focal zooms, cursor smoothing, click ripples, and spotlight UI framing.",
+    priceTag: "$220 / 60 seconds",
     icon: Layers,
     filterSlug: "SaaS",
   },
   {
-    title: "Mobile App Videos",
+    title: "Simple Screencast Tutorials",
     description:
-      "Fluid demonstrations of iOS and Android applications with native touch ripples and vertical-to-horizontal framing.",
-    icon: Smartphone,
-    filterSlug: "Mobile Apps",
+      "Clean, high-definition screen recording tutorials without fancy animations. Focused on pure instruction and fast delivery.",
+    priceTag: "$120 / 60 seconds",
+    icon: Video,
+    filterSlug: "Tutorials",
   },
   {
-    title: "Training Videos",
+    title: "Custom UI Motion Explainers",
     description:
-      "Structured learning modules for customer success, employee SOPs, and product education academies.",
-    icon: GraduationCap,
-    filterSlug: "Training",
-  },
-  {
-    title: "Product Explainers",
-    description:
-      "Fast-paced overview videos summarizing product architecture, pain points, and core differentiators in 2-3 minutes.",
+      "Bespoke SaaS explainers featuring custom 2D/3D vector UI recreations, abstract flows, and cinematic animations.",
+    priceTag: "$800 – $1,200 / scope",
     icon: Sparkles,
     filterSlug: "Explainers",
   },
   {
-    title: "Website & App Demos",
+    title: "Mobile App Demonstrations",
     description:
-      "Polished website navigations and software demonstrations that turn casual visitors into registered users.",
-    icon: Laptop,
-    filterSlug: "Web Apps",
+      "Fluid demonstrations of iOS & Android apps with native touch gesture ripples and device frame mockups.",
+    priceTag: "Vertical & Landscape",
+    icon: Smartphone,
+    filterSlug: "Mobile Apps",
+  },
+  {
+    title: "Training & Knowledge Bases",
+    description:
+      "Structured learning modules and SOP guides for customer success teams, employee onboarding, and academy centers.",
+    priceTag: "Batch Discounts Available",
+    icon: GraduationCap,
+    filterSlug: "Training",
   },
 ];
 
@@ -87,8 +96,15 @@ export const WhatICreate: React.FC = () => {
                 className="group relative p-7 rounded-2xl bg-surface-card border border-white/[0.06] hover:border-brand-500/40 transition-all duration-300 hover:shadow-card hover:-translate-y-1 flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-brand-600/10 border border-brand-500/20 text-brand-400 flex items-center justify-center group-hover:scale-110 group-hover:bg-brand-600/20 transition-all duration-300 mb-5">
-                    <Icon className="w-6 h-6" />
+                  <div className="flex items-center justify-between mb-5">
+                    <div className="w-12 h-12 rounded-xl bg-brand-600/10 border border-brand-500/20 text-brand-400 flex items-center justify-center group-hover:scale-110 group-hover:bg-brand-600/20 transition-all duration-300">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    {card.priceTag && (
+                      <span className="text-[11px] font-bold text-accent-cyan bg-accent-cyan/10 border border-accent-cyan/20 px-2.5 py-1 rounded-full shadow-sm">
+                        {card.priceTag}
+                      </span>
+                    )}
                   </div>
 
                   <h3 className="text-lg font-semibold text-white group-hover:text-brand-300 transition-colors">

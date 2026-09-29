@@ -14,14 +14,15 @@ import {
   Subtitles,
   MousePointerClick,
   ZoomIn,
+  Bot,
 } from "lucide-react";
 import { services, valueAddItems } from "@/data/services";
 import { CTA } from "@/components/CTA";
 
 export const metadata: Metadata = {
-  title: "Services & Capabilities | Software Tutorials & SaaS Walkthroughs",
+  title: "Services & Capabilities | SaaS Walkthroughs, AI UGC & Product Videos",
   description:
-    "Comprehensive video production services for software, SaaS platforms, mobile apps, customer education, and product teams.",
+    "Comprehensive video production: SaaS product walkthroughs, AI UGC & social ads, simple screencasts, custom UI motion graphics, and training videos.",
 };
 
 const ICONS_MAP: Record<string, React.ElementType> = {
@@ -30,6 +31,8 @@ const ICONS_MAP: Record<string, React.ElementType> = {
   GraduationCap,
   Sparkles,
   Layers,
+  Video,
+  Bot,
 };
 
 export default function ServicesPage() {

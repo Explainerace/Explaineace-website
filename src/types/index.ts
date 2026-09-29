@@ -5,7 +5,8 @@ export type CategoryFilter =
   | "Mobile Apps"
   | "Tutorials"
   | "Training"
-  | "Explainers";
+  | "Explainers"
+  | "AI UGC & Product Ads";
 
 export interface ProjectCaseStudy {
   overview: string;
@@ -18,7 +19,7 @@ export interface ProjectCaseStudy {
 export interface Project {
   id: string;
   title: string;
-  category: "SaaS" | "Web Apps" | "Mobile Apps" | "Tutorials" | "Training" | "Explainers";
+  category: "SaaS" | "Web Apps" | "Mobile Apps" | "Tutorials" | "Training" | "Explainers" | "AI UGC & Product Ads";
   client: string;
   industry: string;
   description: string;
@@ -38,7 +39,15 @@ export interface ServiceItem {
   title: string;
   shortDesc: string;
   iconName: string;
-  category: "Software & SaaS" | "Web & Mobile" | "Training & Education" | "Explainer & Product" | "Production Support";
+  category:
+    | "Software & SaaS"
+    | "Web & Mobile"
+    | "Training & Education"
+    | "Explainer & Product"
+    | "AI UGC & Product Ads"
+    | "Custom UI Motion"
+    | "Production Support"
+    | string;
   features: string[];
   deliverables: string[];
 }

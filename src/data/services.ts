@@ -2,36 +2,104 @@ import { ServiceItem } from "@/types";
 
 export const services: ServiceItem[] = [
   {
-    id: "software-saas",
-    title: "Software & SaaS Walkthroughs",
+    id: "ai-ugc-product-ads",
+    title: "AI UGC & AI Product Ad Videos",
     shortDesc:
-      "Turn complex platforms into intuitive, high-converting video walkthroughs that onboard users faster.",
+      "High-converting short-form ad creatives combining hyper-realistic AI avatars, dynamic product motion, viral hooks, and native social captions.",
+    iconName: "Bot",
+    category: "AI UGC & Product Ads",
+    features: [
+      "Hyper-Realistic AI UGC Creator Avatars & Talking Heads",
+      "Dynamic 3D Product Motion & Visual Enhancements",
+      "Viral 3-Second Hook Angle Iterations (Split-Testing)",
+      "Native Social Kinetic Captions & Sound Effects",
+      "TikTok, Meta (Reels/IG/FB), & YouTube Shorts Sizing",
+      "Direct E-commerce & SaaS Ad Script Copywriting",
+    ],
+    deliverables: [
+      "Mobile-First 9:16 Vertical Video & 16:9 Landscape Exports",
+      "High-Converting Short Ad Videos ($200–$300 / ad)",
+      "Ready-to-Run Ad Campaign Files & Thumbnail Hooks",
+      "Full Ad Whitelisting & Commercial Broadcast Rights",
+    ],
+  },
+  {
+    id: "software-saas",
+    title: "Fancy SaaS Explainer & Walkthroughs",
+    shortDesc:
+      "Turn complex platforms into intuitive, high-converting video walkthroughs with 3D camera zooms, cursor tracks, and spotlight framing.",
     iconName: "MonitorPlay",
     category: "Software & SaaS",
     features: [
-      "SaaS Product Demos & Feature Highlights",
-      "Customer Onboarding & Activation Flows",
-      "Comprehensive Admin & Workspace Walkthroughs",
-      "Release Notes & New Feature Updates",
+      "SaaS Product Demos & Feature Highlights ($220 / 60s)",
+      "Dynamic Focal Zooms & Precision Camera Pan",
+      "Smooth Cursor Tracking & Click Ripple Highlighting",
+      "Sleek UI Framing, Depth & Spotlight Accents",
+      "Studio Voiceover Narration & Balanced Audio Mix",
+      "Branded Intro Card & Logo Outro Animation",
     ],
     deliverables: [
-      "Full HD (1080p) or 4K Master Video",
-      "Dynamic Focal Zooms & Click Ripple Tracking",
-      "Clean Studio Voiceover Narration",
-      "MP4 Export + Web Embed Ready Files",
+      "Full HD (1080p) or 4K Master Video (60 FPS)",
+      "Web-Embed Ready MP4s with Ultra-Low Latency",
+      "YouTube Chapter Timestamps & Description Metadata",
+      "Full Commercial Broadcast Rights",
+    ],
+  },
+  {
+    id: "simple-screencast-tutorials",
+    title: "Simple Screencast Tutorials & Training",
+    shortDesc:
+      "Clear, straightforward screen recording tutorials without fancy animations. Focused on pure instruction, ease of following, and fast delivery.",
+    iconName: "Video",
+    category: "Software & SaaS",
+    features: [
+      "Pure Instructional Screencasts ($120 / 60s)",
+      "Native 1080p or 4K Crisp Screen Recording",
+      "Clear, Clean Pacing with Zero Visual Distractions",
+      "Synchronized Studio Voiceover Narration",
+      "Essential Focal Zooms on Key Inputs & Settings",
+      "Bulk Batch Discounts on Multi-Video Projects",
+    ],
+    deliverables: [
+      "Production-Ready Master MP4s",
+      "Knowledge Base & Help Center Sizing",
+      "Optional Timed Subtitle Files (.SRT / .VTT)",
+      "Fast 24h to 48h Turnaround Time",
+    ],
+  },
+  {
+    id: "custom-ui-motion",
+    title: "Custom UI Motion Graphics & Explainers",
+    shortDesc:
+      "Bespoke SaaS explainer videos built with custom 2D/3D UI motion graphics, vector UI reconstructions, and cinematic animations for high conversion.",
+    iconName: "Sparkles",
+    category: "Custom UI Motion",
+    features: [
+      "Custom 2D/3D Vector UI Motion Graphics ($800–$1,200)",
+      "Abstract Software Architecture & Workflow Animations",
+      "Full Storyboard, Scripting & Creative Direction",
+      "Premium Voiceover Artist Selection (Accents & Tone)",
+      "Custom Sound Design (SFX), Swooshes & Sonic Branding",
+      "Multi-Format Delivery (16:9, 9:16, 1:1, Hero Embeds)",
+    ],
+    deliverables: [
+      "Pristine 4K Master Video Files",
+      "Transparent Alpha Exports & Lottie Assets (upon request)",
+      "Full Source File Handoff & Intellectual Property Transfer",
+      "Milestone-Based Revision Stages",
     ],
   },
   {
     id: "web-mobile",
     title: "Web & Mobile App Demonstrations",
     shortDesc:
-      "Flawless screen-captured demonstrations for iOS, Android, and responsive web applications.",
+      "Flawless screen-captured demonstrations for iOS, Android, and responsive web applications with realistic touch interactions.",
     iconName: "Smartphone",
     category: "Web & Mobile",
     features: [
       "iOS & Android Mobile App Demos",
       "Touch Gesture & Finger-Tap Animations",
-      "Mobile Device Frame Mockups",
+      "3D Mobile Device Frame Mockups",
       "Cross-Platform Responsive Web Tours",
     ],
     deliverables: [
@@ -43,13 +111,13 @@ export const services: ServiceItem[] = [
   },
   {
     id: "training-education",
-    title: "Training & Educational Videos",
+    title: "Training & Educational Knowledge Bases",
     shortDesc:
-      "Structured instructional videos built to train employees, partners, and customers effectively.",
+      "Structured instructional video series built to train employees, onboarding users, and scale customer success academies.",
     iconName: "GraduationCap",
     category: "Training & Education",
     features: [
-      "Customer Education & Help Center Videos",
+      "Customer Success Academies & Help Center Videos",
       "Internal SOP & Team Workflow Guides",
       "Step-by-Step 'How-To' Instructional Series",
       "Certification & Learning Module Content",
@@ -61,59 +129,22 @@ export const services: ServiceItem[] = [
       "Bite-Sized Modular Clips for Knowledge Bases",
     ],
   },
-  {
-    id: "explainer-product",
-    title: "Product Explainers & Overviews",
-    shortDesc:
-      "High-impact overview videos that explain your product's core value proposition in 90 to 180 seconds.",
-    iconName: "Sparkles",
-    category: "Explainer & Product",
-    features: [
-      "Top-of-Funnel Product Explainers",
-      "Feature Launch Announcements",
-      "Sales Enablement & Pitch Deck Videos",
-      "Investor & Stakeholder Presentations",
-    ],
-    deliverables: [
-      "Script Timing & Story Arc Guidance",
-      "Custom Branded Intro / Outro Motion Slides",
-      "Licensed Royalty-Free Background Music",
-      "Web Hero Section Video Loops",
-    ],
-  },
-  {
-    id: "production-support",
-    title: "Full-Stack Production Support",
-    shortDesc:
-      "Every detail from high-res screen recording to voiceover, subtitle creation, and motion polish.",
-    iconName: "Layers",
-    category: "Production Support",
-    features: [
-      "Native High-Res Screen Recording (1080p / 4K)",
-      "Professional Voiceover Narration",
-      "Precision Zoom, Pan & Framing",
-      "Cursor Smoothing & Click Highlighting",
-      "Accessible Subtitles & Closed Captions",
-      "Branded Motion Graphics & Transitions",
-    ],
-    deliverables: [
-      "Production-Ready Master MP4s",
-      "Subtitle Files (.SRT)",
-      "Source Recordings & Project Files (upon request)",
-      "Revisions to guarantee precision",
-    ],
-  },
 ];
 
 export const valueAddItems = [
+  {
+    title: "AI UGC Avatars & Creators",
+    desc: "Hyper-realistic on-camera AI presenters and actors that deliver your pitch with authentic emotion and energy.",
+    iconName: "Bot",
+  },
   {
     title: "Screen Recording",
     desc: "Clean, high-resolution product capture in native 1080p or 4K with pixel-perfect clarity.",
     iconName: "Video",
   },
   {
-    title: "Zooms & Focus",
-    desc: "Smooth dynamic zooms direct viewer attention immediately to critical UI elements.",
+    title: "Dynamic Zooms & Pan",
+    desc: "Smooth dynamic focal zooms direct viewer attention immediately to critical UI elements.",
     iconName: "ZoomIn",
   },
   {
@@ -122,23 +153,18 @@ export const valueAddItems = [
     iconName: "MousePointerClick",
   },
   {
-    title: "Annotations",
-    desc: "Custom arrows, badges, boxes, and spotlights highlight features at the exact right moment.",
-    iconName: "Target",
+    title: "Custom UI Motion Graphics",
+    desc: "Custom-animated software interfaces, vector workflows, and cinematic transitions.",
+    iconName: "Layers",
   },
   {
-    title: "Voiceover",
+    title: "Studio Voiceover",
     desc: "Clear, studio-grade narration with professional tone, pacing, and balanced audio leveling.",
     iconName: "Mic",
   },
   {
     title: "Captions & Subtitles",
-    desc: "Accessible and easy-to-follow subtitles burned in or delivered as timed .SRT files.",
+    desc: "Accessible and viral-style kinetic subtitles burned in or delivered as timed .SRT files.",
     iconName: "Subtitles",
-  },
-  {
-    title: "Motion Graphics",
-    desc: "Branded intro/outro slides, feature title cards, and sleek transitions tailored to your identity.",
-    iconName: "Layers",
   },
 ];
