@@ -141,15 +141,18 @@ function ContactForm() {
         body: JSON.stringify(formData),
       });
 
+      const data = await res.json().catch(() => null);
+
       if (!res.ok) {
-        throw new Error("Failed to send message.");
+        throw new Error(data?.error || "Failed to dispatch inquiry. Please try again or reach out on WhatsApp.");
       }
 
       setSubmitted(true);
-    } catch (err) {
+    } catch (err: any) {
       console.error("Submission error:", err);
-      // Ensure user receives confirmation even if network hiccup
-      setSubmitted(true);
+      setErrorMessage(
+        err?.message || "There was an issue sending your message. Please message Ali directly via WhatsApp (+92 313 9110721) or email explaineracepro@gmail.com."
+      );
     } finally {
       setSubmitting(false);
     }
@@ -399,6 +402,32 @@ function ContactForm() {
                   className="w-full px-4 py-3 text-sm bg-surface-subtle border border-white/[0.08] rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors"
                 />
               </div>
+
+              {/* Error Alert if submission fails */}
+              {errorMessage && (
+                <div className="p-4 rounded-2xl bg-red-500/10 border border-red-500/30 text-xs text-red-300 space-y-2">
+                  <p className="font-semibold text-red-200">Notice:</p>
+                  <p>{errorMessage}</p>
+                  <div className="pt-1 flex items-center gap-3">
+                    <a
+                      href={`https://wa.me/923139110721?text=Hi%20Ali,%20I%20tried%20to%20send%20an%20inquiry%20for%20${encodeURIComponent(formData.selectedPackage)}:%20${encodeURIComponent(formData.message)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold transition-colors"
+                    >
+                      <WhatsAppIcon className="w-3.5 h-3.5" />
+                      <span>Send on WhatsApp</span>
+                    </a>
+                    <a
+                      href={`mailto:explaineracepro@gmail.com?subject=Inquiry:%20${encodeURIComponent(formData.selectedPackage)}&body=${encodeURIComponent(formData.message)}`}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white font-medium transition-colors"
+                    >
+                      <Mail className="w-3.5 h-3.5" />
+                      <span>Direct Email</span>
+                    </a>
+                  </div>
+                </div>
+              )}
 
               {/* Submit Button */}
               <button
