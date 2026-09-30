@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Metadata } from "next";
+import FocusLensInstaller from "./FocusLensInstaller";
 import {
   Laptop,
   Brain,
@@ -276,45 +277,7 @@ export default function FocusLensPage() {
         </div>
 
         {/* Installation & Quick Start Guide */}
-        <div id="install-guide" className="mt-24 max-w-4xl mx-auto">
-          <div className="rounded-3xl p-8 bg-gradient-to-b from-[#121626] to-[#0A0D14] border border-white/[0.1] shadow-2xl">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6 pb-6 border-b border-white/[0.08]">
-              <div>
-                <h3 className="text-xl font-bold text-white">Get FocusLens for MacBook</h3>
-                <p className="text-xs sm:text-sm text-slate-400 mt-1">
-                  Supported on macOS 12 Monterey or later (Apple Silicon M1/M2/M3 & Intel x86)
-                </p>
-              </div>
-              <span className="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 text-xs font-semibold">
-                Open Source & Self-Hostable
-              </span>
-            </div>
-
-            <div className="space-y-4">
-              <div className="bg-black/60 rounded-xl p-4 border border-white/[0.06] font-mono text-xs text-slate-300 overflow-x-auto">
-                <div className="text-slate-500 mb-2"># 1. Clone & Bootstrap FocusLens</div>
-                <div className="text-cyan-300">git clone https://github.com/Explainerace/focuslens.git</div>
-                <div className="text-cyan-300">cd focuslens && ./install.sh</div>
-              </div>
-
-              <div className="bg-black/60 rounded-xl p-4 border border-white/[0.06] font-mono text-xs text-slate-300 overflow-x-auto">
-                <div className="text-slate-500 mb-2"># 2. Or Launch Directly on macOS</div>
-                <div className="text-emerald-400">open ~/Applications/FocusLens.app</div>
-              </div>
-            </div>
-
-            <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-white/[0.08] text-xs text-slate-400">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                <span>Zero background CPU consumption (&lt; 2% usage)</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                <span>One-click complete data purge anytime</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <FocusLensInstaller />
       </div>
     </div>
   );
