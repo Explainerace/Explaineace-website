@@ -62,20 +62,29 @@ export default function FocusLensPage() {
           </p>
 
           {/* Action CTAs */}
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5">
             <a
               href="#interactive-preview"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-gradient-to-r from-brand-600 via-indigo-600 to-cyan-600 hover:from-brand-500 hover:to-cyan-500 px-8 py-3.5 rounded-full shadow-glow hover:shadow-glow-lg transition-all duration-200 hover:-translate-y-0.5"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 px-7 py-3.5 rounded-full shadow-[0_0_25px_rgba(59,130,246,0.35)] hover:shadow-[0_0_35px_rgba(59,130,246,0.5)] transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
             >
               <BarChart3 className="w-4 h-4" />
-              <span>Explore Interactive Dashboard</span>
+              <span>Explore Dashboard</span>
+            </a>
+            <a
+              href="http://localhost:8501"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-white/[0.08] hover:bg-white/[0.14] border border-white/[0.15] px-6 py-3.5 rounded-full backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 shadow-sm"
+            >
+              <Laptop className="w-4 h-4 text-emerald-400" />
+              <span>Open Local App</span>
             </a>
             <a
               href="#install-guide"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-white/[0.08] hover:bg-white/[0.12] border border-white/[0.12] px-7 py-3.5 rounded-full backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm font-semibold text-slate-300 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] px-6 py-3.5 rounded-full backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5"
             >
               <Download className="w-4 h-4 text-cyan-400" />
-              <span>Mac App Installer</span>
+              <span>Install for Mac</span>
             </a>
           </div>
         </div>
