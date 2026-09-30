@@ -75,6 +75,7 @@ export const siteConfig = {
   navLinks: [
     { name: "Work", href: "/work" },
     { name: "Services", href: "/services" },
+    { name: "FocusLens", href: "/focuslens" },
     { name: "Pricing", href: "/pricing" },
     { name: "Blog", href: "/blog" },
     { name: "About", href: "/about" },
