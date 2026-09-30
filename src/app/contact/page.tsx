@@ -5,7 +5,8 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import {
   Mail,
-  Send,
+  Copy,
+  Check,
   ExternalLink,
   Star,
   ShieldCheck,
@@ -14,553 +15,315 @@ import {
   Sparkles,
   CreditCard,
   Building,
-  Check,
+  ArrowRight,
+  MessageCircle,
 } from "lucide-react";
 import { YoutubeIcon, WhatsAppIcon, UpworkIcon } from "@/components/Icons";
 import { siteConfig } from "@/data/siteConfig";
 import { pricingTiers } from "@/data/pricing";
 
-const PACKAGE_OPTIONS = [
-  {
-    id: "simple-screencast",
-    name: "Simple Screencast Tutorial ($120 / 60s)",
-    price: "$120 / 60s",
-    duration: "60 seconds base",
-  },
-  {
-    id: "fancy-saas-explainer",
-    name: "Fancy SaaS Explainer ($220 / 60s)",
-    price: "$220 / 60s",
-    duration: "60 seconds base",
-  },
-  {
-    id: "ai-product-ugc-ads",
-    name: "AI Product & UGC Ads ($200 – $300 / ad)",
-    price: "$200 – $300",
-    duration: "15s – 60s short-form",
-  },
-  {
-    id: "custom-ui-motion-explainer",
-    name: "Custom UI Motion Explainer ($800 – $1,200)",
-    price: "$800 – $1,200",
-    duration: "60s – 90s+ custom scope",
-  },
-  {
-    id: "custom",
-    name: "Custom Project / Bulk Multi-Video Batch (Inbox for Discount)",
-    price: "Volume Discount",
-    duration: "Flexible",
-  },
-];
-
-const PROJECT_TYPES = [
-  "Fancy SaaS Explainer ($220/60s)",
-  "Simple Screencast Tutorial ($120/60s)",
-  "AI UGC & Product Ad ($200–$300/ad)",
-  "Custom UI Motion Explainer ($800–$1,200)",
-  "Mobile App Video",
-  "Customer Training / Academy Series",
-  "Other / Multi-Video Batch",
-];
-
-const LENGTH_OPTIONS = [
-  "Under 60 seconds (Quick Teaser / Feature Pill)",
-  "1 to 2.5 minutes (Standard Product Tour)",
-  "3 to 4 minutes (Comprehensive Walkthrough)",
-  "5+ minutes (In-Depth Academy / Training Video)",
-  "Unsure / Need Recommendation",
-];
-
-function ContactForm() {
+function ContactDetails() {
   const searchParams = useSearchParams();
   const packageParam = searchParams.get("package");
+  const [copiedEmail, setCopiedEmail] = useState(false);
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    selectedPackage: PACKAGE_OPTIONS[1].name,
-    projectType: PROJECT_TYPES[0],
-    videoLength: LENGTH_OPTIONS[1],
-    message: "",
-  });
+  const matchedTier = pricingTiers.find(
+    (tier) =>
+      tier.id === packageParam ||
+      tier.id.toLowerCase() === packageParam?.toLowerCase()
+  );
 
-  const [matchedTier, setMatchedTier] = useState<typeof PACKAGE_OPTIONS[0] | null>(null);
-  const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
-
-  // Sync package query parameter if arriving from /pricing
-  useEffect(() => {
-    if (packageParam) {
-      const match = PACKAGE_OPTIONS.find(
-        (p) => p.id === packageParam || p.id.toLowerCase() === packageParam.toLowerCase()
-      );
-      if (match) {
-        setMatchedTier(match);
-        setFormData((prev) => ({
-          ...prev,
-          selectedPackage: match.name,
-          videoLength:
-            match.id === "simple-screencast" || match.id === "ai-product-ugc-ads"
-              ? LENGTH_OPTIONS[0]
-              : match.id === "fancy-saas-explainer"
-              ? LENGTH_OPTIONS[1]
-              : prev.videoLength,
-        }));
-      }
-    }
-  }, [packageParam]);
-
-  const handlePackageChange = (packageName: string) => {
-    const match = PACKAGE_OPTIONS.find((p) => p.name === packageName);
-    setMatchedTier(match || null);
-    setFormData((prev) => ({
-      ...prev,
-      selectedPackage: packageName,
-      videoLength:
-        match?.id === "simple-screencast" || match?.id === "ai-product-ugc-ads"
-          ? LENGTH_OPTIONS[0]
-          : match?.id === "fancy-saas-explainer"
-          ? LENGTH_OPTIONS[1]
-          : prev.videoLength,
-    }));
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(siteConfig.contactEmail);
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2500);
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitting(true);
-    setErrorMessage("");
+  const whatsappMessage = matchedTier
+    ? `Hi Ali, I'm reaching out from explainerace.com. I'm interested in the ${matchedTier.name} (${matchedTier.price}).`
+    : `Hi Ali, I'm reaching out from explainerace.com. I have a software/app video project inquiry.`;
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await res.json().catch(() => null);
-
-      if (!res.ok) {
-        throw new Error(data?.error || "Failed to dispatch inquiry. Please try again or reach out on WhatsApp.");
-      }
-
-      setSubmitted(true);
-    } catch (err: any) {
-      console.error("Submission error:", err);
-      setErrorMessage(
-        err?.message || "There was an issue sending your message. Please message Ali directly via WhatsApp (+92 313 9110721) or email explaineracepro@gmail.com."
-      );
-    } finally {
-      setSubmitting(false);
-    }
-  };
+  const emailSubject = matchedTier
+    ? `Video Project Inquiry: ${matchedTier.name}`
+    : `Software Video Project Inquiry - EXPLAINERACE`;
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-      {/* Left Column: Form */}
-      <div className="lg:col-span-7">
-        <div className="p-8 sm:p-10 rounded-3xl bg-surface-card border border-white/[0.08] shadow-card">
-          {submitted ? (
-            <div className="py-12 text-center space-y-4">
-              <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto mb-4">
-                <CheckCircle2 className="w-8 h-8" />
-              </div>
-              <h2 className="text-2xl font-bold text-white">
-                Inquiry Dispatched!
-              </h2>
-              <div className="p-4 rounded-2xl bg-surface-subtle border border-white/[0.06] text-left max-w-md mx-auto text-xs space-y-1.5">
-                <p className="text-slate-400">
-                  <span className="text-slate-200 font-semibold">Selected Package:</span>{" "}
-                  <span className="text-brand-300 font-bold">{formData.selectedPackage}</span>
-                </p>
-                <p className="text-slate-400">
-                  <span className="text-slate-200 font-semibold">Client Name:</span> {formData.name}
-                </p>
-                <p className="text-slate-400">
-                  <span className="text-slate-200 font-semibold">Email:</span> {formData.email}
-                </p>
-              </div>
-              <p className="text-sm text-slate-300 max-w-md mx-auto leading-relaxed pt-2">
-                Thank you for reaching out, {formData.name}. Ali will review your package details and reply to{" "}
-                <span className="text-brand-300 font-semibold">{formData.email}</span> within 24 business hours.
-              </p>
-              <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
-                <a
-                  href={`https://wa.me/923139110721?text=Hi%20Ali,%20I%20submitted%20an%20inquiry%20for%20the%20${encodeURIComponent(
-                    formData.selectedPackage
-                  )}.`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-600 text-white text-xs font-semibold hover:bg-emerald-500 transition-colors"
-                >
-                  <WhatsAppIcon className="w-4 h-4" />
-                  <span>Chat on WhatsApp for Instant Reply</span>
-                </a>
-                <button
-                  onClick={() => {
-                    setSubmitted(false);
-                    setFormData({
-                      name: "",
-                      email: "",
-                      company: "",
-                      selectedPackage: PACKAGE_OPTIONS[1].name,
-                      projectType: PROJECT_TYPES[0],
-                      videoLength: LENGTH_OPTIONS[1],
-                      message: "",
-                    });
-                  }}
-                  className="text-xs text-brand-400 hover:text-brand-300 underline font-medium"
-                >
-                  Send another inquiry
-                </button>
-              </div>
+    <div className="space-y-10">
+      {/* Selected Package Banner if arriving from /pricing */}
+      {matchedTier && (
+        <div className="p-4 sm:p-5 rounded-2xl bg-brand-500/10 border border-brand-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-3.5">
+            <div className="w-11 h-11 rounded-xl bg-brand-600/20 text-brand-300 flex items-center justify-center font-bold shrink-0">
+              <Sparkles className="w-5 h-5 text-accent-cyan" />
             </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Selected Package Banner if directed from Pricing */}
-              {matchedTier && (
-                <div className="p-4 rounded-2xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-between gap-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-brand-600/20 text-brand-300 flex items-center justify-center font-bold">
-                      <Sparkles className="w-5 h-5 text-accent-cyan" />
-                    </div>
-                    <div>
-                      <span className="text-[10px] uppercase font-bold tracking-wider text-brand-400">
-                        Inquiring About Package
-                      </span>
-                      <h4 className="text-sm sm:text-base font-bold text-white">
-                        {matchedTier.name}
-                      </h4>
-                    </div>
-                  </div>
-                  <Link
-                    href="/pricing"
-                    className="text-xs text-slate-400 hover:text-white underline shrink-0"
-                  >
-                    View All Tiers
-                  </Link>
-                </div>
-              )}
-
-              {/* Package Selection Field */}
-              <div>
-                <label
-                  htmlFor="selectedPackage"
-                  className="block text-xs font-semibold uppercase tracking-wider text-brand-300 mb-2 flex items-center justify-between"
-                >
-                  <span>Select Video Package <span className="text-brand-400">*</span></span>
-                  <Link href="/pricing" className="text-[11px] text-slate-400 hover:text-brand-300 font-normal underline">
-                    Compare packages
-                  </Link>
-                </label>
-                <select
-                  id="selectedPackage"
-                  value={formData.selectedPackage}
-                  onChange={(e) => handlePackageChange(e.target.value)}
-                  className="w-full px-4 py-3 text-sm bg-[#0E111A] border border-brand-500/40 rounded-xl text-white focus:outline-none focus:border-brand-400 focus:ring-1 focus:ring-brand-400 transition-colors font-medium"
-                >
-                  {PACKAGE_OPTIONS.map((pkg) => (
-                    <option key={pkg.id} value={pkg.name} className="bg-[#0E111A]">
-                      {pkg.name}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Name & Email */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2"
-                  >
-                    Your Name <span className="text-brand-400">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    required
-                    value={formData.name}
-                    onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
-                    }
-                    placeholder="e.g. Alex Miller"
-                    className="w-full px-4 py-3 text-sm bg-surface-subtle border border-white/[0.08] rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2"
-                  >
-                    Work Email <span className="text-brand-400">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
-                    placeholder="alex@company.com"
-                    className="w-full px-4 py-3 text-sm bg-surface-subtle border border-white/[0.08] rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors"
-                  />
-                </div>
-              </div>
-
-              {/* Company */}
-              <div>
-                <label
-                  htmlFor="company"
-                  className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2"
-                >
-                  Company / Product Website
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  value={formData.company}
-                  onChange={(e) =>
-                    setFormData({ ...formData, company: e.target.value })
-                  }
-                  placeholder="e.g. Acme Software (acme.io)"
-                  className="w-full px-4 py-3 text-sm bg-surface-subtle border border-white/[0.08] rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors"
-                />
-              </div>
-
-              {/* Project Type & Video Length */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label
-                    htmlFor="projectType"
-                    className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2"
-                  >
-                    Project Type
-                  </label>
-                  <select
-                    id="projectType"
-                    value={formData.projectType}
-                    onChange={(e) =>
-                      setFormData({ ...formData, projectType: e.target.value })
-                    }
-                    className="w-full px-4 py-3 text-sm bg-[#0E111A] border border-white/[0.08] rounded-xl text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors"
-                  >
-                    {PROJECT_TYPES.map((type) => (
-                      <option key={type} value={type} className="bg-[#0E111A]">
-                        {type}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="videoLength"
-                    className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2"
-                  >
-                    Target Length
-                  </label>
-                  <select
-                    id="videoLength"
-                    value={formData.videoLength}
-                    onChange={(e) =>
-                      setFormData({ ...formData, videoLength: e.target.value })
-                    }
-                    className="w-full px-4 py-3 text-sm bg-[#0E111A] border border-white/[0.08] rounded-xl text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors"
-                  >
-                    {LENGTH_OPTIONS.map((opt) => (
-                      <option key={opt} value={opt} className="bg-[#0E111A]">
-                        {opt}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-
-              {/* Message */}
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2"
-                >
-                  Message / Software Overview <span className="text-brand-400">*</span>
-                </label>
-                <textarea
-                  id="message"
-                  required
-                  rows={4}
-                  value={formData.message}
-                  onChange={(e) =>
-                    setFormData({ ...formData, message: e.target.value })
-                  }
-                  placeholder="Tell me a bit about your software, what user action or flow you want to showcase, and your target completion date."
-                  className="w-full px-4 py-3 text-sm bg-surface-subtle border border-white/[0.08] rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors"
-                />
-              </div>
-
-              {/* Error Alert if submission fails */}
-              {errorMessage && (
-                <div className="p-4 rounded-2xl bg-red-500/10 border border-red-500/30 text-xs text-red-300 space-y-2">
-                  <p className="font-semibold text-red-200">Notice:</p>
-                  <p>{errorMessage}</p>
-                  <div className="pt-1 flex items-center gap-3">
-                    <a
-                      href={`https://wa.me/923139110721?text=Hi%20Ali,%20I%20tried%20to%20send%20an%20inquiry%20for%20${encodeURIComponent(formData.selectedPackage)}:%20${encodeURIComponent(formData.message)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold transition-colors"
-                    >
-                      <WhatsAppIcon className="w-3.5 h-3.5" />
-                      <span>Send on WhatsApp</span>
-                    </a>
-                    <a
-                      href={`mailto:explaineracepro@gmail.com?subject=Inquiry:%20${encodeURIComponent(formData.selectedPackage)}&body=${encodeURIComponent(formData.message)}`}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white font-medium transition-colors"
-                    >
-                      <Mail className="w-3.5 h-3.5" />
-                      <span>Direct Email</span>
-                    </a>
-                  </div>
-                </div>
-              )}
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                disabled={submitting}
-                className="w-full py-4 px-6 rounded-full bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-sm font-semibold text-white flex items-center justify-center gap-2 shadow-glow hover:shadow-glow-lg transition-all active:scale-[0.99] disabled:opacity-50"
-              >
-                {submitting ? (
-                  <span>Dispatching Inquiry...</span>
-                ) : (
-                  <>
-                    <span>Send Inquiry for {formData.selectedPackage.split("(")[0]}</span>
-                    <Send className="w-4 h-4" />
-                  </>
-                )}
-              </button>
-            </form>
-          )}
-        </div>
-      </div>
-
-      {/* Right Column: Direct Channels, Contracts & Verified Credentials */}
-      <div className="lg:col-span-5 space-y-5">
-        {/* Quick WhatsApp Card */}
-        <div className="p-6 rounded-3xl bg-gradient-to-br from-emerald-950/40 to-surface-card border border-emerald-500/30 space-y-3">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-semibold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-              Fastest Response
-            </span>
-            <span className="text-[11px] text-slate-400">Available Daily</span>
-          </div>
-          <h3 className="text-lg font-bold text-white">Direct WhatsApp Chat</h3>
-          <p className="text-xs text-slate-300 leading-relaxed">
-            Need an immediate quote or have quick questions about script, voiceover, or delivery timeline? Text Ali directly on WhatsApp.
-          </p>
-          <a
-            href={`https://wa.me/923139110721?text=Hi%20Ali,%20I%20have%20an%20inquiry%20for%20the%20${encodeURIComponent(
-              formData.selectedPackage
-            )}.`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold shadow-md transition-colors"
-          >
-            <WhatsAppIcon className="w-4 h-4" />
-            <span>Chat on WhatsApp: {siteConfig.whatsapp.display}</span>
-          </a>
-        </div>
-
-        {/* Upwork Direct Contract Card */}
-        <div className="p-6 rounded-3xl bg-surface-card border border-emerald-500/20 space-y-3">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
-              0% Client Fee
-            </span>
-            <UpworkIcon className="w-5 h-5 text-emerald-400" />
-          </div>
-          <h3 className="text-base font-bold text-white">
-            Upwork Direct Contract Protection
-          </h3>
-          <p className="text-xs text-slate-300 leading-relaxed">
-            Work with full escrow protection and enterprise invoicing while paying **zero client fees**. I generate an official direct contract through Upwork so you get safety without marketplace surcharges.
-          </p>
-        </div>
-
-        {/* Payoneer Direct Invoicing Card */}
-        <div className="p-6 rounded-3xl bg-surface-card border border-white/[0.08] space-y-3">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold uppercase tracking-wider text-brand-300 bg-brand-500/10 px-2.5 py-0.5 rounded-full border border-brand-500/20">
-              Corporate Invoicing
-            </span>
-            <CreditCard className="w-5 h-5 text-brand-400" />
-          </div>
-          <h3 className="text-base font-bold text-white">
-            Payoneer Business Invoicing
-          </h3>
-          <p className="text-xs text-slate-300 leading-relaxed">
-            Convenient, fast payment for international companies via corporate credit card, ACH, or local bank wire transfer.
-          </p>
-        </div>
-
-        {/* 2 Vetted Fiverr Profiles & Active Gig */}
-        <div className="p-6 rounded-3xl bg-surface-card border border-white/[0.08] space-y-3">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-              Marketplace Profiles & Gig
-            </span>
-            <span className="text-xs font-bold text-amber-400 flex items-center gap-1">
-              <Star className="w-3.5 h-3.5 fill-amber-400" /> 4.8★ (157 Reviews)
-            </span>
-          </div>
-          <p className="text-xs text-slate-300">
-            Order directly through our active Fiverr Gig or visit our verified seller profiles:
-          </p>
-
-          {/* Active Gig Highlight */}
-          <a
-            href={siteConfig.fiverr.gigUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3.5 rounded-xl bg-gradient-to-r from-emerald-500/15 to-brand-500/15 hover:from-emerald-500/25 hover:to-brand-500/25 border border-emerald-500/30 transition-all block group"
-          >
-            <div className="flex items-center justify-between">
-              <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                Featured Fiverr Gig
+            <div>
+              <span className="text-[11px] uppercase font-bold tracking-wider text-brand-400 block">
+                Selected Package from Pricing
               </span>
-              <span className="text-[10px] text-slate-300 font-medium">Level 2 Seller</span>
+              <h4 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+                <span>{matchedTier.name}</span>
+                <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-accent-cyan/15 text-accent-cyan border border-accent-cyan/30">
+                  {matchedTier.price}
+                </span>
+              </h4>
             </div>
-            <div className="text-xs font-bold text-white group-hover:text-emerald-300 transition-colors flex items-center justify-between mt-1">
-              <span>Order on Fiverr: Software & SaaS Explainer Gig</span>
-              <ExternalLink className="w-3.5 h-3.5 text-emerald-400" />
-            </div>
-          </a>
+          </div>
+          <Link
+            href="/pricing"
+            className="text-xs text-slate-300 hover:text-white underline font-medium self-start sm:self-auto"
+          >
+            Change Package &rarr;
+          </Link>
+        </div>
+      )}
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
-            {siteConfig.fiverrProfiles.map((p) => (
+      {/* Main Grid: Direct Channels */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        {/* Left Column: Primary Direct Channels (WhatsApp & Email) */}
+        <div className="lg:col-span-7 space-y-6">
+          {/* Primary Channel 1: WhatsApp (Instant) */}
+          <div className="relative p-7 sm:p-9 rounded-3xl bg-gradient-to-br from-emerald-950/40 via-surface-card to-surface-card border-2 border-emerald-500/40 shadow-glow-lg overflow-hidden group">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 blur-[80px] rounded-full pointer-events-none" />
+
+            <div className="flex items-center justify-between mb-4">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                Recommended & Fastest Response
+              </span>
+              <span className="text-xs text-slate-400 font-medium hidden sm:inline">
+                Available Daily
+              </span>
+            </div>
+
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              Chat Directly on WhatsApp
+            </h2>
+
+            <p className="mt-3 text-sm text-slate-300 leading-relaxed">
+              Skip back-and-forth email delays. Drop a message to discuss your software, get a fast custom estimate, or confirm script and turnaround requirements immediately.
+            </p>
+
+            <div className="mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <a
-                key={p.username}
-                href={p.url}
+                href={`https://wa.me/923139110721?text=${encodeURIComponent(
+                  whatsappMessage
+                )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-xl bg-surface-subtle hover:bg-surface-hover border border-white/[0.06] transition-colors block"
+                className="inline-flex items-center justify-center gap-2.5 py-4 px-6 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all active:scale-[0.99] group/btn"
               >
-                <span className="text-[10px] text-emerald-400 font-semibold block uppercase">
-                  {p.sellerLevel}
-                </span>
-                <span className="text-xs font-bold text-white hover:text-brand-300 transition-colors flex items-center justify-between mt-0.5">
-                  <span>fiverr.com/{p.username}</span>
-                  <ExternalLink className="w-3 h-3 text-slate-500" />
-                </span>
+                <WhatsAppIcon className="w-5 h-5 text-white" />
+                <span>Open WhatsApp Chat ({siteConfig.whatsapp.display})</span>
+                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
               </a>
-            ))}
+            </div>
+
+            <p className="mt-3.5 text-[11px] text-slate-400 flex items-center gap-1.5">
+              <Clock className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Typical reply time: <strong>under 15 minutes</strong></span>
+            </p>
+          </div>
+
+          {/* Primary Channel 2: Direct Email */}
+          <div className="p-7 sm:p-9 rounded-3xl bg-surface-card border border-white/[0.08] hover:border-brand-500/30 transition-all shadow-card space-y-4">
+            <div className="flex items-center justify-between">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300 text-xs font-bold uppercase tracking-wider">
+                <Mail className="w-3.5 h-3.5" />
+                Direct Email Inbox
+              </span>
+              <span className="text-xs text-slate-400 font-medium">
+                Official Inquiries
+              </span>
+            </div>
+
+            <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              Send an Email
+            </h3>
+
+            <p className="text-sm text-slate-300 leading-relaxed">
+              Prefer formal email communication or have detailed brief documents, script drafts, or NDA requirements? Email Ali directly at:
+            </p>
+
+            {/* Email Address Highlight Bar */}
+            <div className="p-4 rounded-2xl bg-surface-subtle border border-white/[0.06] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+              <span className="font-mono text-base sm:text-lg font-bold text-white tracking-wide break-all">
+                {siteConfig.contactEmail}
+              </span>
+
+              <div className="flex items-center gap-2 shrink-0 w-full sm:w-auto">
+                <button
+                  type="button"
+                  onClick={handleCopyEmail}
+                  className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-white/[0.08] hover:bg-white/[0.14] text-white text-xs font-semibold border border-white/[0.1] transition-all"
+                  aria-label="Copy email address"
+                >
+                  {copiedEmail ? (
+                    <>
+                      <Check className="w-4 h-4 text-emerald-400" />
+                      <span className="text-emerald-400">Copied!</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-4 h-4 text-slate-300" />
+                      <span>Copy Email</span>
+                    </>
+                  )}
+                </button>
+
+                <a
+                  href={`mailto:${siteConfig.contactEmail}?subject=${encodeURIComponent(
+                    emailSubject
+                  )}`}
+                  className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold transition-all shadow-sm"
+                >
+                  <span>Open Email Client</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+
+            <p className="text-[11px] text-slate-400">
+              Checked continuously. All inquiries receive a response within 24 business hours.
+            </p>
+          </div>
+
+          {/* Helpful Briefing Checklist */}
+          <div className="p-6 rounded-2xl bg-surface-subtle/70 border border-white/[0.06] space-y-3">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-accent-cyan" />
+              <span>What to include in your message for a fast turnaround:</span>
+            </h4>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-400">
+              <li className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-400 shrink-0 mt-1.5" />
+                <span>Your product or website URL</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-400 shrink-0 mt-1.5" />
+                <span>Target video duration (60s, 2m, or ads)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-400 shrink-0 mt-1.5" />
+                <span>Core user flow or features to show</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-400 shrink-0 mt-1.5" />
+                <span>Target completion deadline</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Right Column: Contracts, Invoicing & Verified Profiles */}
+        <div className="lg:col-span-5 space-y-6">
+          {/* Upwork Direct Contract */}
+          <div className="p-6 sm:p-7 rounded-3xl bg-surface-card border border-emerald-500/20 shadow-card space-y-3.5">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
+                0% Client Fee
+              </span>
+              <UpworkIcon className="w-5 h-5 text-emerald-400" />
+            </div>
+
+            <h3 className="text-lg font-bold text-white">
+              Upwork Direct Contract Protection
+            </h3>
+
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Need corporate escrow protection? I can initiate an official **Upwork Direct Contract** where you enjoy full escrow security, milestone approvals, and dispute protection while paying **0% client marketplace fees**.
+            </p>
+
+            <a
+              href="https://www.upwork.com/freelancers/~015f8dfceae72b5311"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-between w-full py-3 px-4 rounded-xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/[0.08] text-white text-xs font-semibold transition-colors group"
+            >
+              <span>View Profile & Hire on Upwork</span>
+              <ExternalLink className="w-3.5 h-3.5 text-emerald-400 group-hover:translate-x-0.5 transition-transform" />
+            </a>
+          </div>
+
+          {/* Payoneer Business Invoicing */}
+          <div className="p-6 sm:p-7 rounded-3xl bg-surface-card border border-white/[0.08] shadow-card space-y-3.5">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold uppercase tracking-wider text-brand-300 bg-brand-500/10 px-2.5 py-0.5 rounded-full border border-brand-500/20">
+                Corporate Invoicing
+              </span>
+              <CreditCard className="w-5 h-5 text-brand-400" />
+            </div>
+
+            <h3 className="text-lg font-bold text-white">
+              Payoneer Direct Invoicing
+            </h3>
+
+            <p className="text-xs text-slate-300 leading-relaxed">
+              For registered companies and startups requiring accounting-compliant invoicing. Fast payments accepted via local bank wire (USD, EUR, GBP), corporate credit card, or ACH transfer.
+            </p>
+
+            <div className="flex items-center gap-2 text-[11px] text-slate-400 pt-1">
+              <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+              <span>Official commercial invoices generated upon project kickoff</span>
+            </div>
+          </div>
+
+          {/* Fiverr Verified Profiles & Gig */}
+          <div className="p-6 sm:p-7 rounded-3xl bg-surface-card border border-white/[0.08] shadow-card space-y-3.5">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                Marketplace Profiles
+              </span>
+              <span className="text-xs font-bold text-amber-400 flex items-center gap-1">
+                <Star className="w-3.5 h-3.5 fill-amber-400" /> 4.8★ (157 Reviews)
+              </span>
+            </div>
+
+            <h3 className="text-lg font-bold text-white">
+              Order via Fiverr Marketplace
+            </h3>
+
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Prefer placing an order through Fiverr? You can order directly from our active gig or check our vetted Level 2 seller profile:
+            </p>
+
+            <a
+              href={siteConfig.fiverr.gigUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3.5 rounded-xl bg-gradient-to-r from-emerald-500/15 to-brand-500/15 hover:from-emerald-500/25 hover:to-brand-500/25 border border-emerald-500/30 transition-all block group"
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  Featured Fiverr Gig
+                </span>
+                <span className="text-[10px] text-slate-300 font-medium">Level 2 Seller</span>
+              </div>
+              <div className="text-xs font-bold text-white group-hover:text-emerald-300 transition-colors flex items-center justify-between mt-1">
+                <span>Order on Fiverr: Software & SaaS Explainer Gig</span>
+                <ExternalLink className="w-3.5 h-3.5 text-emerald-400" />
+              </div>
+            </a>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+              {siteConfig.fiverrProfiles.map((p) => (
+                <a
+                  key={p.username}
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-xl bg-surface-subtle hover:bg-surface-hover border border-white/[0.06] transition-colors block"
+                >
+                  <span className="text-[10px] text-emerald-400 font-semibold block uppercase">
+                    {p.sellerLevel}
+                  </span>
+                  <span className="text-xs font-bold text-white hover:text-brand-300 transition-colors flex items-center justify-between mt-0.5">
+                    <span>fiverr.com/{p.username}</span>
+                    <ExternalLink className="w-3 h-3 text-slate-500" />
+                  </span>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -573,26 +336,26 @@ export default function ContactPage() {
     <div className="pt-28 sm:pt-36 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="max-w-3xl mb-14">
+        <div className="max-w-3xl mb-12 sm:mb-14">
           <span className="text-xs font-semibold uppercase tracking-wider text-brand-400">
-            Project Intake & Direct Inquiries
+            Direct Contact & Project Inquiries
           </span>
           <h1 className="mt-2 text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Let&apos;s create something clear and useful.
+            Direct access. Zero waiting.
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
-            Reach out through your preferred workflow: direct WhatsApp chat, project inquiry form, Upwork Direct Contract (0% buyer fee), Payoneer invoice, or Fiverr.
+            Skip long intake forms. Reach out directly through WhatsApp for instant replies, email for briefs and proposals, or hire safely through Upwork and Fiverr.
           </p>
         </div>
 
         <Suspense
           fallback={
             <div className="p-12 text-center text-slate-400 text-sm">
-              Loading project intake form...
+              Loading contact details...
             </div>
           }
         >
-          <ContactForm />
+          <ContactDetails />
         </Suspense>
       </div>
     </div>
