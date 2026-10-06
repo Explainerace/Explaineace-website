@@ -38,7 +38,7 @@ export const CTA: React.FC = () => {
             href="/work"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-base font-semibold text-white bg-white/[0.08] hover:bg-white/[0.14] border border-white/[0.12] px-8 py-4 rounded-full transition-all duration-200"
           >
-            <span>Explore All 24 Videos</span>
+            <span>Explore All 27 Videos</span>
           </Link>
         </div>
 

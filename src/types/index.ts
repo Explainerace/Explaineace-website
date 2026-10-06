@@ -1,5 +1,6 @@
 export type CategoryFilter =
   | "All"
+  | "Promo"
   | "SaaS"
   | "Web Apps"
   | "Mobile Apps"
@@ -19,7 +20,7 @@ export interface ProjectCaseStudy {
 export interface Project {
   id: string;
   title: string;
-  category: "SaaS" | "Web Apps" | "Mobile Apps" | "Tutorials" | "Training" | "Explainers" | "AI UGC & Product Ads";
+  category: "Promo" | "SaaS" | "Web Apps" | "Mobile Apps" | "Tutorials" | "Training" | "Explainers" | "AI UGC & Product Ads";
   client: string;
   industry: string;
   description: string;

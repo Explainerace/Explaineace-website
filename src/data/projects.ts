@@ -25,10 +25,127 @@ import { Project } from "@/types";
 
 export const projects: Project[] = [
   {
+    id: "bloom-3d-app-promo",
+    title: "Bloom 3D Exploded App Interface Promo",
+    category: "Promo",
+    order: 1,
+    client: "Bloom Mobile App",
+    industry: "Mobile App & 3D UI Motion",
+    description:
+      "A stunning 3D exploded mobile interface promo showcasing app features, interactive screen layers, and kinetic typography in motion.",
+    videoUrl: "https://www.youtube.com/watch?v=kqmPTZOBv9k",
+    videoId: "kqmPTZOBv9k",
+    thumbnail: "https://img.youtube.com/vi/kqmPTZOBv9k/maxresdefault.jpg",
+    duration: "0:20",
+    services: [
+      "Promo Video",
+      "3D UI Motion Graphics",
+      "Exploded Screen Layers",
+      "Sound Design",
+      "Mobile App Promo",
+    ],
+    featured: true,
+    caseStudy: {
+      overview:
+        "Engineered an eye-catching 3D exploded mobile interface video illustrating multi-depth mobile application features with high-energy spatial motion.",
+      challenge:
+        "Standard mobile recordings lack punch on social media feeds and paid ads where users scroll past in under two seconds.",
+      approach:
+        "Dissected the app UI into isometric 3D floating layers with depth of field, synchronized beat drops, and sharp camera zooms to maximize visual hook and thumb-stopping power.",
+      production: [
+        "3D UI layer separation and extrusion",
+        "Kinetic camera orbit and whip transitions",
+        "Punchy bass impacts and riser SFX",
+        "High-definition 1080x1920 & 16:9 deliverables",
+      ],
+      finalResult:
+        "A thumb-stopping 20-second promo that skyrockets viewer engagement and drives direct app install conversions.",
+    },
+    tags: ["Promo", "3D Motion", "Mobile App", "UI Design", "App Launch"],
+  },
+  {
+    id: "penny-kinetic-ui-promo",
+    title: "Penny Kinetic Typography & UI Promo",
+    category: "Promo",
+    order: 2,
+    client: "Penny Fintech",
+    industry: "Fintech & Kinetic Typography",
+    description:
+      "High-tempo kinetic typography and UI showcase video combining bold typography with slick product animations for fintech marketing.",
+    videoUrl: "https://www.youtube.com/watch?v=P8ceM6b5eDc",
+    videoId: "P8ceM6b5eDc",
+    thumbnail: "https://img.youtube.com/vi/P8ceM6b5eDc/maxresdefault.jpg",
+    duration: "0:20",
+    services: [
+      "Promo Video",
+      "Kinetic Typography",
+      "UI Motion Graphics",
+      "Sound Design",
+      "Social Ad Creative",
+    ],
+    featured: true,
+    caseStudy: {
+      overview:
+        "Crafted a rapid-fire kinetic typography promo that pairs bold editorial headlines with responsive interface micro-animations for Penny.",
+      challenge:
+        "Fintech concepts can seem dry. The brand needed an energetic, vibrant promo that turns complex money tools into something exciting and modern.",
+      approach:
+        "Paced text reveals to sync precisely with snappy transient percussions, layering sleek mobile UI mockups with fluid typographic transitions.",
+      production: [
+        "Beat-matched kinetic typography layout",
+        "Dynamic speed ramps & motion blurs",
+        "Custom audio Foley and synthesizer risers",
+        "Multi-aspect ratio rendering for omni-channel campaigns",
+      ],
+      finalResult:
+        "A hyper-modern promotional asset that commands attention across YouTube, Twitter/X, and product landing pages.",
+    },
+    tags: ["Promo", "Kinetic Typography", "Fintech", "UI Motion", "Product Ad"],
+  },
+  {
+    id: "orbitra-one-saas-promo",
+    title: "Orbitra One SaaS Product Launch Promo",
+    category: "Promo",
+    order: 3,
+    client: "Orbitra One",
+    industry: "SaaS & Cloud Operations",
+    description:
+      "A futuristic, dark-mode SaaS product promo highlighting cloud workspace features, analytics dashboards, and seamless team collaboration.",
+    videoUrl: "https://www.youtube.com/watch?v=ruSnnvafJdc",
+    videoId: "ruSnnvafJdc",
+    thumbnail: "https://img.youtube.com/vi/ruSnnvafJdc/maxresdefault.jpg",
+    duration: "0:27",
+    services: [
+      "Promo Video",
+      "SaaS Launch Video",
+      "Dark-Mode UI Animation",
+      "Sound Design",
+      "Motion Graphics",
+    ],
+    featured: true,
+    caseStudy: {
+      overview:
+        "Produced a premier product launch promo for Orbitra One, highlighting real-time team collaboration, smart dashboards, and fast cloud deployments.",
+      challenge:
+        "Launching in an established SaaS category requires standing out with instant premium authority and clean visual polish.",
+      approach:
+        "Built custom dark-mode interface mockups with glowing accent lines, smooth floating widgets, and an immersive electronic soundtrack.",
+      production: [
+        "Dark-mode UI component styling",
+        "Glow effects and particle accent passes",
+        "Synced audio score and interface click SFX",
+        "60 FPS smooth camera choreography",
+      ],
+      finalResult:
+        "A polished commercial launch video that positions Orbitra One as a cutting-edge platform for modern engineering teams.",
+    },
+    tags: ["Promo", "SaaS", "Product Launch", "Motion Graphics", "Tech"],
+  },
+  {
     id: "framer-saas-explainer",
     title: "Framer SaaS Motion Graphics Explainer",
     category: "SaaS",
-    order: 1,
+    order: 4,
     client: "Framer SaaS Template",
     industry: "Web Software & UI Motion Design",
     description:
@@ -67,7 +184,7 @@ export const projects: Project[] = [
     id: "nexus-ai-promo",
     title: "Nexus AI Platform Promo & Motion Graphics",
     category: "SaaS",
-    order: 2,
+    order: 5,
     client: "Nexus AI",
     industry: "AI & Machine Learning Software",
     description:
@@ -106,7 +223,7 @@ export const projects: Project[] = [
     id: "spec-saas-explainer",
     title: "SaaS Product Motion Graphics Explainer",
     category: "SaaS",
-    order: 3,
+    order: 6,
     client: "SaaS Cloud Platform",
     industry: "B2B SaaS & Productivity",
     description:
@@ -145,7 +262,7 @@ export const projects: Project[] = [
     id: "prim-automation",
     title: "Prim Automation Workflow Demo",
     category: "SaaS",
-    order: 4,
+    order: 7,
     client: "Prim Automation",
     industry: "Operations & Workflow Automation",
     description:
@@ -181,7 +298,7 @@ export const projects: Project[] = [
   {
     id: "muscle-coach-app",
     title: "Muscle Coach App Walkthrough",
-    order: 5,
+    order: 8,
     category: "Mobile Apps",
     client: "Muscle Coach",
     industry: "Health & Fitness / Mobile Software",

@@ -72,7 +72,7 @@ export const AboutPreview: React.FC = () => {
                   href="/work"
                   className="inline-flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-white px-4 py-3 transition-colors"
                 >
-                  <span>See 24 Verified Examples</span>
+                  <span>See 27 Verified Examples</span>
                   <span>&rarr;</span>
                 </Link>
               </div>

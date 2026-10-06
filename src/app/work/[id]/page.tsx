@@ -281,7 +281,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
               href="/work"
               className="text-xs sm:text-sm font-semibold text-brand-400 hover:text-brand-300 transition-colors flex items-center gap-1"
             >
-              <span>View All 24</span>
+              <span>View All {projects.length}</span>
               <span>&rarr;</span>
             </Link>
           </div>
