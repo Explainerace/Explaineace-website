@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { blogPosts } from "@/data/blog";
 import { siteConfig } from "@/data/siteConfig";
+import { BlogVideoEmbed } from "@/components/BlogVideoEmbed";
 
 interface BlogPostPageProps {
   params: {
@@ -230,6 +231,18 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                     <p key={i}>{p}</p>
                   ))}
                 </div>
+
+                {/* Video Embed if present */}
+                {section.video && (
+                  <BlogVideoEmbed
+                    videoId={section.video.videoId}
+                    title={section.video.title}
+                    subtitle={section.video.subtitle}
+                    category={section.video.category}
+                    duration={section.video.duration}
+                    projectId={section.video.projectId}
+                  />
+                )}
 
                 {/* Table if present */}
                 {section.table && (

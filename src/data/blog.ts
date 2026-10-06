@@ -26,6 +26,14 @@ export interface BlogPost {
       heading: string;
       body: string[];
       listItems?: string[];
+      video?: {
+        videoId: string;
+        title: string;
+        subtitle?: string;
+        category?: string;
+        duration?: string;
+        projectId?: string;
+      };
       callout?: {
         type: "tip" | "warning" | "stat";
         title: string;
@@ -145,6 +153,14 @@ export const blogPosts: BlogPost[] = [
             "• Natural, friendly studio narration paced to let the viewer absorb each interface transition.",
             "The entire turnaround was delivered in days at a fraction of traditional agency retainer fees, providing instant conversion lift on their homepage.",
           ],
+          video: {
+            videoId: "2ZtQX_lXHOs",
+            title: "Prim Automation Workflow Demo",
+            subtitle: "Watch the authentic 2:10 SaaS walkthrough demo:",
+            category: "SaaS Walkthrough",
+            duration: "2:10",
+            projectId: "prim-automation",
+          },
         },
         {
           id: "how-to-save",
@@ -229,6 +245,14 @@ export const blogPosts: BlogPost[] = [
             "In the Prim Automation demo, the video immediately anchors the viewer with an ultra-smooth pan across the canvas, zooming into the primary webhook trigger before expanding to show the multi-branch execution.",
             "By pairing precise focal zooms with clean sound design for connection snaps, complex backend automation feels intuitive and effortless.",
           ],
+          video: {
+            videoId: "2ZtQX_lXHOs",
+            title: "Prim Automation Workflow Demo",
+            subtitle: "Watch the authentic canvas workflow demo:",
+            category: "SaaS Walkthrough",
+            duration: "2:10",
+            projectId: "prim-automation",
+          },
           callout: {
             type: "tip",
             title: "Production Craft",
@@ -244,6 +268,14 @@ export const blogPosts: BlogPost[] = [
             "Muscle Coach's walkthrough demonstrates exercise program creation, client check-ins, and analytics tracking with realistic device mockups, fluid tap gesture animations, and vibrant typography.",
             "The narrative arc directly speaks to coaches who want to save hours each week, showcasing how client assignments take only three taps.",
           ],
+          video: {
+            videoId: "W6-glP7Ct5o",
+            title: "Muscle Coach App Walkthrough",
+            subtitle: "Watch the mobile coaching onboarding walkthrough:",
+            category: "Mobile SaaS Walkthrough",
+            duration: "2:45",
+            projectId: "muscle-coach-app",
+          },
         },
         {
           id: "example-3-painworth",
@@ -253,6 +285,14 @@ export const blogPosts: BlogPost[] = [
             "Why it works: Legal calculations involve dense multi-step questionnaires that can feel tedious. The walkthrough bypasses the boring data-entry steps using fast-forward pacing and zooms directly into the instant settlement assessment engine.",
             "This highlights the ultimate reward of using the platform rather than getting bogged down in administrative clicks.",
           ],
+          video: {
+            videoId: "gOwL0pCTMtU",
+            title: "Painworth LegalTech Claim Assessment Platform",
+            subtitle: "Watch the legal software claim walkthrough:",
+            category: "SaaS Walkthrough",
+            duration: "3:10",
+            projectId: "painworth-legaltech",
+          },
         },
         {
           id: "example-4-metrade",
@@ -262,6 +302,14 @@ export const blogPosts: BlogPost[] = [
             "Why it works: Financial dashboards are packed with candlestick charts, order books, and real-time feeds. A static video would cause severe visual fatigue.",
             "The walkthrough utilizes subtle vignettes and darkened background overlays to mute non-essential market tickers, isolating the execution window so viewers understand the trade flow instantly.",
           ],
+          video: {
+            videoId: "AF_MrFEaAMU",
+            title: "METRADE Trading Platform Promo & Tour",
+            subtitle: "Watch the financial dashboard tour:",
+            category: "Fintech SaaS Explainer",
+            duration: "1:45",
+            projectId: "metrade-promo",
+          },
         },
         {
           id: "example-5-bottronic",
@@ -271,6 +319,14 @@ export const blogPosts: BlogPost[] = [
             "Why it works: Showing API keys, authentication tokens, and webhook URLs requires careful post-production masking for privacy while keeping the process crystal clear.",
             "This walkthrough uses synthetic placeholder tokens and clean blur masks, guiding the user through 5 minutes of setup in a punchy 75 seconds.",
           ],
+          video: {
+            videoId: "CQi50pGdXfo",
+            title: "Bottronic AI Bot Setup & Configuration",
+            subtitle: "Watch the step-by-step developer tutorial:",
+            category: "Software Tutorial",
+            duration: "1:15",
+            projectId: "bottronic-signup-tutorial",
+          },
         },
         {
           id: "framework-for-success",
@@ -373,6 +429,14 @@ export const blogPosts: BlogPost[] = [
             "Second, Dynamic 3D Product Motion: Seamless screen captures, 3D smartphone frame tilts, UI zooms, and product renders that show your actual software or hardware solving the problem.",
             "Third, Social-Native Post-Production: High-retention editing techniques including kinetic auto-captions with emoji accents, sound effects (whooshes, pops, ding notifications), and split-screen reactions optimized for 9:16 mobile feeds.",
           ],
+          video: {
+            videoId: "fQ7YXzamRvQ",
+            title: "Nexus AI Platform Promo & Motion Graphics",
+            subtitle: "Watch dynamic AI product motion & feature visualization:",
+            category: "AI SaaS Product Promo",
+            duration: "0:45",
+            projectId: "nexus-ai-promo",
+          },
         },
         {
           id: "cost-roi-comparison",
@@ -484,6 +548,14 @@ export const blogPosts: BlogPost[] = [
             "Why it works: When an existing customer searches your knowledge base for 'How to connect Stripe webhooks' or 'How to configure custom permissions,' they do not want to watch a 30-second cinematic intro with dramatic music. They want clear, rapid, step-by-step guidance.",
             "At $120 per 60 seconds, this format is highly cost-effective for building out 10-to-20 video academy libraries without breaking your budget.",
           ],
+          video: {
+            videoId: "fJ8ocgOvLNU",
+            title: "Password Management & Security Tool Tutorial",
+            subtitle: "Authentic Simple Screencast Tutorial Sample ($120/60s tier):",
+            category: "Software Tutorial",
+            duration: "1:45",
+            projectId: "password-management-tutorial",
+          },
           callout: {
             type: "tip",
             title: "Support Ticket Savings",
@@ -499,6 +571,14 @@ export const blogPosts: BlogPost[] = [
             "Why it works: Modern software interfaces are dense. If you show a full 1440p dashboard on a small laptop screen or smartphone, small buttons and navigation menus become unreadable. A fancy walkthrough dynamically zooms in 150%–200% onto the specific action being discussed, keeping the viewer's eyes glued to the value moment.",
             "At $220 per 60 seconds, this is the highest-ROI investment for SaaS landing pages, onboarding welcome tours, and investor decks.",
           ],
+          video: {
+            videoId: "4E72rncOnBc",
+            title: "Green Medicine SaaS Platform Tour",
+            subtitle: "Authentic Fancy SaaS Walkthrough Sample ($220/60s tier):",
+            category: "SaaS Walkthrough",
+            duration: "1:55",
+            projectId: "green-medicine",
+          },
         },
         {
           id: "format-3-custom-ui-motion",
@@ -508,6 +588,14 @@ export const blogPosts: BlogPost[] = [
             "Primary Goal: Brand authority, enterprise repositioning, venture capital fundraising, and viral launch announcements (Product Hunt, Twitter/X, TechCrunch).",
             "Why it works: For revolutionary products or enterprise platforms that solve complex invisible problems (like database latency, compliance automation, or AI model evaluation), showing a real dashboard doesn't always convey the full technological breakthrough. Custom UI motion graphics simplify complex ideas into elegant, kinetic visual metaphors.",
           ],
+          video: {
+            videoId: "p0v9DLSzjOU",
+            title: "SaaS Product Motion Graphics Explainer",
+            subtitle: "Authentic Custom UI Motion Explainer Sample ($800–$1,200 tier):",
+            category: "UI Motion Graphics",
+            duration: "0:44",
+            projectId: "spec-saas-explainer",
+          },
         },
         {
           id: "comparison-matrix",
@@ -669,6 +757,14 @@ export const blogPosts: BlogPost[] = [
             "• SaaS Cloud Platform Explainer (0:44): Showcases multi-app data sync, automated notifications, and enterprise team collaboration in an agile, high-conversion commercial format.",
             "Each of these projects is engineered to drive immediate trial signups and boost social engagement on platforms like Product Hunt, Twitter/X, and LinkedIn.",
           ],
+          video: {
+            videoId: "jzb-LpUo2i8",
+            title: "Framer SaaS Motion Graphics Explainer",
+            subtitle: "Watch the bespoke 2D/3D UI motion graphics showcase:",
+            category: "UI Motion Graphics Explainer",
+            duration: "0:51",
+            projectId: "framer-saas-explainer",
+          },
         },
         {
           id: "how-to-commission-your-video",
