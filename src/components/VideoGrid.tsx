@@ -167,7 +167,7 @@ export const VideoGrid: React.FC<VideoGridProps> = ({
               href="/work"
               className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-surface-card hover:bg-surface-hover border border-white/[0.1] hover:border-brand-500/50 px-7 py-3.5 rounded-full transition-all duration-200 group shadow-card"
             >
-              <span>Explore All 21 Portfolio Videos</span>
+              <span>Explore All 24 Portfolio Videos</span>
               <ArrowRight className="w-4 h-4 text-brand-400 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>

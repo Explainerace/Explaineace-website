@@ -25,10 +25,127 @@ import { Project } from "@/types";
 
 export const projects: Project[] = [
   {
+    id: "framer-saas-explainer",
+    title: "Framer SaaS Motion Graphics Explainer",
+    category: "Explainers",
+    order: 1,
+    client: "Framer SaaS Template",
+    industry: "Web Software & UI Motion Design",
+    description:
+      "A dynamic SaaS motion graphics explainer combining fluid UI choreography, animated feature cards, and 3D device framing for modern web software.",
+    videoUrl: "https://www.youtube.com/watch?v=jzb-LpUo2i8",
+    videoId: "jzb-LpUo2i8",
+    thumbnail: "https://img.youtube.com/vi/jzb-LpUo2i8/maxresdefault.jpg",
+    duration: "0:51",
+    services: [
+      "UI Motion Graphics",
+      "SaaS Explainer",
+      "3D Device Framing",
+      "Sound Design",
+      "Kinetic Typography",
+    ],
+    featured: true,
+    caseStudy: {
+      overview:
+        "Created a high-tempo, design-led SaaS motion graphics explainer highlighting key product features, modern card interactions, and seamless cloud deployments.",
+      challenge:
+        "Static software mockups fail to capture the speed and elegance of modern web software. The video needed to feel snappy, premium, and impossible to click away from.",
+      approach:
+        "Rebuilt UI components into responsive vector motion layers, utilizing smooth bezier curves, synchronized kinetic typography, and punchy audio transients.",
+      production: [
+        "Vector UI component reconstruction",
+        "3D isometric camera perspective pans",
+        "Bespoke sound design & swoosh effects",
+        "High-retention 9:16 & 16:9 pacing",
+      ],
+      finalResult:
+        "An electric 51-second showcase that highlights product value and commands immediate attention on landing pages and social campaigns.",
+    },
+    tags: ["SaaS", "Motion Graphics", "UI Design", "Explainer", "Framer"],
+  },
+  {
+    id: "nexus-ai-promo",
+    title: "Nexus AI Platform Promo & Motion Graphics",
+    category: "Explainers",
+    order: 2,
+    client: "Nexus AI",
+    industry: "AI & Machine Learning Software",
+    description:
+      "High-impact SaaS product promo featuring kinetic typography, glowing vector UI animations, and AI feature highlights designed for tech launches.",
+    videoUrl: "https://www.youtube.com/watch?v=fQ7YXzamRvQ",
+    videoId: "fQ7YXzamRvQ",
+    thumbnail: "https://img.youtube.com/vi/fQ7YXzamRvQ/maxresdefault.jpg",
+    duration: "0:45",
+    services: [
+      "AI Product Promo",
+      "Motion Graphics",
+      "Vector UI Animation",
+      "Sound Design",
+      "Launch Video",
+    ],
+    featured: true,
+    caseStudy: {
+      overview:
+        "Crafted a futuristic product launch promo for Nexus AI, illustrating complex neural network outputs and automated workflow triggers.",
+      challenge:
+        "AI software features are often abstract and difficult to visualize without putting prospective buyers to sleep with technical diagrams.",
+      approach:
+        "Used neon cyan vector lines, dark obsidian interface card reveals, and synchronized beat-driven sound design to make machine learning feel palpable and powerful.",
+      production: [
+        "Abstract AI workflow vector animations",
+        "High-contrast dark-mode UI styling",
+        "Rhythmic sound effect layering",
+        "1080p 60FPS master render",
+      ],
+      finalResult:
+        "A cinematic launch video engineered to stand out on Product Hunt and paid social channels.",
+    },
+    tags: ["AI", "SaaS", "Motion Graphics", "Promo", "Tech Launch"],
+  },
+  {
+    id: "spec-saas-explainer",
+    title: "SaaS Product Motion Graphics Explainer",
+    category: "Explainers",
+    order: 3,
+    client: "SaaS Cloud Platform",
+    industry: "B2B SaaS & Productivity",
+    description:
+      "Fast-paced SaaS explainer with modern UI-style motion graphics, feature reveals, and high-energy sound design crafted to drive product signups.",
+    videoUrl: "https://www.youtube.com/watch?v=p0v9DLSzjOU",
+    videoId: "p0v9DLSzjOU",
+    thumbnail: "https://img.youtube.com/vi/p0v9DLSzjOU/maxresdefault.jpg",
+    duration: "0:44",
+    services: [
+      "UI Motion Graphics",
+      "SaaS Explainer",
+      "Feature Reveals",
+      "Sound Design",
+      "Product Marketing",
+    ],
+    featured: true,
+    caseStudy: {
+      overview:
+        "Demonstrated key platform integrations and data sync capabilities in an agile 44-second commercial format.",
+      challenge:
+        "Traditional screen recordings take too long to demonstrate multi-software data sync and third-party integrations.",
+      approach:
+        "Constructed animated isometric mockups showcasing live data flow between apps with smooth transitions and bold headline typography.",
+      production: [
+        "Isometric app interface animations",
+        "Live data stream visual effects",
+        "Studio audio mastering & background bed",
+        "Full commercial broadcast licensing",
+      ],
+      finalResult:
+        "A punchy explainer video that increased homepage dwell time and trial signup conversions.",
+    },
+    tags: ["SaaS", "Motion Graphics", "Productivity", "Explainer", "Conversion"],
+  },
+  {
     id: "prim-automation",
     title: "Prim Automation Workflow Demo",
     category: "SaaS",
-    order: 1,
+    order: 4,
     client: "Prim Automation",
     industry: "Operations & Workflow Automation",
     description:
@@ -64,7 +181,7 @@ export const projects: Project[] = [
   {
     id: "muscle-coach-app",
     title: "Muscle Coach App Walkthrough",
-    order: 2,
+    order: 5,
     category: "Mobile Apps",
     client: "Muscle Coach",
     industry: "Health & Fitness / Mobile Software",

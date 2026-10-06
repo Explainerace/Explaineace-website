@@ -63,8 +63,8 @@ export const siteConfig = {
   youtube: {
     playlistUrl:
       "https://www.youtube.com/watch?v=W6-glP7Ct5o&list=PLoKiP4P61SFx80H6XDpHN7gd0QJJ4TgYM",
-    featuredVideoId: "2ZtQX_lXHOs", // Prim Automation Workflow Demo
-    secondaryFeaturedVideoId: "W6-glP7Ct5o", // Muscle Coach App
+    featuredVideoId: "jzb-LpUo2i8", // Framer SaaS Motion Graphics Explainer
+    secondaryFeaturedVideoId: "fQ7YXzamRvQ", // Nexus AI Platform Promo
   },
   stats: [
     { value: "4.8 / 5", label: "Client Rating", sub: "Based on verified feedback" },
