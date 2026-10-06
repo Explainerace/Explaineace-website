@@ -27,7 +27,7 @@ export const projects: Project[] = [
   {
     id: "framer-saas-explainer",
     title: "Framer SaaS Motion Graphics Explainer",
-    category: "Explainers",
+    category: "SaaS",
     order: 1,
     client: "Framer SaaS Template",
     industry: "Web Software & UI Motion Design",
@@ -66,7 +66,7 @@ export const projects: Project[] = [
   {
     id: "nexus-ai-promo",
     title: "Nexus AI Platform Promo & Motion Graphics",
-    category: "Explainers",
+    category: "SaaS",
     order: 2,
     client: "Nexus AI",
     industry: "AI & Machine Learning Software",
@@ -105,7 +105,7 @@ export const projects: Project[] = [
   {
     id: "spec-saas-explainer",
     title: "SaaS Product Motion Graphics Explainer",
-    category: "Explainers",
+    category: "SaaS",
     order: 3,
     client: "SaaS Cloud Platform",
     industry: "B2B SaaS & Productivity",
