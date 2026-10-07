@@ -13,11 +13,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "EXPLAINERACE | Software Tutorials & SaaS Walkthroughs",
+    default: "Screencast & SaaS Explainer Video Service for Software Teams | EXPLAINERACE",
     template: "%s | EXPLAINERACE",
   },
   description:
-    "Professional software tutorial videos, SaaS product walkthroughs, app demos, and training content for software companies, startups, and product teams by Ali.",
+    "Hire Ali for screencast video production and SaaS explainer videos. Crystal-clear product demos and software walkthroughs from $120/60s. Get a quote today.",
   keywords: [
     "software tutorial video creator",
     "SaaS tutorial video",
@@ -94,13 +94,6 @@ const jsonLd = {
       siteConfig.fiverrProfiles[1].url,
       siteConfig.youtube.playlistUrl,
     ],
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "157",
-    "bestRating": "5.0",
-    "worstRating": "1.0",
   },
   "areaServed": "Worldwide",
   "hasOfferCatalog": {

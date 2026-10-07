@@ -18,16 +18,59 @@ import { ProcessInfographic } from "@/components/ProcessInfographic";
 import { CTA } from "@/components/CTA";
 
 export const metadata: Metadata = {
-  title: "Production Process | From Product to Polished Video",
+  title: "SaaS Video Production Process | 4-Stage Workflow",
   description:
-    "Explore the 5-stage interactive production pipeline Ali uses to turn complex software into clear, high-converting video walkthroughs and tutorials.",
+    "Discover Ali's 4-stage SaaS video production process: script outlining, 4K screen recording, dynamic UI zooms, and studio audio delivery in 3 to 5 days.",
+  alternates: {
+    canonical: "https://explainerace.com/process",
+  },
+  openGraph: {
+    title: "SaaS Video Production Process | 4-Stage Workflow | EXPLAINERACE",
+    description:
+      "Discover Ali's 4-stage SaaS video production process: script outlining, 4K screen recording, dynamic UI zooms, and studio audio delivery in 3 to 5 days.",
+    url: "https://explainerace.com/process",
+    type: "website",
+    images: [
+      {
+        url: "https://img.youtube.com/vi/2ZtQX_lXHOs/hqdefault.jpg",
+        width: 1280,
+        height: 720,
+        alt: "SaaS Video Production Process - EXPLAINERACE",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SaaS Video Production Process | 4-Stage Workflow | EXPLAINERACE",
+    description:
+      "Discover Ali's 4-stage SaaS video production process: script outlining, 4K screen recording, dynamic UI zooms, and studio audio delivery in 3 to 5 days.",
+    images: ["https://img.youtube.com/vi/2ZtQX_lXHOs/hqdefault.jpg"],
+  },
 };
 
 const ICONS = [KeyRound, FileText, Video, CheckCircle2];
 
 export default function ProcessPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: processFaqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
-    <div className="pt-28 sm:pt-36">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <div className="pt-28 sm:pt-36">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl mb-12">
@@ -143,5 +186,6 @@ export default function ProcessPage() {
 
       <CTA />
     </div>
+    </>
   );
 }

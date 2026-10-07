@@ -7,6 +7,7 @@ import { HowIAddValue } from "@/components/HowIAddValue";
 import { TrustBlock } from "@/components/TrustBlock";
 import { ProcessTimeline } from "@/components/ProcessTimeline";
 import { AboutPreview } from "@/components/AboutPreview";
+import { HomeFaq } from "@/components/HomeFaq";
 import { CTA } from "@/components/CTA";
 import { projects } from "@/data/projects";
 
@@ -42,7 +43,10 @@ export default function HomePage() {
       {/* 8. About Preview */}
       <AboutPreview />
 
-      {/* 9. Final Conversion CTA */}
+      {/* 9. Frequently Asked Questions (Hiring, Cost & Screencast turnaround) */}
+      <HomeFaq />
+
+      {/* 10. Final Conversion CTA */}
       <CTA />
     </>
   );

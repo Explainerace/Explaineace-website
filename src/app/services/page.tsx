@@ -3,37 +3,115 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   MonitorPlay,
-  Smartphone,
-  GraduationCap,
-  Sparkles,
-  Layers,
-  CheckCircle2,
-  ArrowRight,
   Video,
-  Mic,
-  Subtitles,
-  MousePointerClick,
-  ZoomIn,
+  Smartphone,
   Bot,
+  ArrowRight,
+  CheckCircle2,
+  Sparkles,
+  ShieldCheck,
+  Zap,
 } from "lucide-react";
-import { services, valueAddItems } from "@/data/services";
+import { valueAddItems } from "@/data/services";
 import { CTA } from "@/components/CTA";
 
 export const metadata: Metadata = {
-  title: "Services & Capabilities | SaaS Walkthroughs, AI UGC & Product Videos",
+  title: "Video Services for SaaS & Software Teams | EXPLAINERACE",
   description:
-    "Comprehensive video production: SaaS product walkthroughs, AI UGC & social ads, simple screencasts, custom UI motion graphics, and training videos.",
+    "Explore specialized software video production: SaaS walkthroughs, screencast tutorials, mobile app demos, and AI UGC product ads. Transparent pricing from $120/60s.",
+  alternates: {
+    canonical: "https://explainerace.com/services",
+  },
+  openGraph: {
+    title: "Video Services for SaaS & Software Teams | EXPLAINERACE",
+    description:
+      "Explore specialized software video production: SaaS walkthroughs, screencast tutorials, mobile app demos, and AI UGC product ads. Transparent pricing from $120/60s.",
+    url: "https://explainerace.com/services",
+    type: "website",
+    images: [
+      {
+        url: "https://img.youtube.com/vi/W6-glP7Ct5o/maxresdefault.jpg",
+        width: 1280,
+        height: 720,
+        alt: "Video Services for SaaS & Software Teams - EXPLAINERACE",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Video Services for SaaS & Software Teams | EXPLAINERACE",
+    description:
+      "Explore specialized software video production: SaaS walkthroughs, screencast tutorials, mobile app demos, and AI UGC product ads. Transparent pricing from $120/60s.",
+    images: ["https://img.youtube.com/vi/W6-glP7Ct5o/maxresdefault.jpg"],
+  },
 };
 
-const ICONS_MAP: Record<string, React.ElementType> = {
-  MonitorPlay,
-  Smartphone,
-  GraduationCap,
-  Sparkles,
-  Layers,
-  Video,
-  Bot,
-};
+const serviceCards = [
+  {
+    title: "SaaS Walkthrough & Product Demo Videos",
+    slug: "/services/saas-walkthrough-video",
+    icon: MonitorPlay,
+    badge: "Most Popular",
+    price: "$220 / 60 seconds",
+    description:
+      "Turn complex platforms into intuitive, high-converting video walkthroughs with 3D camera zooms, stabilized cursor tracks, spotlight framing, and studio voiceover narration.",
+    keywords: "SaaS walkthrough video service, SaaS product demo video service",
+    highlights: [
+      "Dynamic 3D zooms & pan on key UI moments",
+      "Stabilized bezier cursor smoothing & click ripple rings",
+      "Studio voiceover narration & professional sound mix",
+      "100% full commercial rights & 4K master delivery",
+    ],
+  },
+  {
+    title: "Screencast Video Production Service",
+    slug: "/services/screencast-tutorials",
+    icon: Video,
+    badge: "Fast 24-48h Delivery",
+    price: "$120 / 60 seconds",
+    description:
+      "Clear, straightforward screen recording tutorials without fancy animations. Focused on pure instructional clarity, ease of following, and rapid turnaround for help academies and SOPs.",
+    keywords: "Screencast video production service, screencast video service",
+    highlights: [
+      "Native 1080p / 4K crisp screen recording",
+      "Synchronized studio voiceover narration",
+      "Essential focal zooms on key inputs & settings",
+      "Volume batch discounts on multi-video series",
+    ],
+  },
+  {
+    title: "App Demo & Mobile Promo Video Service",
+    slug: "/services/app-demo-video",
+    icon: Smartphone,
+    badge: "iOS & Android",
+    price: "Custom / From $220",
+    description:
+      "Flawless screen demonstrations for iOS, Android, and responsive web applications with realistic touch interactions, 3D device framing, and App Store preview sizing.",
+    keywords: "App demo video service, mobile app promo video service",
+    highlights: [
+      "Realistic touch gesture & tap animations",
+      "3D device mockup frames (iPhone & Android)",
+      "App Store & Google Play preview compliance",
+      "App onboarding & feature walkthrough videos",
+    ],
+  },
+  {
+    title: "AI UGC & Product Ad Videos",
+    slug: "/services/ai-ugc-ads",
+    icon: Bot,
+    badge: "Paid Social Creative",
+    price: "$200 – $300 / ad",
+    description:
+      "High-converting short-form ad creatives combining hyper-realistic AI avatars, dynamic product motion, viral hooks, and native social kinetic captions for TikTok, Meta Reels, and Shorts.",
+    keywords: "Human-first creative testing, rapid ad hook iterations",
+    highlights: [
+      "Hyper-realistic AI presenters & talking heads",
+      "Dynamic 3D product motion & UI highlights",
+      "3-second opening hook variations for A/B testing",
+      "Vertical 9:16 & 16:9 deliverables with full ad rights",
+    ],
+  },
+];
 
 export default function ServicesPage() {
   return (
@@ -44,98 +122,81 @@ export default function ServicesPage() {
           <span className="text-xs font-semibold uppercase tracking-wider text-brand-400">
             Specialized Video Production Services
           </span>
-          <h1 className="mt-2 text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
-            Clarity for software, websites & mobile products.
+          <h1 className="mt-2 text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            Video Services for SaaS & Software Teams
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
-            Every software package is built to resolve specific customer friction points—whether you need a fast-paced product explainer, an onboarding walkthrough, or an in-depth customer training series.
+            Every software package is built to resolve specific customer friction points—whether you need a high-converting homepage product walkthrough, an onboarding screencast series, a mobile app demo, or high-velocity AI UGC ads.
           </p>
         </div>
 
-        {/* 5 Main Service Categories */}
-        <div className="space-y-12 mb-24">
-          {services.map((service, index) => {
-            const Icon = ICONS_MAP[service.iconName] || MonitorPlay;
-            const isReversed = index % 2 === 1;
-
+        {/* 4 Dedicated Service Hub Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+          {serviceCards.map((service) => {
+            const Icon = service.icon;
             return (
               <div
-                key={service.id}
-                id={service.id}
-                className="p-8 sm:p-10 rounded-3xl bg-surface-card border border-white/[0.08] shadow-card hover:border-brand-500/30 transition-all duration-300"
+                key={service.slug}
+                className="p-8 sm:p-10 rounded-3xl bg-surface-card border border-white/[0.08] shadow-card hover:border-brand-500/40 transition-all duration-300 flex flex-col justify-between group"
               >
-                <div
-                  className={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center ${
-                    isReversed ? "lg:flex-row-reverse" : ""
-                  }`}
-                >
-                  {/* Left info */}
-                  <div className="lg:col-span-7 space-y-4">
+                <div>
+                  <div className="flex items-center justify-between mb-5">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300 text-xs font-semibold uppercase tracking-wider">
                       <Icon className="w-3.5 h-3.5" />
-                      <span>{service.category}</span>
+                      <span>{service.badge}</span>
                     </div>
-
-                    <h2 className="text-2xl sm:text-3xl font-bold text-white">
-                      {service.title}
-                    </h2>
-
-                    <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                      {service.shortDesc}
-                    </p>
-
-                    <div className="pt-2">
-                      <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">
-                        Included Video Formats & Features
-                      </h3>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                        {service.features.map((feat) => (
-                          <div
-                            key={feat}
-                            className="flex items-center gap-2 text-xs sm:text-sm text-slate-300"
-                          >
-                            <span className="w-1.5 h-1.5 rounded-full bg-brand-400 shrink-0" />
-                            <span>{feat}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                    <span className="text-xs font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+                      {service.price}
+                    </span>
                   </div>
 
-                  {/* Right: Deliverables Card */}
-                  <div className="lg:col-span-5 p-6 rounded-2xl bg-surface/80 border border-white/[0.06] space-y-4">
-                    <h3 className="text-xs font-semibold uppercase tracking-wider text-accent-cyan">
-                      Standard Deliverables
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white group-hover:text-brand-300 transition-colors">
+                    {service.title}
+                  </h2>
+
+                  <p className="mt-3 text-slate-300 text-sm sm:text-base leading-relaxed">
+                    {service.description}
+                  </p>
+
+                  <div className="mt-6 pt-6 border-t border-white/[0.06] space-y-2.5">
+                    <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                      Key Highlights:
                     </h3>
-                    <ul className="space-y-2.5">
-                      {service.deliverables.map((deliv) => (
+                    <ul className="space-y-2">
+                      {service.highlights.map((h) => (
                         <li
-                          key={deliv}
-                          className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300"
+                          key={h}
+                          className="flex items-start gap-2 text-xs sm:text-sm text-slate-300"
                         >
                           <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                          <span>{deliv}</span>
+                          <span>{h}</span>
                         </li>
                       ))}
                     </ul>
-
-                    <div className="pt-3 border-t border-white/[0.06]">
-                      <Link
-                        href="/contact"
-                        className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-xs font-semibold text-white flex items-center justify-center gap-1.5 shadow-glow transition-all"
-                      >
-                        <span>Inquire About This Service</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </Link>
-                    </div>
                   </div>
+                </div>
+
+                <div className="mt-8 pt-6 border-t border-white/[0.06] flex items-center justify-between">
+                  <Link
+                    href={service.slug}
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 px-6 py-3 rounded-full shadow-glow transition-all"
+                  >
+                    <span>Explore Service Page</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  <Link
+                    href="/pricing"
+                    className="text-xs text-slate-400 hover:text-white transition-colors"
+                  >
+                    View Rates &rarr;
+                  </Link>
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/* Detailed Production Add-ons / Craft Showcase */}
+        {/* Technical Foundation */}
         <div className="mb-20">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="text-xs font-semibold uppercase tracking-wider text-brand-400">

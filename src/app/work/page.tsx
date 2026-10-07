@@ -6,9 +6,34 @@ import { CTA } from "@/components/CTA";
 import { Layers, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Work & Video Portfolio | 27 Verified Software Demos",
+  title: "Product Demo Video Portfolio | 27 Software Walkthroughs & Explainers",
   description:
-    "Explore 27 software tutorials, SaaS walkthroughs, mobile app demos, and motion graphics explainers produced by Ali for international product teams.",
+    "Explore 27 verified product demo videos, SaaS walkthroughs, and screencast explainers by Ali. Watch real client case studies and request your video quote.",
+  alternates: {
+    canonical: "https://explainerace.com/work",
+  },
+  openGraph: {
+    title: "Product Demo Video Portfolio | 27 Software Walkthroughs & Explainers | EXPLAINERACE",
+    description:
+      "Explore 27 verified product demo videos, SaaS walkthroughs, and screencast explainers by Ali. Watch real client case studies and request your video quote.",
+    url: "https://explainerace.com/work",
+    type: "website",
+    images: [
+      {
+        url: "https://img.youtube.com/vi/kqmPTZOBv9k/hqdefault.jpg",
+        width: 1280,
+        height: 720,
+        alt: "Product Demo Video Portfolio - EXPLAINERACE",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Product Demo Video Portfolio | 27 Software Walkthroughs & Explainers | EXPLAINERACE",
+    description:
+      "Explore 27 verified product demo videos, SaaS walkthroughs, and screencast explainers by Ali. Watch real client case studies and request your video quote.",
+    images: ["https://img.youtube.com/vi/kqmPTZOBv9k/hqdefault.jpg"],
+  },
 };
 
 export default function WorkPage() {

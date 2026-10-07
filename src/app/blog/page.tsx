@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 import { Clock, Calendar, ArrowRight, Sparkles, BookOpen, ChevronRight } from "lucide-react";
 import { blogPosts } from "@/data/blog";
@@ -9,6 +10,9 @@ export const metadata: Metadata = {
   title: "Blog & Video Strategy Insights | EXPLAINERACE",
   description:
     "Expert guides, pricing breakdowns, and production strategies for SaaS explainer videos, software walkthroughs, and app demos by Ali.",
+  alternates: {
+    canonical: "https://explainerace.com/blog",
+  },
   openGraph: {
     title: "Blog & Video Strategy Insights | EXPLAINERACE",
     description:
@@ -16,6 +20,21 @@ export const metadata: Metadata = {
     url: `${siteConfig.siteUrl}/blog`,
     siteName: siteConfig.brandName,
     type: "website",
+    images: [
+      {
+        url: "https://img.youtube.com/vi/W6-glP7Ct5o/hqdefault.jpg",
+        width: 1280,
+        height: 720,
+        alt: "EXPLAINERACE Blog & Strategy Guides",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog & Video Strategy Insights | EXPLAINERACE",
+    description:
+      "Expert guides, pricing breakdowns, and production strategies for SaaS explainer videos, software walkthroughs, and app demos by Ali.",
+    images: ["https://img.youtube.com/vi/W6-glP7Ct5o/hqdefault.jpg"],
   },
 };
 
@@ -104,10 +123,13 @@ export default function BlogListingPage() {
                   </div>
 
                   <div className="lg:col-span-5 relative aspect-video rounded-2xl overflow-hidden border border-white/[0.08] bg-[#0E111A]">
-                    <img
+                    <Image
                       src={post.featuredImage}
                       alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      fill
+                      priority
+                      sizes="(max-width: 1024px) 100vw, 450px"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-surface/90 via-transparent to-transparent pointer-events-none" />
                     <div className="absolute bottom-4 left-4 right-4">
@@ -143,12 +165,15 @@ export default function BlogListingPage() {
                 >
                   <div className="p-6 sm:p-7 space-y-4">
                     <div className="relative aspect-video rounded-2xl overflow-hidden border border-white/[0.06] bg-[#0E111A] mb-4">
-                      <img
+                      <Image
                         src={post.featuredImage}
                         alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        fill
+                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 550px"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute top-3 left-3">
+                      <div className="absolute top-3 left-3 z-10">
                         <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-black/70 backdrop-blur-md text-brand-300 border border-white/10">
                           {post.category}
                         </span>

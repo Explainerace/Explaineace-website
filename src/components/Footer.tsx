@@ -162,6 +162,12 @@ export const Footer: React.FC = () => {
             &copy; {currentYear} EXPLAINERACE by Ali. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
+            <Link
+              href="/privacy"
+              className="text-slate-400 hover:text-white transition-colors underline"
+            >
+              Privacy Policy
+            </Link>
             <span className="text-slate-400">
               Upwork Direct (0% Client Fee) · Payoneer Invoicing · Fiverr Level 2
             </span>

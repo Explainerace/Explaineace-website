@@ -83,7 +83,11 @@ export const Hero: React.FC = () => {
             </span>
           </h1>
 
-          <p className="mt-5 text-sm sm:text-lg lg:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto">
+          <h2 className="mt-4 text-base sm:text-xl font-semibold text-brand-300">
+            SaaS walkthroughs, screencast tutorials &amp; explainer videos for software teams
+          </h2>
+
+          <p className="mt-3 text-sm sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto">
             {siteConfig.subheadline}
           </p>
 

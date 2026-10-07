@@ -122,6 +122,32 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     })),
   };
 
+  // Schema.org BreadcrumbList
+  const breadcrumbListSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteConfig.siteUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `${siteConfig.siteUrl}/blog`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: `${siteConfig.siteUrl}/blog/${post.slug}`,
+      },
+    ],
+  };
+
   return (
     <>
       <script
@@ -131,6 +157,10 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbListSchema) }}
       />
 
       <article className="pt-28 sm:pt-36 pb-24 relative overflow-hidden">
@@ -356,6 +386,44 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   View 27 Video Projects →
                 </Link>
               </div>
+            </div>
+          </div>
+
+          {/* Contextual Service & Case Study Links */}
+          <div className="mt-14 p-6 sm:p-7 rounded-2xl bg-surface-card border border-white/[0.08] flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="space-y-1 text-center md:text-left">
+              <span className="text-xs font-bold uppercase tracking-wider text-brand-400">
+                Explore Production Services
+              </span>
+              <p className="text-sm text-slate-300">
+                Compare dedicated production packages, rates, and verified video deliverables.
+              </p>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-2.5">
+              <Link
+                href="/services/saas-walkthrough-video"
+                className="px-3.5 py-2 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] text-xs font-semibold text-slate-200 border border-white/[0.08] transition-colors"
+              >
+                SaaS Walkthroughs
+              </Link>
+              <Link
+                href="/services/screencast-tutorials"
+                className="px-3.5 py-2 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] text-xs font-semibold text-slate-200 border border-white/[0.08] transition-colors"
+              >
+                Screencast Tutorials
+              </Link>
+              <Link
+                href="/services/app-demo-video"
+                className="px-3.5 py-2 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] text-xs font-semibold text-slate-200 border border-white/[0.08] transition-colors"
+              >
+                App Demos
+              </Link>
+              <Link
+                href="/pricing"
+                className="px-3.5 py-2 rounded-xl bg-brand-500/10 hover:bg-brand-500/20 text-xs font-semibold text-brand-300 border border-brand-500/30 transition-colors"
+              >
+                Transparent Pricing
+              </Link>
             </div>
           </div>
 

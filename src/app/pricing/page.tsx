@@ -17,14 +17,57 @@ import { siteConfig } from "@/data/siteConfig";
 import { WhatsAppIcon, UpworkIcon } from "@/components/Icons";
 
 export const metadata: Metadata = {
-  title: "Pricing & Rates | Screencasts, SaaS Walkthroughs & AI Product Ads",
+  title: "SaaS Video Production Pricing & Rates | Screencasts & Demos",
   description:
-    "Transparent production rates: $120/60s screencasts, $220/60s SaaS walkthroughs, $200–$300 AI UGC/product ads, and $800–$1,200 custom UI motion. Inbox for discounts.",
+    "Transparent SaaS video pricing: $120/60s screencasts, $220/60s walkthroughs, $200–$300 AI product ads, and $800–$1,200 custom UI motion. Request your quote today.",
+  alternates: {
+    canonical: "https://explainerace.com/pricing",
+  },
+  openGraph: {
+    title: "SaaS Video Production Pricing & Rates | Screencasts & Demos | EXPLAINERACE",
+    description:
+      "Transparent SaaS video pricing: $120/60s screencasts, $220/60s walkthroughs, $200–$300 AI product ads, and $800–$1,200 custom UI motion. Request your quote today.",
+    url: "https://explainerace.com/pricing",
+    type: "website",
+    images: [
+      {
+        url: "https://img.youtube.com/vi/jzb-LpUo2i8/hqdefault.jpg",
+        width: 1280,
+        height: 720,
+        alt: "SaaS Video Pricing - EXPLAINERACE",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SaaS Video Production Pricing & Rates | Screencasts & Demos | EXPLAINERACE",
+    description:
+      "Transparent SaaS video pricing: $120/60s screencasts, $220/60s walkthroughs, $200–$300 AI product ads, and $800–$1,200 custom UI motion. Request your quote today.",
+    images: ["https://img.youtube.com/vi/jzb-LpUo2i8/hqdefault.jpg"],
+  },
 };
 
 export default function PricingPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: pricingFaqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
-    <div className="pt-28 sm:pt-36 pb-24 relative overflow-hidden">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <div className="pt-28 sm:pt-36 pb-24 relative overflow-hidden">
       {/* Background ambient lighting */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-brand-600/10 blur-[140px] rounded-full" />
@@ -334,5 +377,6 @@ export default function PricingPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

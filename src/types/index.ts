@@ -15,6 +15,20 @@ export interface ProjectCaseStudy {
   approach: string;
   production: string[];
   finalResult: string;
+  clientOutcome?: string;
+  videoSpecs?: {
+    resolution: string;
+    fps: string;
+    audio: string;
+    turnaround: string;
+    deliverables: string;
+  };
+  testimonial?: {
+    quote: string;
+    author: string;
+    role: string;
+    rating: string;
+  };
 }
 
 export interface Project {

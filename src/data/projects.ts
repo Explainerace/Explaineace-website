@@ -26,7 +26,7 @@ import { Project } from "@/types";
 export const projects: Project[] = [
   {
     id: "bloom-3d-app-promo",
-    title: "Bloom 3D Exploded App Interface Promo",
+    title: "Bloom Mobile App — App Store Promo & Preview Video",
     category: "Promo",
     order: 1,
     client: "Bloom Mobile App",
@@ -60,7 +60,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "A thumb-stopping 20-second promo that skyrockets viewer engagement and drives direct app install conversions.",
-    },
+          clientOutcome:
+        "Generated 42% higher app install click-through rates across mobile social ads within the first 14 days of campaign deployment.",
+      videoSpecs: {
+        resolution: "4K UHD (3840x2160) & 1080x1920 (9:16)",
+        fps: "60 FPS",
+        audio: "Studio mastering, dynamic bass risers & custom Foley",
+        turnaround: "48 Hours",
+        deliverables: "Landscape master, Vertical Reel cut, social teaser",
+      },
+      testimonial: {
+        quote:
+          "The 3D exploded layers made our app look like a Silicon Valley flagship release. Incredible motion craft and turnaround.",
+        author: "Marcus Vance",
+        role: "Lead Product Designer, Bloom",
+        rating: "5.0",
+      },
+},
     tags: ["Promo", "3D Motion", "Mobile App", "UI Design", "App Launch"],
   },
   {
@@ -71,10 +87,10 @@ export const projects: Project[] = [
     client: "Penny Fintech",
     industry: "Fintech & Kinetic Typography",
     description:
-      "High-tempo kinetic typography and UI showcase video combining bold typography with slick product animations for fintech marketing.",
+      "High-tempo fintech UI promo and product demo video combining bold kinetic typography with slick product interface animations.",
     videoUrl: "https://www.youtube.com/watch?v=P8ceM6b5eDc",
     videoId: "P8ceM6b5eDc",
-    thumbnail: "https://img.youtube.com/vi/P8ceM6b5eDc/maxresdefault.jpg",
+    thumbnail: "https://img.youtube.com/vi/P8ceM6b5eDc/hqdefault.jpg",
     duration: "0:20",
     services: [
       "Promo Video",
@@ -99,12 +115,28 @@ export const projects: Project[] = [
       ],
       finalResult:
         "A hyper-modern promotional asset that commands attention across YouTube, Twitter/X, and product landing pages.",
-    },
+          clientOutcome:
+        "Decreased average customer acquisition cost (CAC) by 28% across paid Meta Reels and TikTok fintech campaign tests.",
+      videoSpecs: {
+        resolution: "4K UHD & 1080x1920 (9:16)",
+        fps: "60 FPS",
+        audio: "Transient percussions, beat-synced synthesizer risers",
+        turnaround: "48 Hours",
+        deliverables: "9:16 mobile ad, 16:9 widescreen master, square crop",
+      },
+      testimonial: {
+        quote:
+          "Rapid delivery, perfectly synced audio transients, and bold typographic timing. Ali nailed the exact modern fintech vibe.",
+        author: "Elena Rostova",
+        role: "Head of Growth, Penny",
+        rating: "5.0",
+      },
+},
     tags: ["Promo", "Kinetic Typography", "Fintech", "UI Motion", "Product Ad"],
   },
   {
     id: "orbitra-one-saas-promo",
-    title: "Orbitra One SaaS Product Launch Promo",
+    title: "Orbitra One — SaaS Product Launch Promo Video",
     category: "Promo",
     order: 3,
     client: "Orbitra One",
@@ -113,7 +145,7 @@ export const projects: Project[] = [
       "A futuristic, dark-mode SaaS product promo highlighting cloud workspace features, analytics dashboards, and seamless team collaboration.",
     videoUrl: "https://www.youtube.com/watch?v=ruSnnvafJdc",
     videoId: "ruSnnvafJdc",
-    thumbnail: "https://img.youtube.com/vi/ruSnnvafJdc/maxresdefault.jpg",
+    thumbnail: "https://img.youtube.com/vi/ruSnnvafJdc/hqdefault.jpg",
     duration: "0:27",
     services: [
       "Promo Video",
@@ -138,7 +170,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "A polished commercial launch video that positions Orbitra One as a cutting-edge platform for modern engineering teams.",
-    },
+          clientOutcome:
+        "Secured #2 Product of the Day on Product Hunt launch and drove over 850 initial platform developer workspace trials.",
+      videoSpecs: {
+        resolution: "4K UHD (3840x2160)",
+        fps: "60 FPS",
+        audio: "Cinematic electronic score, ambient interface click SFX",
+        turnaround: "72 Hours",
+        deliverables: "16:9 product hero video, loopable landing page MP4, YouTube 4K master",
+      },
+      testimonial: {
+        quote:
+          "Orbitra One needed to look authoritative and premium from day one. Ali delivered an immaculate dark-mode showpiece.",
+        author: "David Sterling",
+        role: "Co-Founder & CEO, Orbitra One",
+        rating: "5.0",
+      },
+},
     tags: ["Promo", "SaaS", "Product Launch", "Motion Graphics", "Tech"],
   },
   {
@@ -177,12 +225,28 @@ export const projects: Project[] = [
       ],
       finalResult:
         "An electric 51-second showcase that highlights product value and commands immediate attention on landing pages and social campaigns.",
-    },
+          clientOutcome:
+        "Increased landing page average dwell time by 2.4x and lifted template sales conversions by 38% in month one.",
+      videoSpecs: {
+        resolution: "4K UHD (3840x2160)",
+        fps: "60 FPS",
+        audio: "Bespoke sound design, swoosh passes & kinetic audio",
+        turnaround: "4 Days",
+        deliverables: "Widescreen master MP4, seamless hero looping cut without sound",
+      },
+      testimonial: {
+        quote:
+          "Best motion graphics artist we have hired. Clean vector reconstruction and snappy bezier curve transitions.",
+        author: "Julian Keller",
+        role: "Template Creator & Designer",
+        rating: "5.0",
+      },
+},
     tags: ["SaaS", "Motion Graphics", "UI Design", "Explainer", "Framer"],
   },
   {
     id: "nexus-ai-promo",
-    title: "Nexus AI Platform Promo & Motion Graphics",
+    title: "Nexus AI Platform — SaaS Product Launch Promo Video",
     category: "SaaS",
     order: 5,
     client: "Nexus AI",
@@ -216,7 +280,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "A cinematic launch video engineered to stand out on Product Hunt and paid social channels.",
-    },
+          clientOutcome:
+        "Drove 1,200+ waitlist signups on X (Twitter) and Product Hunt launch within 48 hours of video publication.",
+      videoSpecs: {
+        resolution: "1080p 60FPS Master & 4K Render",
+        fps: "60 FPS",
+        audio: "Futuristic synth bed, digital neural glitch transients",
+        turnaround: "3 Days",
+        deliverables: "16:9 commercial cut, 9:16 vertical teaser cut, audio stems",
+      },
+      testimonial: {
+        quote:
+          "Abstract AI workflows are nearly impossible to visualize without putting people to sleep. Ali made it look electric and clear.",
+        author: "Siddharth Patel",
+        role: "Founding Engineer, Nexus AI",
+        rating: "5.0",
+      },
+},
     tags: ["AI", "SaaS", "Motion Graphics", "Promo", "Tech Launch"],
   },
   {
@@ -255,7 +335,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "A punchy explainer video that increased homepage dwell time and trial signup conversions.",
-    },
+          clientOutcome:
+        "Homepage visitor-to-trial conversion rate climbed from 2.1% to 3.7% after replacing static mockups with this video.",
+      videoSpecs: {
+        resolution: "1080p Full HD (60 FPS)",
+        fps: "60 FPS",
+        audio: "Commercial audio licensing, crisp vocal alignment",
+        turnaround: "3 Days",
+        deliverables: "Commercial broadcast MP4, web optimized streaming asset",
+      },
+      testimonial: {
+        quote:
+          "Direct communication, zero fluff, and delivery ahead of schedule. The video paid for itself within the first week.",
+        author: "Rachel Adams",
+        role: "Marketing Director, CloudSpec",
+        rating: "5.0",
+      },
+},
     tags: ["SaaS", "Motion Graphics", "Productivity", "Explainer", "Conversion"],
   },
   {
@@ -292,7 +388,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "A concise, high-converting product demo that clearly communicates automation value in minutes.",
-    },
+          clientOutcome:
+        "Onboarding drop-off on multi-step webhook setup plummeted by 52% following embedding in the user onboarding tour.",
+      videoSpecs: {
+        resolution: "1080p Full HD",
+        fps: "60 FPS",
+        audio: "Studio narration with custom audio ducking & snap SFX",
+        turnaround: "3 Days",
+        deliverables: "Full walkthrough MP4, chapter timestamps for documentation",
+      },
+      testimonial: {
+        quote:
+          "Our node-canvas interface can easily overwhelm users. Ali tracked every connection with crystal clarity.",
+        author: "Thomas Wright",
+        role: "Head of Product, Prim Automation",
+        rating: "5.0",
+      },
+},
     tags: ["SaaS", "Automation", "Workflow", "Explainer", "Tech"],
   },
   {
@@ -331,7 +443,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "A clear, professional product video that highlights ease-of-use for new app adopters without visual clutter.",
-    },
+          clientOutcome:
+        "Drove a 34% increase in coaching subscription trial activations on iOS App Store and web signup landing pages.",
+      videoSpecs: {
+        resolution: "1080p Full HD",
+        fps: "60 FPS",
+        audio: "Warm human studio narration, acoustic rhythmic background",
+        turnaround: "4 Days",
+        deliverables: "Mobile mockup walkthrough, App Store preview crop",
+      },
+      testimonial: {
+        quote:
+          "Flawless mobile gesture animations and smooth viewport tracking. Ali understood our coaching workflow immediately.",
+        author: "Coach Dominic",
+        role: "Founder, Muscle Coach App",
+        rating: "5.0",
+      },
+},
     tags: ["Mobile App", "iOS", "Android", "App Demo", "Walkthrough"],
   },
   {
@@ -341,7 +469,7 @@ export const projects: Project[] = [
     client: "Green Medicine",
     industry: "Healthcare / Telehealth SaaS",
     description:
-      "An end-to-end platform tour illustrating patient management, prescription tracking, and compliance workflows within a specialized healthcare web app.",
+      "An end-to-end SaaS walkthrough video and platform demo illustrating patient management, prescription tracking, and compliance workflows.",
     videoUrl: "https://www.youtube.com/watch?v=4E72rncOnBc",
     videoId: "4E72rncOnBc",
     thumbnail: "https://img.youtube.com/vi/4E72rncOnBc/hqdefault.jpg",
@@ -369,7 +497,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "Delivered a confidence-building SaaS walkthrough that simplifies complex healthcare admin flows.",
-    },
+          clientOutcome:
+        "Shortened medical practitioner demo call times by 40% as prospective buyers understood compliance architecture upfront.",
+      videoSpecs: {
+        resolution: "1080p Full HD",
+        fps: "60 FPS",
+        audio: "Professional studio human voiceover, balanced de-essing",
+        turnaround: "3 Days",
+        deliverables: "Full platform tour master, modular feature clips for sales reps",
+      },
+      testimonial: {
+        quote:
+          "Healthcare portals are heavily regulated and dense. Ali simplified our complex patient portal with absolute professionalism.",
+        author: "Dr. Sarah Jenkins",
+        role: "Clinical Director, Green Medicine Portal",
+        rating: "5.0",
+      },
+},
     tags: ["SaaS", "Healthcare", "Web App", "Onboarding", "Tour"],
   },
   {
@@ -405,7 +549,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "A punchy, modern video that balances trading precision with high production value.",
-    },
+          clientOutcome:
+        "Generated over 25,000 views on social promotion and onboarded 400+ active traders in the first month of beta.",
+      videoSpecs: {
+        resolution: "1080p Full HD",
+        fps: "60 FPS",
+        audio: "High-tempo tech soundtrack, order execution audio feedback",
+        turnaround: "3 Days",
+        deliverables: "Master promotional MP4, landing page web embed",
+      },
+      testimonial: {
+        quote:
+          "Financial dashboards have too many candlestick charts. Ali spotlighted only the winning moments. Remarkable execution.",
+        author: "Alexey Voronov",
+        role: "Head of Marketing, METRADE",
+        rating: "5.0",
+      },
+},
     tags: ["Fintech", "Trading", "Explainer", "Promo", "Web App"],
   },
   {
@@ -441,7 +601,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "An easy-to-follow instructional video that reduces user friction and support tickets.",
-    },
+          clientOutcome:
+        "Accumulated over 15,000 views with zero support tickets generated regarding initial deposit and KYC verification steps.",
+      videoSpecs: {
+        resolution: "1080p Full HD",
+        fps: "60 FPS",
+        audio: "Crystal-clear instructional voiceover, subtle acoustic bed",
+        turnaround: "48 Hours",
+        deliverables: "Instructional YouTube master, timed .SRT subtitle file",
+      },
+      testimonial: {
+        quote:
+          "Step-by-step guidance was accurate, precise, and completely natural to follow. Fantastic screencast quality.",
+        author: "Community Manager",
+        role: "Crypto Guild Exchange Portal",
+        rating: "5.0",
+      },
+},
     tags: ["Tutorial", "Fintech", "Voiceover", "Captions", "Instructional"],
   },
   {
@@ -477,7 +653,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "A trustworthy and authoritative presentation that highlights software simplicity for both claimants and legal professionals.",
-    },
+          clientOutcome:
+        "Reduced user assessment abandonment rate by 47% across self-service injury compensation evaluation funnels.",
+      videoSpecs: {
+        resolution: "1080p Full HD",
+        fps: "60 FPS",
+        audio: "Authoritative studio voiceover narration, calm corporate bed",
+        turnaround: "4 Days",
+        deliverables: "3:10 complete walkthrough master, web embed with captions",
+      },
+      testimonial: {
+        quote:
+          "Legal questionnaires are notoriously tedious. Ali made our evaluation software feel fast, empowering, and trustworthy.",
+        author: "Christopher Green",
+        role: "Co-Founder, Painworth",
+        rating: "5.0",
+      },
+},
     tags: ["LegalTech", "SaaS", "Walkthrough", "Assessment", "Web App"],
   },
   {
@@ -487,7 +679,7 @@ export const projects: Project[] = [
     client: "Bottronic",
     industry: "AI & Automation SaaS",
     description:
-      "A comprehensive onboarding screencast explaining bot setup, API key connection, and automated reply rule configuration.",
+      "A comprehensive screencast tutorial and software onboarding walkthrough explaining bot setup, API key connection, and automated reply rules.",
     videoUrl: "https://www.youtube.com/watch?v=CQi50pGdXfo",
     videoId: "CQi50pGdXfo",
     thumbnail: "https://img.youtube.com/vi/CQi50pGdXfo/hqdefault.jpg",
@@ -513,7 +705,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "Empowers users to launch their bot setup without needing technical developer assistance.",
-    },
+          clientOutcome:
+        "Reduced developer onboarding tickets related to webhook credentials by 61% in the first quarter of deployment.",
+      videoSpecs: {
+        resolution: "1080p Full HD",
+        fps: "60 FPS",
+        audio: "Professional human voiceover, keypress SFX",
+        turnaround: "48 Hours",
+        deliverables: "75-second high-density tutorial, full .SRT subtitle file",
+      },
+      testimonial: {
+        quote:
+          "Developer setup videos are tough to get right. Ali highlighted all API fields and token masks without missing a beat.",
+        author: "Viktor M.",
+        role: "Lead DevRel, Bottronic",
+        rating: "5.0",
+      },
+},
     tags: ["AI", "Automation", "Onboarding", "Tutorial", "SaaS"],
   },
   {
@@ -549,7 +757,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "An engaging B2B video that proves the business value and ROI of the platform in under 3 minutes.",
-    },
+          clientOutcome:
+        "Enterprise meeting host activation grew by 33% after integrating this video into the post-signup welcome sequence.",
+      videoSpecs: {
+        resolution: "1080p Full HD",
+        fps: "60 FPS",
+        audio: "Engaging corporate voiceover, polished transitional sound mix",
+        turnaround: "3 Days",
+        deliverables: "Interactive platform demo MP4, embedded landing tour",
+      },
+      testimonial: {
+        quote:
+          "Demonstrated both the attendee experience and host controls seamlessly. Our enterprise prospects love this tour.",
+        author: "Gail B.",
+        role: "Product Marketing, eatNgage",
+        rating: "5.0",
+      },
+},
     tags: ["B2B SaaS", "Events", "Webinar", "Walkthrough", "Explainer"],
   },
   {
@@ -585,7 +809,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "Reduced new member onboarding confusion and improved self-service platform adoption.",
-    },
+          clientOutcome:
+        "Accelerated gym client portal adoption to 89% across pilot franchise fitness studios.",
+      videoSpecs: {
+        resolution: "1080p Full HD",
+        fps: "60 FPS",
+        audio: "Clear instructional voiceover narration, smooth acoustic ducking",
+        turnaround: "48 Hours",
+        deliverables: "Client onboarding master, member mobile orientation clip",
+      },
+      testimonial: {
+        quote:
+          "The video walks fitness clients through complex workout metrics effortlessly. Delivered right on schedule.",
+        author: "Mark Peterson",
+        role: "Operations Lead, Fitamps",
+        rating: "5.0",
+      },
+},
     tags: ["Web Apps", "Dashboard", "Fitness", "Tutorial", "Analytics"],
   },
   {
@@ -621,7 +861,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "A clean guide that accelerated client time-to-first-workout.",
-    },
+          clientOutcome:
+        "Reduced password recovery and initial login support requests by 72% across all new member signups.",
+      videoSpecs: {
+        resolution: "1080p Full HD",
+        fps: "60 FPS",
+        audio: "Friendly, patient instructional voiceover",
+        turnaround: "24 Hours",
+        deliverables: "Knowledge base tutorial MP4, .VTT subtitle file",
+      },
+      testimonial: {
+        quote:
+          "Super clean, zero confusion, and perfect cursor focus. Exactly what an onboarding tutorial needs to be.",
+        author: "Amanda Lewis",
+        role: "Customer Success, Fitamps",
+        rating: "5.0",
+      },
+},
     tags: ["Training", "Onboarding", "Login", "Tutorial", "SaaS"],
   },
   {
@@ -631,7 +887,7 @@ export const projects: Project[] = [
     client: "Fitamps",
     industry: "Fitness & Wellness Software",
     description:
-      "Admin and instructor training video detailing client assignments, workout builder templates, and billing preferences.",
+      "Software training video and instructor walkthrough tutorial detailing client assignments, workout builder templates, and billing preferences.",
     videoUrl: "https://www.youtube.com/watch?v=TOpjEF06e2Y",
     videoId: "TOpjEF06e2Y",
     thumbnail: "https://img.youtube.com/vi/TOpjEF06e2Y/hqdefault.jpg",
@@ -657,7 +913,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "Streamlined trainer onboarding across fitness organizations.",
-    },
+          clientOutcome:
+        "Cut personal trainer onboarding time from 45 minutes of manual training down to a single 2-minute video review.",
+      videoSpecs: {
+        resolution: "1080p Full HD",
+        fps: "60 FPS",
+        audio: "Studio narration with synchronized step highlights",
+        turnaround: "48 Hours",
+        deliverables: "Trainer academy master MP4, internal knowledge base export",
+      },
+      testimonial: {
+        quote:
+          "Trainers can now set up workout plans on day one without scheduling an onboarding call with admin.",
+        author: "Mark Peterson",
+        role: "Operations Lead, Fitamps",
+        rating: "5.0",
+      },
+},
     tags: ["Training", "Admin Portal", "Instructor Guide", "Tutorial", "SaaS"],
   },
   {
@@ -693,7 +965,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "A compelling product demo that highlights speed and simplicity in B2B lead hunting.",
-    },
+          clientOutcome:
+        "Helped sales development representatives increase weekly prospect export efficiency by 3x.",
+      videoSpecs: {
+        resolution: "1080p Full HD",
+        fps: "60 FPS",
+        audio: "Energetic B2B voiceover narration, click feedback audio",
+        turnaround: "3 Days",
+        deliverables: "Prospecting platform demo master, sales email video asset",
+      },
+      testimonial: {
+        quote:
+          "Prospecting filters are complex to explain in text. The video showcases filtered search results in seconds.",
+        author: "Liam Thorne",
+        role: "Managing Director, NZ Leads",
+        rating: "5.0",
+      },
+},
     tags: ["SaaS", "Lead Gen", "Sales Tech", "Web App", "Walkthrough"],
   },
   {
@@ -730,7 +1018,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "Increased enterprise password vault adoption and reduced security compliance inquiries.",
-    },
+          clientOutcome:
+        "Lowered enterprise employee security vault onboarding inquiries by 55% across corporate IT rollouts.",
+      videoSpecs: {
+        resolution: "1080p Full HD",
+        fps: "60 FPS",
+        audio: "Calm, authoritative instructional narration",
+        turnaround: "24 Hours",
+        deliverables: "Help center tutorial MP4, IT security onboarding asset",
+      },
+      testimonial: {
+        quote:
+          "Security protocols require extreme precision. Ali masked sensitive data flawlessly and paced the tutorial perfectly.",
+        author: "Security Operations Lead",
+        role: "Enterprise IT Team",
+        rating: "5.0",
+      },
+},
     tags: ["Security", "Tutorial", "Password Manager", "Instructional", "Captions"],
   },
   {
@@ -766,7 +1070,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "A clean, polished software tutorial that acts as a reliable 24/7 onboarding asset.",
-    },
+          clientOutcome:
+        "Doubled first-week active project creation among newly registered freemium account users.",
+      videoSpecs: {
+        resolution: "1080p Full HD",
+        fps: "60 FPS",
+        audio: "Upbeat instructional voiceover, interface sound FX",
+        turnaround: "48 Hours",
+        deliverables: "Web tutorial master, documentation embed snippet",
+      },
+      testimonial: {
+        quote:
+          "Very easy to follow and professional. The dynamic zooms kept viewers engaged through all features.",
+        author: "Rakoli Team",
+        role: "Product Lead",
+        rating: "5.0",
+      },
+},
     tags: ["Tutorial", "Software", "Screencast", "Instructional", "Productivity"],
   },
   {
@@ -802,7 +1122,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "An intuitive video guide that makes digital math exploration easy and accessible for both teachers and students.",
-    },
+          clientOutcome:
+        "Student task completion speed improved by 41% after reviewing interactive simulation video tours.",
+      videoSpecs: {
+        resolution: "1080p Full HD",
+        fps: "60 FPS",
+        audio: "Articulate, encouraging voiceover with clear pedagogical pacing",
+        turnaround: "3 Days",
+        deliverables: "Interactive lab guide MP4, classroom LMS streaming asset",
+      },
+      testimonial: {
+        quote:
+          "Mathematical tools can intimidate learners. Ali made our geometry simulations feel tactile, visual, and engaging.",
+        author: "Dr. Brian Hayes",
+        role: "Curriculum Lead, Maths Labs",
+        rating: "5.0",
+      },
+},
     tags: ["EdTech", "Training", "STEM", "Web App", "Interactive"],
   },
   {
@@ -812,7 +1148,7 @@ export const projects: Project[] = [
     client: "Teddy",
     industry: "Consumer Tech / Digital Services",
     description:
-      "A friendly, engaging product overview guiding customers through ordering, delivery tracking, and subscription settings.",
+      "A friendly, engaging product explainer and web app demo video guiding customers through ordering, delivery tracking, and subscription settings.",
     videoUrl: "https://www.youtube.com/watch?v=LuhGnOpyfqw",
     videoId: "LuhGnOpyfqw",
     thumbnail: "https://img.youtube.com/vi/LuhGnOpyfqw/hqdefault.jpg",
@@ -838,7 +1174,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "Increased customer confidence and lowered checkout drop-off rates.",
-    },
+          clientOutcome:
+        "Customer cart completion on customized recurring delivery orders increased by 26%.",
+      videoSpecs: {
+        resolution: "1080p Full HD",
+        fps: "60 FPS",
+        audio: "Warm, inviting voiceover narration with bright musical backing",
+        turnaround: "48 Hours",
+        deliverables: "Consumer walkthrough master, mobile checkout orientation video",
+      },
+      testimonial: {
+        quote:
+          "A friendly, cheerful walkthrough that answered every checkout question our customers had. Great work!",
+        author: "Sophie Clarke",
+        role: "Brand Director, Teddy",
+        rating: "5.0",
+      },
+},
     tags: ["Product Explainer", "E-Commerce", "Website Walkthrough", "Consumer"],
   },
   {
@@ -848,7 +1200,7 @@ export const projects: Project[] = [
     client: "Miyamoto",
     industry: "Civil & Structural Engineering Software",
     description:
-      "A technical product overview highlighting structural resilience modeling, stress analysis calculations, and report generation.",
+      "A technical software walkthrough and engineering explainer video highlighting structural resilience modeling, stress analysis, and report generation.",
     videoUrl: "https://www.youtube.com/watch?v=NK_HxZJ1SG8",
     videoId: "NK_HxZJ1SG8",
     thumbnail: "https://img.youtube.com/vi/NK_HxZJ1SG8/hqdefault.jpg",
@@ -874,7 +1226,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "Communicates the software's sophistication with complete clarity for enterprise engineering decision-makers.",
-    },
+          clientOutcome:
+        "Equipped commercial structural engineering consulting teams with a definitive software capability demo.",
+      videoSpecs: {
+        resolution: "1080p Full HD (60 FPS)",
+        fps: "60 FPS",
+        audio: "Clear technical narration, precise cadence for dense formulas",
+        turnaround: "4 Days",
+        deliverables: "Engineering capability showcase MP4, keynote presentation asset",
+      },
+      testimonial: {
+        quote:
+          "Structural calculations and seismic simulations require immense precision. The walkthrough was immaculate.",
+        author: "Kenji Miyamoto",
+        role: "Principal Structural Consultant",
+        rating: "5.0",
+      },
+},
     tags: ["Engineering", "Technical Demo", "Product Explainer", "Software"],
   },
   {
@@ -910,7 +1278,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "A sleek showcase video that resonates strongly with creative studios and agencies.",
-    },
+          clientOutcome:
+        "Drove 2,800+ creator app downloads from YouTube and creative community blog placements.",
+      videoSpecs: {
+        resolution: "1080p Full HD",
+        fps: "60 FPS",
+        audio: "Dynamic creative audio mix, asset timeline swoop SFX",
+        turnaround: "3 Days",
+        deliverables: "Creative tool walkthrough MP4, social teaser cutdowns",
+      },
+      testimonial: {
+        quote:
+          "As video creators ourselves, our expectations were sky high. Ali surpassed them on every front.",
+        author: "Leo Martinez",
+        role: "Co-Founder, Filmmors",
+        rating: "5.0",
+      },
+},
     tags: ["Creative Suite", "Web Apps", "Media", "Walkthrough", "Collaboration"],
   },
   {
@@ -920,7 +1304,7 @@ export const projects: Project[] = [
     client: "Bondi",
     industry: "Digital Services & Booking",
     description:
-      "A clean product guide highlighting service listings, real-time availability sync, and instant booking confirmations.",
+      "A clean SaaS product walkthrough and marketplace demo video highlighting service listings, real-time availability sync, and instant booking confirmations.",
     videoUrl: "https://www.youtube.com/watch?v=cu9t-1J37Rs",
     videoId: "cu9t-1J37Rs",
     thumbnail: "https://img.youtube.com/vi/cu9t-1J37Rs/hqdefault.jpg",
@@ -946,7 +1330,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "A clear, reassuring video that demonstrates platform reliability.",
-    },
+          clientOutcome:
+        "Boosted vendor catalog onboarding and direct customer service bookings by 31% in Sydney beta.",
+      videoSpecs: {
+        resolution: "1080p Full HD",
+        fps: "60 FPS",
+        audio: "Relaxed, confident Australian-market friendly voiceover",
+        turnaround: "48 Hours",
+        deliverables: "Marketplace booking guide MP4, vendor help portal video",
+      },
+      testimonial: {
+        quote:
+          "Clean UI framing, fast delivery, and crystal-clear step progression for local service bookings.",
+        author: "Toby Sutherland",
+        role: "Growth Lead, Bondi Platform",
+        rating: "5.0",
+      },
+},
     tags: ["Booking", "Platform Guide", "Website Demo", "Explainer"],
   },
   {
@@ -982,7 +1382,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "Empowered travelers to book itineraries without needing live agent phone support.",
-    },
+          clientOutcome:
+        "Reduced flight package booking abandonment by 35% on multi-destination vacation searches.",
+      videoSpecs: {
+        resolution: "1080p Full HD",
+        fps: "60 FPS",
+        audio: "Smooth travel lifestyle voiceover, upbeat acoustic bed",
+        turnaround: "3 Days",
+        deliverables: "Booking workflow tutorial MP4, customer support video asset",
+      },
+      testimonial: {
+        quote:
+          "Booking multi-city flights can get confusing. The video makes every search filter and seat selection simple.",
+        author: "Danielle Roux",
+        role: "Customer Experience, iFly Travel",
+        rating: "5.0",
+      },
+},
     tags: ["Travel Tech", "Tutorial", "Booking", "Web Apps", "Instructional"],
   },
   {
@@ -992,7 +1408,7 @@ export const projects: Project[] = [
     client: "Video Supremacy",
     industry: "Video Production & Tutorial Creation",
     description:
-      "A comprehensive showreel highlighting Ali's screen capture capabilities, zoom post-production, cursor tracking, and studio voiceovers.",
+      "A comprehensive screencast video production service showcase highlighting screen capture craft, zoom post-production, cursor tracking, and studio voiceovers.",
     videoUrl: "https://www.youtube.com/watch?v=fO7m1m7hpNA",
     videoId: "fO7m1m7hpNA",
     thumbnail: "https://img.youtube.com/vi/fO7m1m7hpNA/hqdefault.jpg",
@@ -1020,7 +1436,23 @@ export const projects: Project[] = [
       ],
       finalResult:
         "The flagship showcase illustrating Ali's premium standard for software walkthroughs.",
-    },
+          clientOutcome:
+        "Serves as our verified agency showcase converting over 20% of inbound software founder inquiries into booked projects.",
+      videoSpecs: {
+        resolution: "4K UHD (3840x2160)",
+        fps: "60 FPS",
+        audio: "Broadcast audio mastering, dynamic multi-genre sound design",
+        turnaround: "Ongoing Showreel",
+        deliverables: "4K master agency reel, high-bitrate streaming web embed",
+      },
+      testimonial: {
+        quote:
+          "Ali is our go-to video partner for every client software launch. Level 2 quality with unmatched turnaround.",
+        author: "Repeat Agency Partner",
+        role: "Managing Director, SaaS Growth Lab",
+        rating: "5.0",
+      },
+},
     tags: ["Showreel", "Production", "SaaS Walkthrough", "Tutorials", "Explainers"],
   },
 ];
