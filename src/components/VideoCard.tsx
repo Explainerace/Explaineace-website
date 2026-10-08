@@ -20,7 +20,7 @@ export const VideoCard: React.FC<VideoCardProps> = ({ project, onPlay }) => {
     : project.thumbnail;
 
   return (
-    <article className="group relative flex flex-col bg-surface-card border border-white/[0.08] hover:border-brand-500/40 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-card hover:-translate-y-1">
+    <article className="h-full group relative flex flex-col bg-surface-card border border-white/[0.08] hover:border-brand-500/40 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-card hover:-translate-y-1">
       {/* Thumbnail & Play Overlay Container */}
       <div
         className="relative aspect-video w-full bg-surface-subtle cursor-pointer overflow-hidden"

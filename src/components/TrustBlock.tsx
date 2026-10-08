@@ -1,12 +1,15 @@
 import React from "react";
 import { Star, ShieldCheck, Award, ExternalLink, Users, CreditCard, CheckCircle2 } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
+import { Reveal } from "@/components/motion/Reveal";
+import { CountUp } from "@/components/motion/CountUp";
+import { Marquee } from "@/components/motion/Marquee";
 
 export const TrustBlock: React.FC = () => {
   return (
     <section className="py-20 sm:py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 sm:p-12 lg:p-16 rounded-3xl bg-gradient-to-b from-surface-card to-surface-subtle border border-white/[0.08] shadow-2xl relative">
+        <Reveal variant="scale" className="p-8 sm:p-12 lg:p-16 rounded-3xl bg-gradient-to-b from-surface-card to-surface-subtle border border-white/[0.08] shadow-2xl relative">
           {/* Subtle glow inside card */}
           <div className="absolute top-0 right-1/4 w-80 h-80 bg-brand-600/10 blur-[100px] pointer-events-none rounded-full" />
 
@@ -79,7 +82,7 @@ export const TrustBlock: React.FC = () => {
                     ))}
                   </div>
                   <div className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                    4.8 / 5
+                    <CountUp to={4.8} decimals={1} /> / 5
                   </div>
                 </div>
                 <div className="mt-4 pt-3 border-t border-white/[0.06]">
@@ -99,7 +102,7 @@ export const TrustBlock: React.FC = () => {
                     <Users className="w-4 h-4" />
                   </div>
                   <div className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                    157
+                    <CountUp to={157} />
                   </div>
                 </div>
                 <div className="mt-4 pt-3 border-t border-white/[0.06]">
@@ -137,18 +140,9 @@ export const TrustBlock: React.FC = () => {
             <span className="text-xs uppercase font-semibold tracking-wider text-slate-500">
               Trusted by teams at:
             </span>
-            <div className="flex flex-wrap gap-2">
-              {siteConfig.targetAudiences.map((team) => (
-                <span
-                  key={team}
-                  className="text-xs text-slate-300 bg-white/[0.04] border border-white/[0.06] px-3 py-1 rounded-full"
-                >
-                  {team}
-                </span>
-              ))}
-            </div>
+            <Marquee items={siteConfig.targetAudiences} className="flex-1 min-w-0" />
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

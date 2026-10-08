@@ -6,6 +6,7 @@ import { Search, Layers, ArrowRight } from "lucide-react";
 import { Project, CategoryFilter } from "@/types";
 import { VideoCard } from "@/components/VideoCard";
 import { VideoModal } from "@/components/VideoModal";
+import { Reveal } from "@/components/motion/Reveal";
 
 interface VideoGridProps {
   projects: Project[];
@@ -71,7 +72,7 @@ export const VideoGrid: React.FC<VideoGridProps> = ({
     <section id="work" className="py-20 sm:py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+        <Reveal className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300 text-xs font-semibold uppercase tracking-wider mb-3">
               <Layers className="w-3.5 h-3.5" />
@@ -96,7 +97,7 @@ export const VideoGrid: React.FC<VideoGridProps> = ({
               className="w-full pl-10 pr-4 py-2.5 text-sm bg-surface-card border border-white/[0.1] rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors"
             />
           </div>
-        </div>
+        </Reveal>
 
         {/* Filter Tabs */}
         <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none">
@@ -136,12 +137,14 @@ export const VideoGrid: React.FC<VideoGridProps> = ({
         {/* Video Grid */}
         {displayProjects.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {displayProjects.map((project) => (
-              <VideoCard
-                key={project.id}
-                project={project}
-                onPlay={(proj) => setActiveModalProject(proj)}
-              />
+            {displayProjects.map((project, idx) => (
+              // Keyed by filter so cards re-stagger in when the category changes
+              <Reveal key={`${selectedCategory}-${project.id}`} delay={(idx % 3) * 90} variant="scale" className="h-full">
+                <VideoCard
+                  project={project}
+                  onPlay={(proj) => setActiveModalProject(proj)}
+                />
+              </Reveal>
             ))}
           </div>
         ) : (

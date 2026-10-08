@@ -51,13 +51,15 @@ export const Hero: React.FC = () => {
     <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-24 overflow-hidden">
       {/* Ambient background glow contained */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-brand-600/15 blur-[120px] rounded-full" />
-        <div className="absolute top-1/3 right-0 w-[300px] h-[300px] bg-accent-cyan/10 blur-[100px] rounded-full" />
+        <div className="absolute inset-0 bg-grid" />
+        <div className="aurora absolute top-[8%] left-1/2 -translate-x-1/2 w-[640px] h-[380px] bg-brand-600/20 blur-[120px] rounded-full" />
+        <div className="aurora-slow absolute top-1/3 right-[-5%] w-[340px] h-[340px] bg-accent-cyan/15 blur-[110px] rounded-full" />
+        <div className="aurora absolute top-[45%] left-[-8%] w-[320px] h-[320px] bg-accent-purple/10 blur-[110px] rounded-full" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Top Trust Badge */}
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-6 fade-up">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-card/90 border border-white/[0.08] shadow-sm backdrop-blur-md max-w-full">
             <div className="flex items-center text-amber-400">
               <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400 shrink-0" />
@@ -76,23 +78,31 @@ export const Hero: React.FC = () => {
         {/* Central Headline & Copy */}
         <div className="text-center max-w-4xl mx-auto">
           <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-white leading-[1.15] sm:leading-[1.1] break-words">
-            Software is complicated.
-            <br />
-            <span className="bg-gradient-to-r from-brand-300 via-indigo-200 to-accent-cyan bg-clip-text text-transparent">
-              Your videos shouldn&apos;t be.
+            <span className="line-mask">
+              <span className="line-rise" style={{ "--d": "80ms" } as React.CSSProperties}>
+                Software is complicated.
+              </span>
+            </span>
+            <span className="line-mask">
+              <span
+                className="line-rise text-shimmer bg-clip-text text-transparent"
+                style={{ "--d": "220ms", backgroundImage: "linear-gradient(90deg,#A5B4FC,#C7D2FE,#38BDF8,#A5B4FC)" } as React.CSSProperties}
+              >
+                Your videos shouldn&apos;t be.
+              </span>
             </span>
           </h1>
 
-          <h2 className="mt-4 text-base sm:text-xl font-semibold text-brand-300">
+          <h2 className="fade-up mt-4 text-base sm:text-xl font-semibold text-brand-300" style={{ "--d": "380ms" } as React.CSSProperties}>
             SaaS walkthroughs, screencast tutorials &amp; explainer videos for software teams
           </h2>
 
-          <p className="mt-3 text-sm sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto">
+          <p className="fade-up mt-3 text-sm sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl mx-auto" style={{ "--d": "480ms" } as React.CSSProperties}>
             {siteConfig.subheadline}
           </p>
 
           {/* Action CTAs */}
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4">
+          <div className="fade-up mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4" style={{ "--d": "580ms" } as React.CSSProperties}>
             <Link
               href="/work"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-white/[0.08] hover:bg-white/[0.12] border border-white/[0.12] px-7 py-3.5 rounded-full backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 shadow-sm"
@@ -103,7 +113,7 @@ export const Hero: React.FC = () => {
 
             <Link
               href="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 px-7 py-3.5 rounded-full shadow-glow hover:shadow-glow-lg transition-all duration-200 hover:-translate-y-0.5 group"
+              className="beam-border w-full sm:w-auto inline-flex items-center justify-center gap-2 text-sm font-semibold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 px-7 py-3.5 rounded-full shadow-glow hover:shadow-glow-lg transition-all duration-200 hover:-translate-y-0.5 group"
             >
               <span>Start a Project</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -112,7 +122,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Hero Visual: Interactive Software UI Video Window & Gallery Stage */}
-        <div className="mt-12 sm:mt-16 max-w-5xl mx-auto w-full space-y-6">
+        <div className="stage-enter mt-12 sm:mt-16 max-w-5xl mx-auto w-full space-y-6">
           {/* Main Stage Video Player Window */}
           <div
             className="relative rounded-2xl p-1 sm:p-2 bg-gradient-to-b from-white/15 to-white/5 shadow-2xl group cursor-pointer w-full"
@@ -146,14 +156,17 @@ export const Hero: React.FC = () => {
 
               {/* Video Canvas Area */}
               <div className="relative aspect-video w-full bg-surface-subtle overflow-hidden">
-                <Image
-                  src={`https://img.youtube.com/vi/${activeProject.videoId}/maxresdefault.jpg`}
-                  alt={activeProject.title}
-                  fill
-                  priority
-                  sizes="(max-width: 1200px) 100vw, 1024px"
-                  className="object-cover group-hover:scale-102 transition-transform duration-700"
-                />
+                {/* Keyed so each switch replays the crossfade + slow push-in */}
+                <div key={activeProject.id} className="ken-burns absolute inset-0">
+                  <Image
+                    src={`https://img.youtube.com/vi/${activeProject.videoId}/maxresdefault.jpg`}
+                    alt={activeProject.title}
+                    fill
+                    priority
+                    sizes="(max-width: 1200px) 100vw, 1024px"
+                    className="object-cover"
+                  />
+                </div>
 
                 {/* Dark Vignette Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/25" />
@@ -176,6 +189,12 @@ export const Hero: React.FC = () => {
                 <div className="absolute bottom-14 right-4 hidden sm:flex items-center gap-2 bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/[0.1] text-xs text-white shadow-lg">
                   <MousePointer2 className="w-3.5 h-3.5 text-brand-400" />
                   <span className="font-medium">Cursor Stabilization & Click Ripples</span>
+                </div>
+
+                {/* Demo cursor gliding across the stage with click ripples */}
+                <div className="demo-cursor absolute z-10 pointer-events-none hidden sm:block" aria-hidden="true">
+                  <span className="demo-cursor-ripple absolute -left-4 -top-4 w-8 h-8 rounded-full border-2 border-accent-cyan bg-accent-cyan/20" />
+                  <MousePointer2 className="relative w-6 h-6 text-white fill-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]" />
                 </div>
 
                 {/* Center Play Button */}
@@ -224,7 +243,7 @@ export const Hero: React.FC = () => {
                   <div className="flex items-center gap-2 sm:gap-3">
                     <span className="text-[10px] sm:text-[11px] text-slate-300 font-mono">00:45</span>
                     <div className="flex-1 h-1.5 bg-white/20 rounded-full overflow-hidden">
-                      <div className="h-full w-2/5 bg-gradient-to-r from-brand-500 to-accent-cyan rounded-full" />
+                      <div key={activeProject.id} className="scrub-progress h-full w-full bg-gradient-to-r from-brand-500 to-accent-cyan rounded-full" />
                     </div>
                     <span className="text-[10px] sm:text-[11px] text-slate-400 font-mono">{activeProject.duration}</span>
                   </div>

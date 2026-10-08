@@ -11,6 +11,8 @@ import {
   Bot,
   Video,
 } from "lucide-react";
+import { Reveal } from "@/components/motion/Reveal";
+import { Spotlight } from "@/components/motion/Spotlight";
 
 interface CategoryCard {
   title: string;
@@ -75,7 +77,7 @@ export const WhatICreate: React.FC = () => {
   return (
     <section className="py-20 sm:py-24 bg-surface/50 border-y border-white/[0.04] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <Reveal className="text-center max-w-3xl mx-auto mb-14">
           <span className="text-xs font-semibold uppercase tracking-wider text-brand-400">
             Core Production Focus
           </span>
@@ -85,15 +87,15 @@ export const WhatICreate: React.FC = () => {
           <p className="mt-3 text-slate-400 text-sm sm:text-base leading-relaxed">
             Every product has unique complexities. I craft targeted video assets designed specifically for your audience&apos;s technical familiarity.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {CARDS.map((card) => {
+          {CARDS.map((card, idx) => {
             const Icon = card.icon;
             return (
-              <div
-                key={card.title}
-                className="group relative p-7 rounded-2xl bg-surface-card border border-white/[0.06] hover:border-brand-500/40 transition-all duration-300 hover:shadow-card hover:-translate-y-1 flex flex-col justify-between"
+              <Reveal key={card.title} delay={(idx % 3) * 90} className="h-full">
+              <Spotlight
+                className="h-full group relative p-7 rounded-2xl bg-surface-card border border-white/[0.06] hover:border-brand-500/40 transition-all duration-300 hover:shadow-card hover:-translate-y-1 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">
@@ -125,7 +127,8 @@ export const WhatICreate: React.FC = () => {
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
-              </div>
+              </Spotlight>
+              </Reveal>
             );
           })}
         </div>

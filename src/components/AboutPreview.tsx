@@ -2,12 +2,13 @@ import React from "react";
 import Link from "next/link";
 import { User, ArrowRight, ShieldCheck, Video, CheckCircle2 } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
+import { Reveal } from "@/components/motion/Reveal";
 
 export const AboutPreview: React.FC = () => {
   return (
     <section className="py-20 sm:py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 sm:p-12 rounded-3xl bg-surface-card border border-white/[0.08] shadow-card">
+        <Reveal className="p-8 sm:p-12 rounded-3xl bg-surface-card border border-white/[0.08] shadow-card">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left: Avatar placeholder & badge */}
             <div className="lg:col-span-4 flex flex-col items-center text-center">
@@ -26,7 +27,7 @@ export const AboutPreview: React.FC = () => {
                 </div>
 
                 {/* Floating Level 2 badge */}
-                <div className="absolute -bottom-3 bg-emerald-500/20 border border-emerald-500/40 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold text-emerald-300 shadow-lg flex items-center gap-1.5">
+                <div className="float-slow absolute -bottom-3 bg-emerald-500/20 border border-emerald-500/40 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold text-emerald-300 shadow-lg flex items-center gap-1.5">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
                   <span>Level 2 Seller</span>
                 </div>
@@ -78,7 +79,7 @@ export const AboutPreview: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

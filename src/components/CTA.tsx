@@ -3,21 +3,28 @@ import Link from "next/link";
 import { ArrowRight, ExternalLink, Mail, CheckCircle2 } from "lucide-react";
 import { YoutubeIcon } from "@/components/Icons";
 import { siteConfig } from "@/data/siteConfig";
+import { Reveal } from "@/components/motion/Reveal";
 
 export const CTA: React.FC = () => {
   return (
     <section className="py-24 sm:py-28 relative overflow-hidden bg-gradient-to-b from-transparent to-[#07080E]">
       {/* Background radial glow */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none"><div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-brand-600/15 blur-[140px] rounded-full" /></div>
+      <div className="absolute inset-0 overflow-hidden pointer-events-none"><div className="aurora absolute top-1/4 left-1/4 w-[700px] h-[350px] bg-brand-600/15 blur-[140px] rounded-full" /><div className="aurora-slow absolute top-1/3 right-1/4 w-[360px] h-[260px] bg-accent-cyan/10 blur-[120px] rounded-full" /></div>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <Reveal className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300 text-xs font-semibold uppercase tracking-wider mb-6">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
           <span>Currently Accepting New Client Projects</span>
         </div>
 
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-          Have a product that needs explaining?
+          Have a product that{" "}
+          <span
+            className="text-shimmer bg-clip-text text-transparent"
+            style={{ backgroundImage: "linear-gradient(90deg,#A5B4FC,#C7D2FE,#38BDF8,#A5B4FC)" }}
+          >
+            needs explaining?
+          </span>
         </h2>
 
         <p className="mt-5 text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
@@ -28,7 +35,7 @@ export const CTA: React.FC = () => {
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/contact"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-base font-semibold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 px-8 py-4 rounded-full shadow-glow hover:shadow-glow-lg transition-all duration-200 group active:scale-95"
+            className="beam-border w-full sm:w-auto inline-flex items-center justify-center gap-2 text-base font-semibold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 px-8 py-4 rounded-full shadow-glow hover:shadow-glow-lg transition-all duration-200 group active:scale-95"
           >
             <span>Start a Project</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -74,7 +81,7 @@ export const CTA: React.FC = () => {
             <span>{siteConfig.contactEmail}</span>
           </a>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 };

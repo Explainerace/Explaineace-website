@@ -9,6 +9,8 @@ import {
   Layers,
   Sparkles,
 } from "lucide-react";
+import { Reveal } from "@/components/motion/Reveal";
+import { Spotlight } from "@/components/motion/Spotlight";
 
 interface ValueBlock {
   title: string;
@@ -66,7 +68,7 @@ export const HowIAddValue: React.FC = () => {
   return (
     <section className="py-20 sm:py-24 relative bg-surface-subtle/40 border-y border-white/[0.04]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <Reveal className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300 text-xs font-semibold uppercase tracking-wider mb-3">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Production Craft</span>
@@ -77,7 +79,7 @@ export const HowIAddValue: React.FC = () => {
           <p className="mt-3 text-slate-400 text-sm sm:text-base leading-relaxed">
             Anyone can hit record. Turning complicated workflows into engaging, conversion-focused video assets requires dedicated post-production craft.
           </p>
-        </div>
+        </Reveal>
 
         {/* Feature Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -85,11 +87,13 @@ export const HowIAddValue: React.FC = () => {
             const Icon = block.icon;
             const isWide = idx === BLOCKS.length - 1; // Last card spans nicely or stands out
             return (
-              <div
+              <Reveal
                 key={block.title}
-                className={`group p-6 rounded-2xl bg-surface-card border border-white/[0.06] hover:border-brand-500/40 transition-all duration-300 hover:shadow-card hover:-translate-y-1 flex flex-col justify-between ${
-                  isWide ? "md:col-span-2 lg:col-span-3 xl:col-span-1" : ""
-                }`}
+                delay={(idx % 4) * 80}
+                className={`h-full ${isWide ? "md:col-span-2 lg:col-span-3 xl:col-span-1" : ""}`}
+              >
+              <Spotlight
+                className="h-full group p-6 rounded-2xl bg-surface-card border border-white/[0.06] hover:border-brand-500/40 transition-all duration-300 hover:shadow-card hover:-translate-y-1 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -114,7 +118,8 @@ export const HowIAddValue: React.FC = () => {
                   <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan" />
                   <span>Standard on all packages</span>
                 </div>
-              </div>
+              </Spotlight>
+              </Reveal>
             );
           })}
         </div>

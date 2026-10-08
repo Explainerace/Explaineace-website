@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { ScrollProgress } from "@/components/motion/ScrollProgress";
 import { siteConfig } from "@/data/siteConfig";
 
 export const viewport: Viewport = {
@@ -131,14 +132,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
+        {/* Flag JS early so scroll-reveal styles never flash hidden content for no-JS/crawlers */}
+        <script
+          dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body className="min-h-screen flex flex-col bg-[#08090E] text-slate-100 antialiased selection:bg-brand-600 selection:text-white overflow-x-hidden">
+        <ScrollProgress />
         <Navbar />
         <main className="flex-1 overflow-x-hidden">{children}</main>
         <Footer />

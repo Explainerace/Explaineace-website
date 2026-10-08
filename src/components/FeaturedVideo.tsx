@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Play, Sparkles, Volume2, ShieldCheck, ArrowRight, Eye } from "lucide-react";
 import { VideoModal } from "@/components/VideoModal";
+import { Reveal } from "@/components/motion/Reveal";
 
 export const FeaturedVideo: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -16,7 +17,7 @@ export const FeaturedVideo: React.FC = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none"><div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-brand-600/10 blur-[140px] rounded-full" /></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+        <Reveal className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-cyan/10 border border-accent-cyan/20 text-accent-cyan text-xs font-semibold uppercase tracking-wider mb-3">
               <Sparkles className="w-3.5 h-3.5" />
@@ -39,10 +40,10 @@ export const FeaturedVideo: React.FC = () => {
               <ArrowRight className="w-4 h-4 text-brand-400" />
             </Link>
           </div>
-        </div>
+        </Reveal>
 
         {/* Cinematic Video Player Container */}
-        <div className="relative rounded-3xl p-1 bg-gradient-to-b from-white/20 via-white/5 to-transparent shadow-2xl">
+        <Reveal variant="scale" className="relative rounded-3xl p-1 bg-gradient-to-b from-white/20 via-white/5 to-transparent shadow-2xl">
           <div
             className="relative rounded-[22px] overflow-hidden aspect-video w-full bg-black cursor-pointer group"
             onClick={() => setModalOpen(true)}
@@ -52,7 +53,7 @@ export const FeaturedVideo: React.FC = () => {
               alt="Green Medicine SaaS Walkthrough Featured Video"
               fill
               sizes="(max-width: 1200px) 100vw, 1200px"
-              className="object-cover opacity-90 group-hover:scale-103 transition-transform duration-700"
+              className="object-cover opacity-90 group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
             />
 
             {/* Cinematic Gradient Bars */}
@@ -72,8 +73,11 @@ export const FeaturedVideo: React.FC = () => {
 
             {/* Big Center Play Trigger */}
             <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-brand-600/90 text-white flex items-center justify-center shadow-glow-lg group-hover:scale-110 group-hover:bg-brand-500 transition-all duration-300">
+              <div className="relative">
+              <span className="absolute inset-0 rounded-full bg-brand-500/40 animate-ping [animation-duration:2.4s]" />
+              <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-brand-600/90 text-white flex items-center justify-center shadow-glow-lg group-hover:scale-110 group-hover:bg-brand-500 transition-all duration-300">
                 <Play className="w-8 h-8 sm:w-10 sm:h-10 fill-white ml-1.5" />
+              </div>
               </div>
               <span className="mt-4 text-xs sm:text-sm font-semibold text-white uppercase tracking-wider bg-black/60 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10">
                 Watch High-Definition Walkthrough (3:15)
@@ -99,7 +103,7 @@ export const FeaturedVideo: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
 
       <VideoModal
