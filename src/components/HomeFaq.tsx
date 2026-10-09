@@ -1,6 +1,9 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
-import { HelpCircle, ArrowRight } from "lucide-react";
+import { HelpCircle, ArrowRight, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const homeFaqs = [
   {
@@ -18,6 +21,12 @@ export const homeFaqs = [
 ];
 
 export const HomeFaq: React.FC = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const toggleFaq = (index: number) => {
+    setOpenIndex((prev) => (prev === index ? null : index));
+  };
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -51,20 +60,63 @@ export const HomeFaq: React.FC = () => {
         </div>
 
         <div className="space-y-4">
-          {homeFaqs.map((faq, i) => (
-            <div
-              key={i}
-              className="p-6 sm:p-7 rounded-2xl bg-surface-card border border-white/[0.06] hover:border-brand-500/20 transition-all duration-300"
-            >
-              <h3 className="text-base sm:text-lg font-bold text-white flex items-start gap-3">
-                <HelpCircle className="w-5 h-5 text-brand-400 shrink-0 mt-0.5" />
-                <span>{faq.q}</span>
-              </h3>
-              <p className="mt-3 text-slate-300 text-sm leading-relaxed pl-8">
-                {faq.a}
-              </p>
-            </div>
-          ))}
+          {homeFaqs.map((faq, i) => {
+            const isOpen = openIndex === i;
+
+            return (
+              <div
+                key={i}
+                className={`rounded-2xl transition-all duration-300 overflow-hidden border ${
+                  isOpen
+                    ? "bg-[#101422]/90 border-brand-500/40 shadow-glow/10"
+                    : "bg-surface-card border-white/[0.06] hover:border-white/20"
+                }`}
+              >
+                <button
+                  type="button"
+                  onClick={() => toggleFaq(i)}
+                  aria-expanded={isOpen}
+                  className="w-full text-left p-6 sm:p-7 flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+                >
+                  <div className="flex items-start gap-3.5">
+                    <HelpCircle
+                      className={`w-5 h-5 shrink-0 mt-0.5 transition-colors ${
+                        isOpen ? "text-accent-cyan" : "text-brand-400"
+                      }`}
+                    />
+                    <h3 className="text-base sm:text-lg font-bold text-white pr-2">
+                      {faq.q}
+                    </h3>
+                  </div>
+
+                  <motion.div
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.25, ease: "easeInOut" }}
+                    className="shrink-0 p-1.5 rounded-full bg-white/[0.05] text-slate-300 hover:text-white"
+                  >
+                    <ChevronDown className="w-4 h-4" />
+                  </motion.div>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      key="content"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-6 sm:px-7 sm:pb-7 pt-0 text-slate-300 text-sm leading-relaxed pl-14 sm:pl-15 border-t border-white/[0.04]">
+                        <p className="pt-3">{faq.a}</p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
         </div>
 
         <div className="mt-10 text-center">
@@ -72,7 +124,7 @@ export const HomeFaq: React.FC = () => {
             href="/pricing"
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-brand-400 hover:text-brand-300 transition-colors group"
           >
-            <span>View complete pricing breakdown & FAQ</span>
+            <span>View complete pricing breakdown &amp; FAQ</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

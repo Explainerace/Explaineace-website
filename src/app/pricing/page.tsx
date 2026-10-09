@@ -15,6 +15,7 @@ import {
 import { pricingTiers, pricingFaqs } from "@/data/pricing";
 import { siteConfig } from "@/data/siteConfig";
 import { WhatsAppIcon, UpworkIcon } from "@/components/Icons";
+import { PricingCalculator } from "@/components/PricingCalculator";
 
 export const metadata: Metadata = {
   title: "SaaS Video Production Pricing & Rates | Screencasts & Demos",
@@ -241,6 +242,11 @@ export default function PricingPage() {
               </div>
             );
           })}
+        </div>
+
+        {/* Interactive Pricing & ROI Calculator */}
+        <div className="mt-16 sm:mt-24">
+          <PricingCalculator />
         </div>
 
         {/* Payment & Contract Methods */}

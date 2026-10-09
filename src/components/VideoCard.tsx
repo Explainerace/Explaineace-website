@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Play, Clock, ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { Play, Clock, ArrowUpRight } from "lucide-react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Project } from "@/types";
 
 interface VideoCardProps {
@@ -13,6 +14,45 @@ interface VideoCardProps {
 
 export const VideoCard: React.FC<VideoCardProps> = ({ project, onPlay }) => {
   const [imgError, setImgError] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const cardRef = useRef<HTMLElement>(null);
+
+  // Mouse coordinates normalized (-0.5 to 0.5) for 3D tilt
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  // Pointer position in pixels for spotlight glow
+  const glowX = useMotionValue(0);
+  const glowY = useMotionValue(0);
+
+  // Damped spring physics for smooth, buttery tilt return
+  const springConfig = { damping: 25, stiffness: 260 };
+  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [7, -7]), springConfig);
+  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-7, 7]), springConfig);
+  const brightness = useSpring(useTransform(mouseY, [-0.5, 0.5], [1.04, 0.96]), springConfig);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    glowX.set(x);
+    glowY.set(y);
+
+    mouseX.set(x / rect.width - 0.5);
+    mouseY.set(y / rect.height - 0.5);
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    mouseX.set(0);
+    mouseY.set(0);
+  };
 
   // High quality fallback thumbnail URL if maxres/hq is missing
   const posterSrc = imgError
@@ -20,105 +60,145 @@ export const VideoCard: React.FC<VideoCardProps> = ({ project, onPlay }) => {
     : project.thumbnail;
 
   return (
-    <article className="h-full group relative flex flex-col bg-surface-card border border-white/[0.08] hover:border-brand-500/40 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-card hover:-translate-y-1">
-      {/* Thumbnail & Play Overlay Container */}
-      <div
-        className="relative aspect-video w-full bg-surface-subtle cursor-pointer overflow-hidden"
-        onClick={() => onPlay(project)}
+    <div style={{ perspective: 1000 }} className="h-full">
+      <motion.article
+        ref={cardRef}
+        onMouseMove={handleMouseMove}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          rotateX,
+          rotateY,
+          transformStyle: "preserve-3d",
+          filter: `brightness(${brightness})`,
+        }}
+        className="h-full group relative flex flex-col bg-surface-card border border-white/[0.08] hover:border-brand-500/50 rounded-2xl overflow-hidden transition-colors duration-300 shadow-card hover:shadow-glow/20"
       >
-        <Image
-          src={posterSrc}
-          alt={project.title}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-          onError={() => setImgError(true)}
-          loading="lazy"
-        />
-
-        {/* Ambient Dark Gradient on bottom */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-
-        {/* Category Pill on top left */}
-        <div className="absolute top-3 left-3 z-10">
-          <span className="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-brand-300 border border-white/[0.1]">
-            {project.category}
-          </span>
-        </div>
-
-        {/* Duration badge on top right */}
-        {project.duration && (
-          <div className="absolute top-3 right-3 z-10 flex items-center gap-1 text-[11px] font-medium px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-slate-300 border border-white/[0.1]">
-            <Clock className="w-3 h-3 text-slate-400" />
-            <span>{project.duration}</span>
-          </div>
+        {/* Dynamic Pointer Spotlight Glow */}
+        {isHovered && (
+          <motion.div
+            className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30"
+            style={{
+              background: useTransform(
+                [glowX, glowY],
+                ([x, y]) =>
+                  `radial-gradient(380px circle at ${x}px ${y}px, rgba(99, 102, 241, 0.18), transparent 70%)`
+              ),
+            }}
+          />
         )}
 
-        {/* Centered Play Button */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <button
-            type="button"
-            className="w-12 h-12 rounded-full bg-brand-600/90 text-white flex items-center justify-center shadow-glow group-hover:scale-110 group-hover:bg-brand-500 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400"
-            aria-label={`Play video for ${project.title}`}
-          >
-            <Play className="w-5 h-5 fill-white ml-0.5" />
-          </button>
-        </div>
+        {/* Thumbnail & Play Overlay Container */}
+        <div
+          className="relative aspect-video w-full bg-surface-subtle cursor-pointer overflow-hidden"
+          onClick={() => onPlay(project)}
+        >
+          <Image
+            src={posterSrc}
+            alt={project.title}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+            onError={() => setImgError(true)}
+            loading="lazy"
+          />
 
-        {/* Bottom indicator inside thumbnail */}
-        <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[11px] text-slate-300 pointer-events-none">
-          <span className="font-medium truncate text-white/90">{project.client}</span>
-          <span className="text-[10px] text-slate-400 bg-white/[0.1] px-1.5 py-0.5 rounded">
-            1080p
-          </span>
-        </div>
-      </div>
+          {/* Specular Diagonal Glass Sheen Sweep */}
+          <div
+            className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/[0.12] to-transparent skew-x-12 z-20"
+            aria-hidden="true"
+          />
 
-      {/* Content Section */}
-      <div className="p-5 flex-1 flex flex-col justify-between">
-        <div>
-          <div className="flex items-start justify-between gap-2">
-            <h3
-              onClick={() => onPlay(project)}
-              className="font-semibold text-base text-white group-hover:text-brand-300 transition-colors cursor-pointer line-clamp-1"
+          {/* Ambient Dark Gradient on bottom */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
+
+          {/* Category Pill on top left */}
+          <div className="absolute top-3 left-3 z-10">
+            <span className="text-[11px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-brand-300 border border-white/[0.1] shadow-sm">
+              {project.category}
+            </span>
+          </div>
+
+          {/* Duration badge on top right */}
+          {project.duration && (
+            <div className="absolute top-3 right-3 z-10 flex items-center gap-1 text-[11px] font-medium px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-md text-slate-300 border border-white/[0.1]">
+              <Clock className="w-3 h-3 text-slate-400" />
+              <span>{project.duration}</span>
+            </div>
+          )}
+
+          {/* Centered Play Button with Spring Physics */}
+          <div className="absolute inset-0 flex items-center justify-center z-10">
+            <motion.button
+              type="button"
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.92 }}
+              transition={{ type: "spring", stiffness: 400, damping: 20 }}
+              className="relative w-12 h-12 rounded-full bg-brand-600/90 text-white flex items-center justify-center shadow-glow group-hover:bg-brand-500 transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400"
+              aria-label={`Play video for ${project.title}`}
             >
-              {project.title}
-            </h3>
+              {/* Play ripple pulse ring */}
+              <span className="absolute -inset-1 rounded-full bg-brand-400/20 opacity-0 group-hover:opacity-100 group-hover:animate-ping pointer-events-none" />
+              <Play className="w-5 h-5 fill-white ml-0.5 relative z-10" />
+            </motion.button>
+          </div>
+
+          {/* Bottom indicator inside thumbnail */}
+          <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[11px] text-slate-300 pointer-events-none z-10">
+            <span className="font-medium truncate text-white/90">{project.client}</span>
+            <span className="text-[10px] text-slate-400 bg-white/[0.1] px-1.5 py-0.5 rounded backdrop-blur-xs font-mono">
+              1080p
+            </span>
+          </div>
+        </div>
+
+        {/* Content Section */}
+        <div className="p-5 flex-1 flex flex-col justify-between relative z-10">
+          <div>
+            <div className="flex items-start justify-between gap-2">
+              <h3
+                onClick={() => onPlay(project)}
+                className="font-semibold text-base text-white group-hover:text-brand-300 transition-colors cursor-pointer line-clamp-1"
+              >
+                {project.title}
+              </h3>
+              <Link
+                href={`/work/${project.id}`}
+                className="text-slate-400 hover:text-white p-1 rounded hover:bg-white/[0.06] transition-colors shrink-0"
+                title="View Case Study Details"
+              >
+                <ArrowUpRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            <p className="mt-2 text-xs sm:text-sm text-slate-400 line-clamp-2 leading-relaxed">
+              {project.description}
+            </p>
+          </div>
+
+          {/* Tags / Service Pills */}
+          <div className="mt-4 pt-3.5 border-t border-white/[0.06] flex items-center justify-between">
+            <div className="flex flex-wrap gap-1.5">
+              {project.tags.slice(0, 3).map((tag) => (
+                <span
+                  key={tag}
+                  className="text-[10px] text-slate-400 bg-white/[0.04] px-2 py-0.5 rounded-md border border-white/[0.04]"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
             <Link
               href={`/work/${project.id}`}
-              className="text-slate-400 hover:text-white p-1 rounded hover:bg-white/[0.06] transition-colors shrink-0"
-              title="View Case Study Details"
+              className="text-[11px] font-medium text-brand-400 hover:text-brand-300 transition-colors flex items-center gap-1 shrink-0 ml-2 group/link"
             >
-              <ArrowUpRight className="w-4 h-4" />
+              <span>Details</span>
+              <span className="group-hover/link:translate-x-0.5 transition-transform">&rarr;</span>
             </Link>
           </div>
-
-          <p className="mt-2 text-xs sm:text-sm text-slate-400 line-clamp-2 leading-relaxed">
-            {project.description}
-          </p>
         </div>
-
-        {/* Tags / Service Pills */}
-        <div className="mt-4 pt-3.5 border-t border-white/[0.06] flex items-center justify-between">
-          <div className="flex flex-wrap gap-1.5">
-            {project.tags.slice(0, 3).map((tag) => (
-              <span
-                key={tag}
-                className="text-[10px] text-slate-400 bg-white/[0.04] px-2 py-0.5 rounded-md border border-white/[0.04]"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-
-          <Link
-            href={`/work/${project.id}`}
-            className="text-[11px] font-medium text-brand-400 hover:text-brand-300 transition-colors flex items-center gap-1 shrink-0 ml-2"
-          >
-            Details &rarr;
-          </Link>
-        </div>
-      </div>
-    </article>
+      </motion.article>
+    </div>
   );
 };

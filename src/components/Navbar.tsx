@@ -8,11 +8,13 @@ import { WhatsAppIcon } from "@/components/Icons";
 import { siteConfig } from "@/data/siteConfig";
 
 import { BrandLogo } from "@/components/BrandLogo";
+import { motion } from "framer-motion";
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const [hoveredPath, setHoveredPath] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,21 +47,37 @@ export const Navbar: React.FC = () => {
           <BrandLogo size="md" />
         </Link>
 
-        {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-1 bg-surface-card/60 border border-white/[0.06] rounded-full px-4 py-1.5 backdrop-blur-md">
+        {/* Desktop Navigation Links with Magnetic Sliding Pill */}
+        <nav
+          onMouseLeave={() => setHoveredPath(null)}
+          className="hidden md:flex items-center gap-1 bg-surface-card/60 border border-white/[0.06] rounded-full px-2 py-1 backdrop-blur-md relative"
+        >
           {siteConfig.navLinks.map((link) => {
             const isActive = pathname === link.href;
+            const isHovered = (hoveredPath || pathname) === link.href;
+
             return (
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium px-4 py-1.5 rounded-full transition-all duration-200 ${
-                  isActive
-                    ? "text-white bg-brand-600/30 border border-brand-500/40 shadow-sm"
-                    : "text-slate-300 hover:text-white hover:bg-white/[0.05]"
+                onMouseEnter={() => setHoveredPath(link.href)}
+                className={`relative text-sm font-medium px-4 py-1.5 rounded-full transition-colors duration-200 z-10 ${
+                  isActive ? "text-white font-semibold" : "text-slate-300 hover:text-white"
                 }`}
               >
-                {link.name}
+                {/* Magnetic Sliding Pill */}
+                {isHovered && (
+                  <motion.span
+                    layoutId="navbar-pill"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    className={`absolute inset-0 rounded-full z-[-1] ${
+                      isActive
+                        ? "bg-brand-600/35 border border-brand-500/50 shadow-sm"
+                        : "bg-white/[0.08] border border-white/[0.06]"
+                    }`}
+                  />
+                )}
+                <span>{link.name}</span>
               </Link>
             );
           })}
@@ -80,8 +98,13 @@ export const Navbar: React.FC = () => {
 
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-2 text-xs font-semibold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 px-4 py-2.5 rounded-full shadow-glow hover:shadow-glow-lg transition-all duration-200 active:scale-95"
+            className="group relative inline-flex items-center gap-2 text-xs font-semibold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 px-4 py-2.5 rounded-full shadow-glow hover:shadow-glow-lg transition-all duration-200 active:scale-95"
           >
+            {/* Live Availability Radar Dot */}
+            <span className="relative flex h-2 w-2 mr-0.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+            </span>
             <span>Start a Project</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
           </Link>

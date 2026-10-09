@@ -17,6 +17,9 @@ import {
 import { siteConfig } from "@/data/siteConfig";
 import { projects } from "@/data/projects";
 import { VideoModal } from "@/components/VideoModal";
+import { HeroCanvas } from "@/components/motion/HeroCanvas";
+import { HeroTimelineScrubber } from "@/components/HeroTimelineScrubber";
+import { motion } from "framer-motion";
 
 export const Hero: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -51,6 +54,7 @@ export const Hero: React.FC = () => {
     <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-24 overflow-hidden">
       {/* Ambient background glow contained */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <HeroCanvas />
         <div className="absolute inset-0 bg-grid" />
         <div className="aurora absolute top-[8%] left-1/2 -translate-x-1/2 w-[640px] h-[380px] bg-brand-600/20 blur-[120px] rounded-full" />
         <div className="aurora-slow absolute top-1/3 right-[-5%] w-[340px] h-[340px] bg-accent-cyan/15 blur-[110px] rounded-full" />
@@ -122,7 +126,26 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Hero Visual: Interactive Software UI Video Window & Gallery Stage */}
-        <div className="stage-enter mt-12 sm:mt-16 max-w-5xl mx-auto w-full space-y-6">
+        <div className="stage-enter mt-12 sm:mt-16 max-w-5xl mx-auto w-full space-y-6 relative">
+          {/* Floating Pro Badges */}
+          <motion.div
+            animate={{ y: [-4, 4, -4] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="hidden lg:flex items-center gap-2 absolute -top-5 -left-4 z-30 px-3.5 py-1.5 rounded-full bg-[#0A0D14]/90 border border-brand-500/30 backdrop-blur-md shadow-glow text-xs text-brand-300 font-semibold"
+          >
+            <span className="w-2 h-2 rounded-full bg-accent-cyan animate-pulse" />
+            <span>✦ Native 4K Screencasts</span>
+          </motion.div>
+
+          <motion.div
+            animate={{ y: [4, -4, 4] }}
+            transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+            className="hidden lg:flex items-center gap-2 absolute -top-5 -right-4 z-30 px-3.5 py-1.5 rounded-full bg-[#0A0D14]/90 border border-emerald-500/30 backdrop-blur-md shadow-glow text-xs text-emerald-400 font-semibold"
+          >
+            <span className="w-2 h-2 rounded-full bg-emerald-400" />
+            <span>⚡ Fast 48h Turnaround</span>
+          </motion.div>
+
           {/* Main Stage Video Player Window */}
           <div
             className="relative rounded-2xl p-1 sm:p-2 bg-gradient-to-b from-white/15 to-white/5 shadow-2xl group cursor-pointer w-full"
@@ -238,16 +261,11 @@ export const Hero: React.FC = () => {
                   <ChevronRight className="w-5 h-5" />
                 </button>
 
-                {/* Simulated Scrubber Bar */}
-                <div className="absolute bottom-0 inset-x-0 p-2 sm:p-3 bg-gradient-to-t from-black via-black/80 to-transparent">
-                  <div className="flex items-center gap-2 sm:gap-3">
-                    <span className="text-[10px] sm:text-[11px] text-slate-300 font-mono">00:45</span>
-                    <div className="flex-1 h-1.5 bg-white/20 rounded-full overflow-hidden">
-                      <div key={activeProject.id} className="scrub-progress h-full w-full bg-gradient-to-r from-brand-500 to-accent-cyan rounded-full" />
-                    </div>
-                    <span className="text-[10px] sm:text-[11px] text-slate-400 font-mono">{activeProject.duration}</span>
-                  </div>
-                </div>
+                {/* Simulated Live Video Editor Scrubber Bar */}
+                <HeroTimelineScrubber
+                  projectId={activeProject.id}
+                  duration={activeProject.duration}
+                />
               </div>
             </div>
           </div>
