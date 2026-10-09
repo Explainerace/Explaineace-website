@@ -4,7 +4,6 @@ import React, { useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Play, Clock, ArrowUpRight } from "lucide-react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Project } from "@/types";
 
 interface VideoCardProps {
@@ -15,21 +14,8 @@ interface VideoCardProps {
 export const VideoCard: React.FC<VideoCardProps> = ({ project, onPlay }) => {
   const [imgError, setImgError] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
   const cardRef = useRef<HTMLElement>(null);
-
-  // Mouse coordinates normalized (-0.5 to 0.5) for 3D tilt
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  // Pointer position in pixels for spotlight glow
-  const glowX = useMotionValue(0);
-  const glowY = useMotionValue(0);
-
-  // Damped spring physics for smooth, buttery tilt return
-  const springConfig = { damping: 25, stiffness: 260 };
-  const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [7, -7]), springConfig);
-  const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-7, 7]), springConfig);
-  const brightness = useSpring(useTransform(mouseY, [-0.5, 0.5], [1.04, 0.96]), springConfig);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
     if (!cardRef.current) return;
@@ -37,11 +23,14 @@ export const VideoCard: React.FC<VideoCardProps> = ({ project, onPlay }) => {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    glowX.set(x);
-    glowY.set(y);
+    // Calculate 3D tilt angles: -7deg to +7deg
+    const rotateX = ((y / rect.height) - 0.5) * -12;
+    const rotateY = ((x / rect.width) - 0.5) * 12;
+    setTilt({ x: rotateX, y: rotateY });
 
-    mouseX.set(x / rect.width - 0.5);
-    mouseY.set(y / rect.height - 0.5);
+    // Set cursor coordinates for CSS spotlight glow
+    cardRef.current.style.setProperty("--mx", `${x}px`);
+    cardRef.current.style.setProperty("--my", `${y}px`);
   };
 
   const handleMouseEnter = () => {
@@ -50,8 +39,7 @@ export const VideoCard: React.FC<VideoCardProps> = ({ project, onPlay }) => {
 
   const handleMouseLeave = () => {
     setIsHovered(false);
-    mouseX.set(0);
-    mouseY.set(0);
+    setTilt({ x: 0, y: 0 });
   };
 
   // High quality fallback thumbnail URL if maxres/hq is missing
@@ -61,32 +49,31 @@ export const VideoCard: React.FC<VideoCardProps> = ({ project, onPlay }) => {
 
   return (
     <div style={{ perspective: 1000 }} className="h-full">
-      <motion.article
+      <article
         ref={cardRef}
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         style={{
-          rotateX,
-          rotateY,
+          transform: isHovered
+            ? `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) translateY(-4px)`
+            : "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)",
+          transition: isHovered
+            ? "transform 0.1s ease-out, border-color 0.3s ease, box-shadow 0.3s ease"
+            : "transform 0.4s ease-out, border-color 0.3s ease, box-shadow 0.3s ease",
           transformStyle: "preserve-3d",
-          filter: `brightness(${brightness})`,
         }}
-        className="h-full group relative flex flex-col bg-surface-card border border-white/[0.08] hover:border-brand-500/50 rounded-2xl overflow-hidden transition-colors duration-300 shadow-card hover:shadow-glow/20"
+        className="h-full group relative flex flex-col bg-surface-card border border-white/[0.08] hover:border-brand-500/50 rounded-2xl overflow-hidden shadow-card hover:shadow-glow/20 will-change-transform"
       >
-        {/* Dynamic Pointer Spotlight Glow */}
-        {isHovered && (
-          <motion.div
-            className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30"
-            style={{
-              background: useTransform(
-                [glowX, glowY],
-                ([x, y]) =>
-                  `radial-gradient(380px circle at ${x}px ${y}px, rgba(99, 102, 241, 0.18), transparent 70%)`
-              ),
-            }}
-          />
-        )}
+        {/* Dynamic Pointer Spotlight Glow via CSS Variables */}
+        <div
+          className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30"
+          style={{
+            background:
+              "radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), rgba(99, 102, 241, 0.18), transparent 70%)",
+          }}
+          aria-hidden="true"
+        />
 
         {/* Thumbnail & Play Overlay Container */}
         <div
@@ -129,18 +116,15 @@ export const VideoCard: React.FC<VideoCardProps> = ({ project, onPlay }) => {
 
           {/* Centered Play Button with Spring Physics */}
           <div className="absolute inset-0 flex items-center justify-center z-10">
-            <motion.button
+            <button
               type="button"
-              whileHover={{ scale: 1.15 }}
-              whileTap={{ scale: 0.92 }}
-              transition={{ type: "spring", stiffness: 400, damping: 20 }}
-              className="relative w-12 h-12 rounded-full bg-brand-600/90 text-white flex items-center justify-center shadow-glow group-hover:bg-brand-500 transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400"
+              className="relative w-12 h-12 rounded-full bg-brand-600/90 text-white flex items-center justify-center shadow-glow group-hover:bg-brand-500 group-hover:scale-110 active:scale-95 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400"
               aria-label={`Play video for ${project.title}`}
             >
               {/* Play ripple pulse ring */}
               <span className="absolute -inset-1 rounded-full bg-brand-400/20 opacity-0 group-hover:opacity-100 group-hover:animate-ping pointer-events-none" />
               <Play className="w-5 h-5 fill-white ml-0.5 relative z-10" />
-            </motion.button>
+            </button>
           </div>
 
           {/* Bottom indicator inside thumbnail */}
@@ -198,7 +182,7 @@ export const VideoCard: React.FC<VideoCardProps> = ({ project, onPlay }) => {
             </Link>
           </div>
         </div>
-      </motion.article>
+      </article>
     </div>
   );
 };

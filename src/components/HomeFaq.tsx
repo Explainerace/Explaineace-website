@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { HelpCircle, ArrowRight, ChevronDown } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 export const homeFaqs = [
   {
@@ -89,31 +88,26 @@ export const HomeFaq: React.FC = () => {
                     </h3>
                   </div>
 
-                  <motion.div
-                    animate={{ rotate: isOpen ? 180 : 0 }}
-                    transition={{ duration: 0.25, ease: "easeInOut" }}
-                    className="shrink-0 p-1.5 rounded-full bg-white/[0.05] text-slate-300 hover:text-white"
+                  <div
+                    className={`shrink-0 p-1.5 rounded-full bg-white/[0.05] text-slate-300 hover:text-white transition-transform duration-300 ${
+                      isOpen ? "rotate-180 text-white bg-white/[0.1]" : "rotate-0"
+                    }`}
                   >
                     <ChevronDown className="w-4 h-4" />
-                  </motion.div>
+                  </div>
                 </button>
 
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      key="content"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-6 pb-6 sm:px-7 sm:pb-7 pt-0 text-slate-300 text-sm leading-relaxed pl-14 sm:pl-15 border-t border-white/[0.04]">
-                        <p className="pt-3">{faq.a}</p>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                <div
+                  className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                    isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="px-6 pb-6 sm:px-7 sm:pb-7 pt-0 text-slate-300 text-sm leading-relaxed pl-14 sm:pl-15 border-t border-white/[0.04]">
+                      <p className="pt-3">{faq.a}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             );
           })}

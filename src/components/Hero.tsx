@@ -17,9 +17,7 @@ import {
 import { siteConfig } from "@/data/siteConfig";
 import { projects } from "@/data/projects";
 import { VideoModal } from "@/components/VideoModal";
-import { HeroCanvas } from "@/components/motion/HeroCanvas";
 import { HeroTimelineScrubber } from "@/components/HeroTimelineScrubber";
-import { motion } from "framer-motion";
 
 export const Hero: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -54,7 +52,6 @@ export const Hero: React.FC = () => {
     <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-24 overflow-hidden">
       {/* Ambient background glow contained */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <HeroCanvas />
         <div className="absolute inset-0 bg-grid" />
         <div className="aurora absolute top-[8%] left-1/2 -translate-x-1/2 w-[640px] h-[380px] bg-brand-600/20 blur-[120px] rounded-full" />
         <div className="aurora-slow absolute top-1/3 right-[-5%] w-[340px] h-[340px] bg-accent-cyan/15 blur-[110px] rounded-full" />
@@ -127,24 +124,19 @@ export const Hero: React.FC = () => {
 
         {/* Hero Visual: Interactive Software UI Video Window & Gallery Stage */}
         <div className="stage-enter mt-12 sm:mt-16 max-w-5xl mx-auto w-full space-y-6 relative">
-          {/* Floating Pro Badges */}
-          <motion.div
-            animate={{ y: [-4, 4, -4] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="hidden lg:flex items-center gap-2 absolute -top-5 -left-4 z-30 px-3.5 py-1.5 rounded-full bg-[#0A0D14]/90 border border-brand-500/30 backdrop-blur-md shadow-glow text-xs text-brand-300 font-semibold"
-          >
+          {/* Floating Pro Badges with pure CSS float-slow */}
+          <div className="hidden lg:flex items-center gap-2 absolute -top-5 -left-4 z-30 px-3.5 py-1.5 rounded-full bg-[#0A0D14]/90 border border-brand-500/30 backdrop-blur-md shadow-glow text-xs text-brand-300 font-semibold float-slow">
             <span className="w-2 h-2 rounded-full bg-accent-cyan animate-pulse" />
             <span>✦ Native 4K Screencasts</span>
-          </motion.div>
+          </div>
 
-          <motion.div
-            animate={{ y: [4, -4, 4] }}
-            transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-            className="hidden lg:flex items-center gap-2 absolute -top-5 -right-4 z-30 px-3.5 py-1.5 rounded-full bg-[#0A0D14]/90 border border-emerald-500/30 backdrop-blur-md shadow-glow text-xs text-emerald-400 font-semibold"
+          <div
+            style={{ animationDelay: "-3s" }}
+            className="hidden lg:flex items-center gap-2 absolute -top-5 -right-4 z-30 px-3.5 py-1.5 rounded-full bg-[#0A0D14]/90 border border-emerald-500/30 backdrop-blur-md shadow-glow text-xs text-emerald-400 font-semibold float-slow"
           >
             <span className="w-2 h-2 rounded-full bg-emerald-400" />
             <span>⚡ Fast 48h Turnaround</span>
-          </motion.div>
+          </div>
 
           {/* Main Stage Video Player Window */}
           <div

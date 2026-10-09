@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { Play, Pause, Sparkles, Volume2, ZoomIn, MousePointer2 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 interface Keyframe {
   id: string;
@@ -179,26 +178,20 @@ export const HeroTimelineScrubber: React.FC<HeroTimelineScrubberProps> = ({
               />
 
               {/* Tooltip on hover/click */}
-              <AnimatePresence>
-                {isHovered && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 6, scale: 0.9 }}
-                    animate={{ opacity: 1, y: -28, scale: 1 }}
-                    exit={{ opacity: 0, y: 4, scale: 0.9 }}
-                    transition={{ duration: 0.15 }}
-                    className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 pointer-events-none whitespace-nowrap bg-black/90 backdrop-blur-md border border-white/20 rounded-md px-2 py-1 text-[10px] text-white font-medium shadow-xl flex items-center gap-1.5 z-40"
-                  >
-                    {kf.icon === "zoom" && <ZoomIn className="w-3 h-3 text-accent-cyan" />}
-                    {kf.icon === "cursor" && <MousePointer2 className="w-3 h-3 text-brand-400" />}
-                    {kf.icon === "sparkles" && <Sparkles className="w-3 h-3 text-amber-400" />}
-                    {kf.icon === "play" && <Play className="w-2.5 h-2.5 fill-emerald-400 text-emerald-400" />}
-                    <span>{kf.label}</span>
-                    <span className="text-slate-400 font-mono text-[9px] bg-white/10 px-1 py-0.2 rounded">
-                      {kf.tag}
-                    </span>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              {isHovered && (
+                <div
+                  className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 pointer-events-none whitespace-nowrap bg-black/95 backdrop-blur-md border border-white/20 rounded-md px-2 py-1 text-[10px] text-white font-medium shadow-xl flex items-center gap-1.5 z-40 transition-all duration-150 animate-fade-in -translate-y-1"
+                >
+                  {kf.icon === "zoom" && <ZoomIn className="w-3 h-3 text-accent-cyan" />}
+                  {kf.icon === "cursor" && <MousePointer2 className="w-3 h-3 text-brand-400" />}
+                  {kf.icon === "sparkles" && <Sparkles className="w-3 h-3 text-amber-400" />}
+                  {kf.icon === "play" && <Play className="w-2.5 h-2.5 fill-emerald-400 text-emerald-400" />}
+                  <span>{kf.label}</span>
+                  <span className="text-slate-400 font-mono text-[9px] bg-white/10 px-1 py-0.2 rounded">
+                    {kf.tag}
+                  </span>
+                </div>
+              )}
             </div>
           );
         })}

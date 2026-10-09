@@ -12,7 +12,6 @@ import {
   Calculator,
   Flame,
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import { WhatsAppIcon } from "@/components/Icons";
 
 interface ServiceOption {

@@ -8,13 +8,11 @@ import { WhatsAppIcon } from "@/components/Icons";
 import { siteConfig } from "@/data/siteConfig";
 
 import { BrandLogo } from "@/components/BrandLogo";
-import { motion } from "framer-motion";
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const [hoveredPath, setHoveredPath] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,37 +45,22 @@ export const Navbar: React.FC = () => {
           <BrandLogo size="md" />
         </Link>
 
-        {/* Desktop Navigation Links with Magnetic Sliding Pill */}
-        <nav
-          onMouseLeave={() => setHoveredPath(null)}
-          className="hidden md:flex items-center gap-1 bg-surface-card/60 border border-white/[0.06] rounded-full px-2 py-1 backdrop-blur-md relative"
-        >
+        {/* Desktop Navigation Links */}
+        <nav className="hidden md:flex items-center gap-1 bg-surface-card/60 border border-white/[0.06] rounded-full px-3 py-1 backdrop-blur-md">
           {siteConfig.navLinks.map((link) => {
             const isActive = pathname === link.href;
-            const isHovered = (hoveredPath || pathname) === link.href;
 
             return (
               <Link
                 key={link.name}
                 href={link.href}
-                onMouseEnter={() => setHoveredPath(link.href)}
-                className={`relative text-sm font-medium px-4 py-1.5 rounded-full transition-colors duration-200 z-10 ${
-                  isActive ? "text-white font-semibold" : "text-slate-300 hover:text-white"
+                className={`relative text-sm font-medium px-4 py-1.5 rounded-full transition-all duration-200 ${
+                  isActive
+                    ? "text-white font-semibold bg-brand-600/35 border border-brand-500/50 shadow-sm"
+                    : "text-slate-300 hover:text-white hover:bg-white/[0.08]"
                 }`}
               >
-                {/* Magnetic Sliding Pill */}
-                {isHovered && (
-                  <motion.span
-                    layoutId="navbar-pill"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                    className={`absolute inset-0 rounded-full z-[-1] ${
-                      isActive
-                        ? "bg-brand-600/35 border border-brand-500/50 shadow-sm"
-                        : "bg-white/[0.08] border border-white/[0.06]"
-                    }`}
-                  />
-                )}
-                <span>{link.name}</span>
+                {link.name}
               </Link>
             );
           })}
