@@ -142,13 +142,13 @@ export const Footer: React.FC = () => {
               {/* YouTube */}
               <li>
                 <a
-                  href={siteConfig.youtube.playlistUrl}
+                  href={siteConfig.youtube.channelUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-slate-300 hover:text-white transition-colors group text-sm"
                 >
                   <YoutubeIcon className="w-4 h-4 text-red-500 shrink-0" />
-                  <span>YouTube Portfolio</span>
+                  <span>YouTube: @Explainerace</span>
                   <ExternalLink className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition-colors" />
                 </a>
               </li>

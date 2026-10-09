@@ -1405,7 +1405,7 @@ export const projects: Project[] = [
     id: "screencast-production-showcase",
     title: "Screencast Video Production Service Showcase",
     category: "Explainers",
-    client: "Video Supremacy",
+    client: "ExplainerAce",
     industry: "Video Production & Tutorial Creation",
     description:
       "A comprehensive screencast video production service showcase highlighting screen capture craft, zoom post-production, cursor tracking, and studio voiceovers.",

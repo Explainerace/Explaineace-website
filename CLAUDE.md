@@ -13,8 +13,9 @@ This file provides Claude (Claude Code, Claude Projects, or web interface) with 
   - **AI UGC & Product Video Ads**: $200 – $300 / ad (hyper-realistic AI creators, 3s hook testing, kinetic captions)
   - **Custom UI Motion Graphics Explainers**: $800 – $1,200 (bespoke 2D/3D vector UI reconstruction)
 - **Primary Contact**:
-  - Email: `hello@explainerace.com` (do NOT use old gmail)
+  - Email: `ali@explainerace.com` (do NOT use old gmail)
   - WhatsApp: `+92 313 9110721` (`wa.me/923139110721`)
+  - YouTube: `https://www.youtube.com/@Explainerace` (@Explainerace)
   - Fiverr: Level 2 Seller (@video_supermacy, @explainerace) · 4.8★ / 157+ reviews
   - Upwork: Direct Contract (0% client marketplace fee escrow)
 
@@ -87,7 +88,7 @@ Whenever making changes, always:
    - The user explicitly requested: keep the 4.8/5 (157 reviews) as plain text linking to Fiverr.
    - Do NOT mark up reviews with Google schema to prevent rich-snippet review penalties.
 2. **Contact Email Sitewide**:
-   - Always use `hello@explainerace.com`. Never re-introduce `explaineracepro@gmail.com`.
+   - Always use `ali@explainerace.com`. Never re-introduce `explaineracepro@gmail.com`.
 3. **Contact Details Initial HTML**:
    - `/contact` must render phone `+923139110721`, email, WhatsApp, Upwork, and Fiverr in the initial server HTML (no client-only loading placeholders).
 4. **4 Dedicated Service Pages**:
