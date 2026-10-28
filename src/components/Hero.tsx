@@ -7,22 +7,16 @@ import {
   Play,
   ArrowRight,
   Star,
-  Monitor,
-  MousePointer2,
   ChevronLeft,
   ChevronRight,
-  Sparkles,
   Layers,
-  Volume2,
 } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 import { projects } from "@/data/projects";
 import { VideoModal } from "@/components/VideoModal";
-import { HeroTimelineScrubber } from "@/components/HeroTimelineScrubber";
 
 export const Hero: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  // Feature the premier 3D UI Motion Graphics project (Orbitra One) on the hero stage
   const motionProject = projects.find((p) => p.id === "orbitra-one-saas-promo");
   const otherProjects = projects.filter((p) => p.id !== "orbitra-one-saas-promo");
   const galleryVideos = [motionProject, ...otherProjects].filter(Boolean).slice(0, 10) as typeof projects;
@@ -31,17 +25,6 @@ export const Hero: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const activeProject = galleryVideos[currentIndex] || galleryVideos[0];
-  const isMotionVideo = activeProject?.id === "orbitra-one-saas-promo";
-
-  const handlePrev = (e?: React.MouseEvent) => {
-    e?.stopPropagation();
-    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : galleryVideos.length - 1));
-  };
-
-  const handleNext = (e?: React.MouseEvent) => {
-    e?.stopPropagation();
-    setCurrentIndex((prev) => (prev < galleryVideos.length - 1 ? prev + 1 : 0));
-  };
 
   const scrollGallery = (direction: "left" | "right") => {
     if (scrollRef.current) {
@@ -81,8 +64,32 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Central Headline & Copy */}
-        <div className="text-center max-w-4xl mx-auto">
+        {/* Central Headline & Copy with Native Background Motion Graphics */}
+        <div className="relative text-center max-w-4xl mx-auto py-4 sm:py-6">
+          {/* Native Ambient Motion Graphics Video (Seamless, non-embedded) */}
+          <div
+            className="absolute inset-0 -inset-x-8 sm:-inset-x-24 -inset-y-6 sm:-inset-y-12 -z-10 overflow-hidden pointer-events-none rounded-3xl opacity-35 sm:opacity-45"
+            style={{
+              WebkitMaskImage: "radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 75%)",
+              maskImage: "radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 75%)",
+            }}
+          >
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              className="w-full h-full object-cover scale-105 filter saturate-125"
+            >
+              <source src="/hero-motion.webm" type="video/webm" />
+              <source src="/hero-motion.mp4" type="video/mp4" />
+            </video>
+            {/* Dark vignette blending so text remains 100% crisp and readable */}
+            <div className="absolute inset-0 bg-gradient-to-t from-surface-bg via-transparent to-surface-bg pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-r from-surface-bg/70 via-transparent to-surface-bg/70 pointer-events-none" />
+          </div>
+
           <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-white leading-[1.15] sm:leading-[1.1] break-words">
             <span className="line-mask">
               <span className="line-rise" style={{ "--d": "80ms" } as React.CSSProperties}>
@@ -127,171 +134,50 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Hero Visual: Interactive Software UI Video Window & Gallery Stage */}
-        <div className="stage-enter mt-12 sm:mt-16 max-w-5xl mx-auto w-full space-y-6 relative">
-          {/* Floating Pro Badges with pure CSS float-slow */}
-          <div className="hidden lg:flex items-center gap-2 absolute -top-5 -left-4 z-30 px-3.5 py-1.5 rounded-full bg-[#0A0D14]/90 border border-brand-500/30 backdrop-blur-md shadow-glow text-xs text-brand-300 font-semibold float-slow">
+        {/* Hero Visual: Native 3D UI Motion Graphics Showcase (Seamless, non-embedded) */}
+        <div className="stage-enter mt-10 sm:mt-14 max-w-5xl mx-auto w-full space-y-6 relative">
+          {/* Floating Pro Badges */}
+          <div className="hidden lg:flex items-center gap-2 absolute -top-4 -left-4 z-30 px-3.5 py-1.5 rounded-full bg-[#0A0D14]/90 border border-brand-500/30 backdrop-blur-md shadow-glow text-xs text-brand-300 font-semibold float-slow">
             <span className="w-2 h-2 rounded-full bg-accent-cyan animate-pulse" />
-            <span>✦ Native 4K Screencasts</span>
+            <span>✦ 3D UI Motion Graphics</span>
           </div>
 
           <div
             style={{ animationDelay: "-3s" }}
-            className="hidden lg:flex items-center gap-2 absolute -top-5 -right-4 z-30 px-3.5 py-1.5 rounded-full bg-[#0A0D14]/90 border border-emerald-500/30 backdrop-blur-md shadow-glow text-xs text-emerald-400 font-semibold float-slow"
+            className="hidden lg:flex items-center gap-2 absolute -top-4 -right-4 z-30 px-3.5 py-1.5 rounded-full bg-[#0A0D14]/90 border border-emerald-500/30 backdrop-blur-md shadow-glow text-xs text-emerald-400 font-semibold float-slow"
           >
             <span className="w-2 h-2 rounded-full bg-emerald-400" />
-            <span>⚡ Fast 48h Turnaround</span>
+            <span>⚡ 60 FPS Native Playback</span>
           </div>
 
-          {/* Main Stage Video Player Window with Ambient Motion Aura */}
-          <div className="relative group cursor-pointer w-full">
+          {/* Main Native Motion Graphics Video Container */}
+          <div className="relative w-full">
             {/* Dynamic Ambient Motion Aura Glow */}
-            <div className="absolute -inset-1.5 sm:-inset-3 bg-gradient-to-r from-brand-600/30 via-accent-cyan/25 to-accent-purple/30 rounded-3xl blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none -z-10" />
+            <div className="absolute -inset-1.5 sm:-inset-3 bg-gradient-to-r from-brand-600/30 via-accent-cyan/25 to-accent-purple/30 rounded-3xl blur-2xl opacity-75 pointer-events-none -z-10" />
 
-            <div
-              className="relative rounded-2xl p-1 sm:p-2 bg-gradient-to-b from-white/15 to-white/5 shadow-2xl w-full"
-              onClick={() => setModalOpen(true)}
-            >
-              {/* Window Container */}
-              <div className="relative rounded-xl overflow-hidden bg-[#0A0D14] border border-white/[0.08] w-full">
-                {/* Window Header / Titlebar */}
-                <div className="h-10 sm:h-11 bg-[#0E121B] px-3 sm:px-4 flex items-center justify-between border-b border-white/[0.06] overflow-hidden">
-                  <div className="flex items-center gap-1.5 sm:gap-2 truncate mr-2 min-w-0">
-                    <div className="w-2.5 h-2.5 rounded-full bg-red-500/80 shrink-0" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80 shrink-0" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 shrink-0" />
-                    <span className="ml-1 sm:ml-2 text-[11px] sm:text-xs font-medium text-slate-300 truncate flex items-center gap-1.5">
-                      <Monitor className="w-3.5 h-3.5 text-brand-400 shrink-0" />
-                      <span className="font-semibold text-white truncate">{activeProject.client}</span>
-                      <span className="text-slate-500 truncate hidden sm:inline">•</span>
-                      <span className="truncate hidden sm:inline text-slate-400">{activeProject.title}</span>
-                    </span>
-                  </div>
-
-                  <div className="flex items-center gap-2.5 text-xs text-slate-400 shrink-0">
-                    <span className="text-[11px] px-2 py-0.5 rounded-md bg-white/[0.06] text-slate-300 font-mono hidden sm:inline">
-                      {currentIndex + 1} / {galleryVideos.length}
-                    </span>
-                    <span className="text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded border border-emerald-400/20 text-[10px] sm:text-[11px] font-medium whitespace-nowrap">
-                      4K / 60 FPS
-                    </span>
-                  </div>
-                </div>
-
-                {/* Video Canvas Area */}
+            <div className="relative rounded-2xl sm:rounded-3xl p-1 sm:p-1.5 bg-gradient-to-b from-white/20 via-white/5 to-white/10 shadow-2xl w-full">
+              {/* Seamless Video Frame */}
+              <div className="relative rounded-xl sm:rounded-2xl overflow-hidden bg-[#0A0D14] border border-white/[0.1] w-full">
+                {/* 60 FPS Motion Graphics Video Stream */}
                 <div className="relative aspect-video w-full bg-[#0A0D14] overflow-hidden">
-                  {isMotionVideo ? (
-                    /* Live Web-Optimized Motion Graphics Loop */
-                    <div className="absolute inset-0 overflow-hidden">
-                      <video
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        preload="auto"
-                        poster={`https://img.youtube.com/vi/${activeProject.videoId}/maxresdefault.jpg`}
-                        className="w-full h-full object-cover"
-                      >
-                        <source src="/hero-motion.webm" type="video/webm" />
-                        <source src="/hero-motion.mp4" type="video/mp4" />
-                      </video>
-                    </div>
-                  ) : (
-                    /* Keyed thumbnail so each switch replays crossfade + slow push-in */
-                    <div key={activeProject.id} className="ken-burns absolute inset-0">
-                      <Image
-                        src={`https://img.youtube.com/vi/${activeProject.videoId}/maxresdefault.jpg`}
-                        alt={activeProject.title}
-                        fill
-                        priority
-                        sizes="(max-width: 1200px) 100vw, 1024px"
-                        className="object-cover"
-                      />
-                    </div>
-                  )}
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    className="w-full h-full object-cover"
+                  >
+                    <source src="/hero-motion.webm" type="video/webm" />
+                    <source src="/hero-motion.mp4" type="video/mp4" />
+                  </video>
 
-                  {/* Dark Vignette Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/35 pointer-events-none" />
-
-                  {/* Floating Video Annotations */}
-                  <div className="absolute top-4 left-4 hidden sm:flex items-center gap-2 bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/[0.1] text-xs text-white shadow-lg">
-                    <span className="w-2 h-2 rounded-full bg-accent-cyan animate-ping" />
-                    <span className="font-medium text-slate-200">
-                      {isMotionVideo
-                        ? "✦ Live 3D UI Motion Graphics (60 FPS)"
-                        : activeProject.id === "prim-automation"
-                        ? "Focal Zoom: 185% on Workflow Canvas"
-                        : "Focal Zoom: 180% on UI Highlights"}
-                    </span>
-                  </div>
-
-                  <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/[0.1] text-xs text-brand-300 font-semibold shadow-lg">
-                    <Sparkles className="w-3.5 h-3.5 text-brand-400" />
-                    <span>{isMotionVideo ? "Motion Graphics" : activeProject.category}</span>
-                  </div>
-
-                  <div className="absolute bottom-14 right-4 hidden sm:flex items-center gap-2 bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/[0.1] text-xs text-white shadow-lg">
-                    <MousePointer2 className="w-3.5 h-3.5 text-brand-400" />
-                    <span className="font-medium">Cursor Stabilization & Click Ripples</span>
-                  </div>
-
-                  {/* Demo cursor gliding across the stage with click ripples */}
-                  <div className="demo-cursor absolute z-10 pointer-events-none hidden sm:block" aria-hidden="true">
-                    <span className="demo-cursor-ripple absolute -left-4 -top-4 w-8 h-8 rounded-full border-2 border-accent-cyan bg-accent-cyan/20" />
-                    <MousePointer2 className="relative w-6 h-6 text-white fill-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]" />
-                  </div>
-
-                  {/* Center Play Button */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
-                    <div className="relative">
-                      <div className="absolute -inset-3 bg-brand-500/30 rounded-full blur-md animate-pulse" />
-                      <button
-                        type="button"
-                        className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-brand-600/85 hover:bg-brand-500 text-white flex items-center justify-center shadow-glow-lg group-hover:scale-110 backdrop-blur-sm border border-white/20 transition-all duration-300"
-                        aria-label={`Play ${activeProject.title}`}
-                      >
-                        <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-white ml-1" />
-                      </button>
-                    </div>
-                    <div className="mt-3 sm:mt-4 space-y-1">
-                      <span className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold text-white tracking-wide uppercase px-3.5 py-1 rounded-full bg-black/75 backdrop-blur-md border border-white/15 shadow-sm">
-                        <Volume2 className="w-3.5 h-3.5 text-accent-cyan" />
-                        <span>Watch in 4K with Audio · {activeProject.duration}</span>
-                      </span>
-                      <p className="text-xs sm:text-sm text-slate-200 font-medium drop-shadow-md">
-                        {activeProject.title}
-                      </p>
-                    </div>
-                  </div>
-
-                {/* Previous & Next Floating Overlay Controls */}
-                <button
-                  type="button"
-                  onClick={handlePrev}
-                  className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/60 hover:bg-brand-600/90 border border-white/15 text-white flex items-center justify-center backdrop-blur-md transition-all duration-200 hover:scale-110 shadow-lg z-20"
-                  aria-label="Previous video in gallery"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-
-                <button
-                  type="button"
-                  onClick={handleNext}
-                  className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/60 hover:bg-brand-600/90 border border-white/15 text-white flex items-center justify-center backdrop-blur-md transition-all duration-200 hover:scale-110 shadow-lg z-20"
-                  aria-label="Next video in gallery"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-
-                {/* Simulated Live Video Editor Scrubber Bar */}
-                <HeroTimelineScrubber
-                  projectId={activeProject.id}
-                  duration={activeProject.duration}
-                />
+                  {/* Subtle edge vignette for polished SaaS contrast */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20 pointer-events-none" />
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
           {/* Interactive Video Gallery Carousel Strip */}
           <div className="rounded-2xl p-4 sm:p-5 bg-surface-card/80 border border-white/[0.08] shadow-card">
@@ -340,8 +226,11 @@ export const Hero: React.FC = () => {
                   <button
                     key={project.id}
                     type="button"
-                    onClick={() => setCurrentIndex(idx)}
-                    className={`shrink-0 w-48 sm:w-56 text-left rounded-xl p-2 transition-all duration-200 snap-start border ${
+                    onClick={() => {
+                      setCurrentIndex(idx);
+                      setModalOpen(true);
+                    }}
+                    className={`shrink-0 w-48 sm:w-56 text-left rounded-xl p-2 transition-all duration-200 snap-start border cursor-pointer ${
                       isSelected
                         ? "bg-brand-950/60 border-brand-500 ring-2 ring-brand-500/40 shadow-glow"
                         : "bg-surface-subtle/70 hover:bg-surface-hover border-white/[0.06] hover:border-white/20"
@@ -359,15 +248,8 @@ export const Hero: React.FC = () => {
                       <div className="absolute inset-0 bg-black/30 hover:bg-black/10 transition-colors" />
 
                       {isSelected ? (
-                        <div className="absolute top-1.5 left-1.5 px-2 py-0.5 rounded bg-brand-600 text-[10px] font-bold text-white uppercase tracking-wider shadow flex items-center gap-1">
-                          {project.id === "orbitra-one-saas-promo" && (
-                            <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan animate-pulse" />
-                          )}
-                          <span>{project.id === "orbitra-one-saas-promo" ? "Live Motion" : "On Stage"}</span>
-                        </div>
-                      ) : project.id === "orbitra-one-saas-promo" ? (
-                        <div className="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded bg-brand-500/90 text-[10px] font-bold text-white uppercase tracking-wider shadow">
-                          Motion
+                        <div className="absolute top-1.5 left-1.5 px-2 py-0.5 rounded bg-brand-600 text-[10px] font-bold text-white uppercase tracking-wider shadow">
+                          On Stage
                         </div>
                       ) : (
                         <div className="absolute inset-0 flex items-center justify-center opacity-70 group-hover:opacity-100">
