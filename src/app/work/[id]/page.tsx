@@ -35,18 +35,23 @@ export async function generateMetadata({
   params,
 }: ProjectPageProps): Promise<Metadata> {
   const project = projects.find((p) => p.id === params.id);
-  if (!project) return { title: "Project Not Found | EXPLAINERACE" };
+  if (!project) return { title: "Project Not Found" };
 
   const canonicalUrl = `${siteConfig.siteUrl}/work/${project.id}`;
 
+  // Avoid doubling "SaaS"/"Walkthrough" when the project title already ends with them.
+  const caseStudyTitle = /walkthrough|saas/i.test(project.title)
+    ? `${project.title} — Video Case Study`
+    : `${project.title} SaaS Walkthrough Video Case Study`;
+
   return {
-    title: `${project.title} SaaS Walkthrough Video Case Study | EXPLAINERACE`,
+    title: caseStudyTitle,
     description: `Watch the ${project.title} video case study produced by Ali. Specs, UI zooms, client outcome, and full production breakdown. Request your quote today.`,
     alternates: {
       canonical: canonicalUrl,
     },
     openGraph: {
-      title: `${project.title} SaaS Walkthrough Video Case Study | EXPLAINERACE`,
+      title: `${caseStudyTitle} | EXPLAINERACE`,
       description: `Watch the ${project.title} video case study produced by Ali. Specs, UI zooms, client outcome, and full production breakdown. Request your quote today.`,
       url: canonicalUrl,
       type: "video.other",
@@ -61,7 +66,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `${project.title} SaaS Walkthrough Video Case Study | EXPLAINERACE`,
+      title: `${caseStudyTitle} | EXPLAINERACE`,
       description: `Watch the ${project.title} video case study produced by Ali. Specs, UI zooms, client outcome, and full production breakdown. Request your quote today.`,
       images: [project.thumbnail],
     },
