@@ -20,7 +20,7 @@ import { siteConfig } from "@/data/siteConfig";
 import { CTA } from "@/components/CTA";
 
 export const metadata: Metadata = {
-  title: "About Ali | SaaS Video Specialist & Founder of EXPLAINERACE",
+  title: "About Ali | SaaS Video Specialist",
   description:
     "Learn about Ali, founder of EXPLAINERACE and SaaS video specialist with 157+ verified client reviews on Fiverr (Level 2) and Upwork. Read my story and career timeline.",
   alternates: {
