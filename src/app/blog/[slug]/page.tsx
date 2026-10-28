@@ -383,7 +383,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   Read Full Bio →
                 </Link>
                 <Link href="/work" className="text-brand-300 hover:text-white underline">
-                  View 41 Video Projects →
+                  View 33 Video Projects →
                 </Link>
               </div>
             </div>

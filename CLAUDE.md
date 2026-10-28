@@ -38,7 +38,7 @@ This file provides Claude (Claude Code, Claude Projects, or web interface) with 
   - `ScrollProgress.tsx`: Top gradient viewport scroll progress bar
   - `Spotlight.tsx`: Pointer-following radial card glow
 - `src/data/siteConfig.ts`: Global brand info, social URLs, profiles, stats, phone, email
-- `src/data/projects.ts`: All 41 portfolio videos, YouTube IDs, case studies, specs, testimonials
+- `src/data/projects.ts`: All 33 portfolio videos, YouTube IDs, case studies, specs, testimonials
 - `src/data/blog.ts`: 5 comprehensive SEO & conversion blog guides with schema and video embeds
 - `src/data/pricing.ts`: Tier structures, features, and pricing FAQs
 - `src/data/services.ts`: Category definitions, deliverables, and value-add feature blocks

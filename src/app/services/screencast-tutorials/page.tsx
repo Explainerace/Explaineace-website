@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://img.youtube.com/vi/fJ8ocgOvLNU/maxresdefault.jpg",
+        url: "https://img.youtube.com/vi/0QOVOmNEFME/hqdefault.jpg",
         width: 1280,
         height: 720,
         alt: "Screencast Video Production Service - EXPLAINERACE",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Screencast Video Production Service | EXPLAINERACE",
     description:
       "Professional screencast video production service for software tutorials, SOPs & help centers. Pure instructional clarity, studio audio from $120/60s.",
-    images: ["https://img.youtube.com/vi/fJ8ocgOvLNU/maxresdefault.jpg"],
+    images: ["https://img.youtube.com/vi/0QOVOmNEFME/hqdefault.jpg"],
   },
 };
 
@@ -89,7 +89,7 @@ export default function ScreencastTutorialsPage() {
   };
 
   const relevantProjects = projects
-    .filter((p) => p.category === "Tutorials" || p.category === "Training" || p.id.includes("bottronic") || p.id.includes("password"))
+    .filter((p) => p.category === "Tutorials" || p.category === "Training" || p.id === "screencast-production-showcase")
     .slice(0, 3);
 
   return (
@@ -275,7 +275,7 @@ export default function ScreencastTutorialsPage() {
                 href="/work"
                 className="text-xs sm:text-sm font-semibold text-brand-400 hover:text-brand-300 transition-colors"
               >
-                View all 41 portfolio videos &rarr;
+                View all 33 portfolio videos &rarr;
               </Link>
             </div>
 
