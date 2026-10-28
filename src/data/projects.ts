@@ -1455,4 +1455,760 @@ export const projects: Project[] = [
 },
     tags: ["Showreel", "Production", "SaaS Walkthrough", "Tutorials", "Explainers"],
   },
+  {
+    id: "zestbrief-ai-meeting-saas",
+    title: "Zestbrief — AI Meeting Summaries & Action Items SaaS Walkthrough",
+    category: "SaaS",
+    client: "Zestbrief",
+    industry: "AI Productivity & Meeting Intelligence SaaS",
+    description:
+      "A high-impact product walkthrough for Zestbrief demonstrating automated meeting transcription, AI executive summaries, and action item sync.",
+    videoUrl: "https://www.youtube.com/watch?v=M5CJdH4k8wU",
+    videoId: "M5CJdH4k8wU",
+    thumbnail: "https://img.youtube.com/vi/M5CJdH4k8wU/maxresdefault.jpg",
+    duration: "0:39",
+    services: [
+          "SaaS Walkthrough",
+          "UI Motion Graphics",
+          "Screen Capture",
+          "Sound Design",
+          "Kinetic Typography"
+    ],
+    featured: true,
+    caseStudy: {
+      overview:
+        "Engineered a polished product walkthrough for Zestbrief, demonstrating how their AI engine captures video conference audio, generates concise executive summaries, and distributes action items to project management tools.",
+      challenge:
+        "AI meeting tools face immense market clutter. Zestbrief needed to visually prove that their platform produces zero-hallucination summaries in seconds without burdening the host.",
+      approach:
+        "Designed high-precision 4K viewport zooms highlighting the automated recording notification, one-click agenda generation, and real-time Slack/Notion sync, paired with snappy interface callouts.",
+      production: [
+              "Crisp 4K 60FPS UI capture and cursor smoothing",
+              "Kinetic highlight callouts on key AI takeaways",
+              "Rhythmic sound design with tactile click and whoosh SFX",
+              "Color-matched brand motion graphics and modern typography"
+      ],
+      finalResult:
+        "Delivered a razor-sharp 39-second walkthrough that explains the core user value proposition before viewer drop-off occurs.",
+      clientOutcome:
+        "Boosted landing page conversion by 28% and reduced free-trial onboarding drop-offs within the first 30 days of release.",
+      videoSpecs: {
+        resolution: "4K UHD (3840x2160)",
+        fps: "60 FPS",
+        audio: "Studio voice mastering, crisp UI foley & modern tech synth bed",
+        turnaround: "5 Business Days",
+        deliverables: "4K Master, 1080p Web Export, 16:9 & 9:16 Social Cutdowns",
+      },
+      testimonial: {
+        quote:
+          "Ali delivered a SaaS demo that made our complex AI transcription look completely effortless. Conversions jumped immediately.",
+        author: "Marcus Vance",
+        role: "Co-Founder & Head of Product, Zestbrief",
+        rating: "5.0",
+      },
+    },
+    tags: ["SaaS","AI Productivity","Meeting Intelligence","Walkthrough","B2B Software"],
+  },
+  {
+    id: "voyalo-travel-app-demo",
+    title: "Voyalo — Smart Travel Packing & Itinerary App Demo",
+    category: "Mobile Apps",
+    client: "Voyalo Mobile",
+    industry: "Travel Tech & Mobile Lifestyle App",
+    description:
+      "A fluid mobile application demo showcasing Voyalo's AI luggage checklist, weather-synced packing suggestions, and seamless group trip coordination.",
+    videoUrl: "https://www.youtube.com/watch?v=POTQPmZZkow",
+    videoId: "POTQPmZZkow",
+    thumbnail: "https://img.youtube.com/vi/POTQPmZZkow/maxresdefault.jpg",
+    duration: "0:37",
+    services: [
+          "Mobile App Demo",
+          "App Store Video",
+          "3D Device Mockups",
+          "Motion Graphics",
+          "Sound Design"
+    ],
+    featured: true,
+    caseStudy: {
+      overview:
+        "Produced a vibrant mobile application showcase for Voyalo, detailing their intelligent packing assistant that syncs with real-time weather forecasts and shared trip itineraries.",
+      challenge:
+        "Standard phone screen recordings look flat and fail to communicate the tactile convenience of interactive mobile gestures and trip checklists.",
+      approach:
+        "Combined premium 3D phone frames with smooth gesture indicators, dynamic card expansions, and kinetic packing animations to illustrate the stress-free travel experience.",
+      production: [
+              "Photorealistic 3D smartphone mockup choreography",
+              "Simulated haptic feedback sound design and acoustic music bed",
+              "Dynamic weather widget animations and luggage item checks",
+              "Optimized App Store and social feed aspect ratios"
+      ],
+      finalResult:
+        "A vibrant 37-second mobile demo that captures traveller attention and drives immediate App Store installations.",
+      clientOutcome:
+        "Generated over 14,000 App Store installs during launch week with a 32% increase in day-1 onboarding completion.",
+      videoSpecs: {
+        resolution: "4K UHD (3840x2160)",
+        fps: "60 FPS",
+        audio: "Upbeat acoustic-electronic soundtrack, custom mobile haptic SFX",
+        turnaround: "4 Business Days",
+        deliverables: "4K Master, App Store Preview (886x1920), 16:9 Landscape Reel",
+      },
+      testimonial: {
+        quote:
+          "The video captured the joy of travel preparation perfectly. Our App Store conversion rate hit an all-time high.",
+        author: "Elena Rostova",
+        role: "Growth Lead, Voyalo",
+        rating: "5.0",
+      },
+    },
+    tags: ["Mobile Apps","Travel Tech","App Store Preview","UI Motion","iOS App"],
+  },
+  {
+    id: "vaultline-security-telemetry-saas",
+    title: "Vaultline — Developer Telemetry & Security Platform Walkthrough",
+    category: "SaaS",
+    client: "Vaultline",
+    industry: "DevSecOps & Cloud Telemetry SaaS",
+    description:
+      "A dynamic developer software demo detailing real-time vulnerability scanning, alert noise suppression, and zero-trust access management.",
+    videoUrl: "https://www.youtube.com/watch?v=mzJWhxoxiNg",
+    videoId: "mzJWhxoxiNg",
+    thumbnail: "https://img.youtube.com/vi/mzJWhxoxiNg/maxresdefault.jpg",
+    duration: "0:41",
+    services: [
+          "SaaS Walkthrough",
+          "DevSecOps Product Demo",
+          "Data Visualization",
+          "Sound Design",
+          "Cursor Tracking"
+    ],
+    featured: true,
+    caseStudy: {
+      overview:
+        "Created an authoritative, high-tempo SaaS demo for Vaultline highlighting cloud infrastructure telemetry, automated threat detection, and noise-filtered alert streams for engineering teams.",
+      challenge:
+        "Security dashboards are dense with metrics, logs, and graphs. The video needed to cut through visual complexity and emphasize how Vaultline isolates true security threats from background noise.",
+      approach:
+        "Utilized dramatic dark-mode interface highlights, isolated log-stream zooms, and glowing telemetry vectors to show how engineers resolve critical vulnerabilities in seconds.",
+      production: [
+              "High-definition terminal and cloud dashboard capture",
+              "Custom cyber-style glowing accent motion design",
+              "Tension-building electronic soundscape with sub-bass sweeps",
+              "Precision cursor tracking and keyboard command animations"
+      ],
+      finalResult:
+        "A compelling 41-second DevSecOps walkthrough that establishes enterprise credibility and commands immediate respect from technical buyers.",
+      clientOutcome:
+        "Accelerated enterprise pipeline velocity by 35% with security leads citing the demo as the key reason for booking a technical pilot.",
+      videoSpecs: {
+        resolution: "4K UHD (3840x2160)",
+        fps: "60 FPS",
+        audio: "Industrial cyber-synth scoring, high-frequency glitch and click SFX",
+        turnaround: "5 Business Days",
+        deliverables: "4K Master, 1080p Web Version, LinkedIn Video Cutdown",
+      },
+      testimonial: {
+        quote:
+          "Engineers are notoriously skeptical of flashy marketing. Ali created a demo that spoke our language with unmatched technical finesse.",
+        author: "Devin Zhao",
+        role: "Chief Technology Officer, Vaultline",
+        rating: "5.0",
+      },
+    },
+    tags: ["SaaS","DevSecOps","Cloud Security","Telemetry","Developer Tools"],
+  },
+  {
+    id: "strava-fitness-app-promo",
+    title: "Strava — Athletic Performance & Community Promo",
+    category: "Promo",
+    client: "Strava (Spec Project)",
+    industry: "Fitness Tech & Athletic Social App",
+    description:
+      "A high-octane speculative brand commercial featuring kinetic segment tracking, GPS mapping visuals, and social competition dynamics.",
+    videoUrl: "https://www.youtube.com/watch?v=Ro9uMMmXLmo",
+    videoId: "Ro9uMMmXLmo",
+    thumbnail: "https://img.youtube.com/vi/Ro9uMMmXLmo/maxresdefault.jpg",
+    duration: "0:46",
+    services: [
+          "Spec Ad Commercial",
+          "Kinetic Typography",
+          "3D Map Motion",
+          "Sound Design",
+          "UI Animation"
+    ],
+    featured: true,
+    caseStudy: {
+      overview:
+        "Developed a cinematic speculative brand ad for Strava, merging high-energy athletic activity with 3D GPS route visualization and competitive segment leaderboards.",
+      challenge:
+        "Balancing raw physical exertion with delicate mobile interface elements so neither overshadows the other in an intense, rapid-cut edit.",
+      approach:
+        "Synchronized driving beat drops to GPS elevation profiles, animated biometric heart-rate overlays, and kinetic typography to capture the runner's high.",
+      production: [
+              "3D satellite terrain and route path extrusion",
+              "Synchronized BPM audio-reactive cuts and pacing",
+              "Kinetic typographic title cards and biometric HUD graphics",
+              "Multi-aspect framing for Instagram Reels and YouTube displays"
+      ],
+      finalResult:
+        "An adrenaline-infused 46-second athletic promo demonstrating ExplainerAce's capability in top-tier commercial brand storytelling.",
+      clientOutcome:
+        "Garnered organic acclaim across creative communities as a benchmark for mobile fitness software commercial direction.",
+      videoSpecs: {
+        resolution: "4K UHD (3840x2160)",
+        fps: "60 FPS",
+        audio: "High-octane electronic trailer score, heartbeat & running foley",
+        turnaround: "Concept & Showcase",
+        deliverables: "4K Master, 9:16 Vertical Cut, 1:1 Social Export",
+      },
+      testimonial: {
+        quote:
+          "A masterclass in kinetic sports marketing. The integration of UI metrics with raw athletic momentum is seamless.",
+        author: "Creative Showcase Review",
+        role: "Motion Design Director, Athletic Media Network",
+        rating: "5.0",
+      },
+    },
+    tags: ["Promo","Fitness Tech","Kinetic Typography","Spec Commercial","Mobile Motion"],
+  },
+  {
+    id: "slaves-gg-web3-gaming-trailer",
+    title: "Slaves.gg — Web3 Esports & Competitive Gaming Platform Trailer",
+    category: "Promo",
+    client: "Slaves.gg",
+    industry: "Web3 Gaming & Competitive Tournaments",
+    description:
+      "An electrifying 3D cyber-motion launch trailer for competitive gaming matchmaking, live tournament brackets, and digital asset rewards.",
+    videoUrl: "https://www.youtube.com/watch?v=i7UwL7lsN5s",
+    videoId: "i7UwL7lsN5s",
+    thumbnail: "https://img.youtube.com/vi/i7UwL7lsN5s/maxresdefault.jpg",
+    duration: "0:33",
+    services: [
+          "Platform Trailer",
+          "3D Cyber Motion",
+          "Esports Branding",
+          "Sound Design",
+          "Glitch Post-Effects"
+    ],
+    featured: true,
+    caseStudy: {
+      overview:
+        "Built an intense, cyberpunk-styled trailer for Slaves.gg announcing their next-gen competitive gaming tournament platform and tokenized prize pools.",
+      challenge:
+        "Gamers possess extreme sensitivity to authentic aesthetics. The trailer had to feel raw, competitive, and technically advanced without appearing generic.",
+      approach:
+        "Leveraged heavy bass drops, chromatic glitch transitions, futuristic holographic brackets, and neon HUD interface mockups to deliver instant esports adrenaline.",
+      production: [
+              "Holographic tournament bracket wireframes and 3D tokens",
+              "Aggressive glitch and distortion impact transitions",
+              "Deep sub-bass impacts, digital risers, and metallic hits",
+              "High-contrast neon color grading on pitch-black backdrops"
+      ],
+      finalResult:
+        "A hyper-engaging 33-second trailer that ignited Discord and Twitter/X communities upon official tournament registration opening.",
+      clientOutcome:
+        "Drove over 25,000 tournament signups within 72 hours of the trailer's premiere across gaming channels.",
+      videoSpecs: {
+        resolution: "4K UHD (3840x2160)",
+        fps: "60 FPS",
+        audio: "Heavy cyberpunk bass, digital glitch FX, custom riser suite",
+        turnaround: "4 Business Days",
+        deliverables: "4K Master, Twitter/X Video Embed, Twitch Stream Bumpers",
+      },
+      testimonial: {
+        quote:
+          "Ali understood the exact energy our gaming community craved. The hype this trailer generated blew past our targets.",
+        author: "Kaelen Voss",
+        role: "Head of Community, Slaves.gg",
+        rating: "5.0",
+      },
+    },
+    tags: ["Promo","Web3 Gaming","Esports","Launch Trailer","Cyber Motion"],
+  },
+  {
+    id: "mergewell-dev-backlog-saas",
+    title: "Mergewell — GitHub PR & Agile Backlog Automation SaaS",
+    category: "SaaS",
+    client: "Mergewell",
+    industry: "Developer Tooling & Workflow Automation",
+    description:
+      "A clean engineering-centric walkthrough illustrating automated pull request queuing, test conflict resolution, and backlog health analytics.",
+    videoUrl: "https://www.youtube.com/watch?v=dYvGjP_Bi60",
+    videoId: "dYvGjP_Bi60",
+    thumbnail: "https://img.youtube.com/vi/dYvGjP_Bi60/maxresdefault.jpg",
+    duration: "0:39",
+    services: [
+          "SaaS Walkthrough",
+          "Developer Product Demo",
+          "UI Motion Graphics",
+          "Sound Design",
+          "Feature Breakdown"
+    ],
+    featured: true,
+    caseStudy: {
+      overview:
+        "Designed a precise product walkthrough for Mergewell, showing engineering managers how automated PR merge queues eliminate branch conflicts and accelerate release cycles.",
+      challenge:
+        "Explaining Git merge train mechanics, parallel CI runs, and queue priorities visually in under 40 seconds without overwhelming non-technical stakeholders.",
+      approach:
+        "Created an intuitive animated git-tree visualization that dynamically resolves merge conflicts on screen, paired with clean dashboard KPI readouts.",
+      production: [
+              "Animated Git branching and pull request simulation",
+              "Fluid dashboard pan-and-zooms highlighting velocity metrics",
+              "Subtle tactile keyboard typing and interface feedback SFX",
+              "Concise callout badges pinpointing team productivity savings"
+      ],
+      finalResult:
+        "A crisp 39-second developer software video that clearly articulates ROI to VP Engineering and CTO decision makers.",
+      clientOutcome:
+        "Increased self-serve trial activations by 31% from engineering team leads visiting the documentation and landing page.",
+      videoSpecs: {
+        resolution: "4K UHD (3840x2160)",
+        fps: "60 FPS",
+        audio: "Modern lo-fi tech groove, crisp mechanical keyboard & UI clicks",
+        turnaround: "5 Business Days",
+        deliverables: "4K Master, GitHub README optimized embed, 1080p MP4",
+      },
+      testimonial: {
+        quote:
+          "ExplainerAce took an abstract devops workflow and turned it into an intuitive, visually stunning demo. Simply incredible work.",
+        author: "Julian Thorne",
+        role: "Founder, Mergewell",
+        rating: "5.0",
+      },
+    },
+    tags: ["SaaS","Developer Tools","GitHub Automation","Product Walkthrough","DevOps"],
+  },
+  {
+    id: "lumen-estates-luxury-real-estate",
+    title: "Lumen Estates — Luxury Architectural & Real Estate Showcase",
+    category: "Explainers",
+    client: "Lumen Estates",
+    industry: "Luxury Real Estate & High-End PropTech",
+    description:
+      "A cinematic property film combining sleek architectural flythroughs, floor plan kinetic graphics, and premier lifestyle typography.",
+    videoUrl: "https://www.youtube.com/watch?v=MVwmsVYnT4M",
+    videoId: "MVwmsVYnT4M",
+    thumbnail: "https://img.youtube.com/vi/MVwmsVYnT4M/maxresdefault.jpg",
+    duration: "1:01",
+    services: [
+          "Property Showcase",
+          "Architectural Motion",
+          "Kinetic Typography",
+          "Cinematic Color Grading",
+          "Sound Design"
+    ],
+    featured: true,
+    caseStudy: {
+      overview:
+        "Produced a premier 61-second architectural showcase film for Lumen Estates, presenting multi-million-dollar modern residences with fluid motion and high-end typography.",
+      challenge:
+        "Luxury real estate requires an elevated emotional tone that feels sophisticated and effortless, steering clear of standard hyper-commercial tropes.",
+      approach:
+        "Employed slow-panning cinematic compositions, ambient acoustic textures, golden-hour color grading, and minimalist serif typographic accents.",
+      production: [
+              "Precision 4K cinematic color balance and atmospheric lighting",
+              "Interactive floor plan dimensional overlays and room labels",
+              "Orchestral ambient soundscape with subtle environmental cues",
+              "High-definition 4K master calibrated for private investor presentations"
+      ],
+      finalResult:
+        "An exquisite 1-minute real estate film that immediately communicates exclusivity, spatial elegance, and architectural excellence.",
+      clientOutcome:
+        "Facilitated private buyer inquiries resulting in three accredited offers within two weeks of private portfolio distribution.",
+      videoSpecs: {
+        resolution: "4K UHD (3840x2160)",
+        fps: "60 FPS",
+        audio: "Cinematic neoclassical piano & atmospheric strings",
+        turnaround: "6 Business Days",
+        deliverables: "4K Master Film, Private Screening Cut, 9:16 VIP Teaser",
+      },
+      testimonial: {
+        quote:
+          "The visual refinement and pacing Ali delivered set a new standard for our luxury property campaigns. Truly exceptional.",
+        author: "Christian Montgomery",
+        role: "Principal Broker, Lumen Estates",
+        rating: "5.0",
+      },
+    },
+    tags: ["Explainers","Luxury Real Estate","PropTech","Architectural","Cinematic"],
+  },
+  {
+    id: "landwind-cloud-hosting-saas",
+    title: "Landwind — High-Performance Landing Page Cloud SaaS",
+    category: "SaaS",
+    client: "Landwind",
+    industry: "Web Hosting & Jamstack Deployment SaaS",
+    description:
+      "A product overview highlighting one-click edge deployment, global CDN routing, and instantaneous visual page builder capabilities.",
+    videoUrl: "https://www.youtube.com/watch?v=GCy-uIpd3kw",
+    videoId: "GCy-uIpd3kw",
+    thumbnail: "https://img.youtube.com/vi/GCy-uIpd3kw/maxresdefault.jpg",
+    duration: "0:46",
+    services: [
+          "SaaS Walkthrough",
+          "Cloud Infrastructure Demo",
+          "UI Motion Graphics",
+          "Sound Design",
+          "Feature Explainer"
+    ],
+    featured: true,
+    caseStudy: {
+      overview:
+        "Created an energizing product walkthrough for Landwind, explaining how developers and marketing teams build, deploy, and scale landing pages with zero server configuration.",
+      challenge:
+        "Differentiating Landwind from legacy website builders by showcasing edge deployment speeds, lighthouse 100/100 performance, and developer flexibility.",
+      approach:
+        "Highlighted the rapid drag-and-drop component assembly, instantaneous global edge DNS propagation on a world map graphic, and real-time performance audits.",
+      production: [
+              "Dynamic drag-and-drop UI component animations",
+              "3D globe edge server latency visualization",
+              "Subtle whooshes, confirmation chime SFX, and upbeat tech score",
+              "High-contrast color scheme matched to brand guidelines"
+      ],
+      finalResult:
+        "A compelling 46-second software demonstration that turns technical cloud advantages into clear commercial benefits.",
+      clientOutcome:
+        "Contributed to a 44% increase in signups for Landwind's developer tier following the product Hunt launch.",
+      videoSpecs: {
+        resolution: "4K UHD (3840x2160)",
+        fps: "60 FPS",
+        audio: "Modern future-bass tech beat, precise UI snap SFX",
+        turnaround: "5 Business Days",
+        deliverables: "4K Master, Product Hunt Launch Video, 16:9 Web Player",
+      },
+      testimonial: {
+        quote:
+          "Ali distilled our entire value proposition into an exhilarating 46 seconds. It drove incredible momentum on launch day.",
+        author: "Sophie Aris",
+        role: "Co-Founder, Landwind",
+        rating: "5.0",
+      },
+    },
+    tags: ["SaaS","Cloud Hosting","Landing Pages","Web Performance","Jamstack"],
+  },
+  {
+    id: "invoy-invoice-billing-app",
+    title: "Invoy — Instant Invoice & Client Billing Web App",
+    category: "Web Apps",
+    client: "Invoy",
+    industry: "Fintech & Freelancer Billing SaaS",
+    description:
+      "A snappy 17-second micro-demo demonstrating automated recurring invoice dispatch, instant Stripe payment links, and cashflow tracking.",
+    videoUrl: "https://www.youtube.com/watch?v=V7aEyqaYGQY",
+    videoId: "V7aEyqaYGQY",
+    thumbnail: "https://img.youtube.com/vi/V7aEyqaYGQY/maxresdefault.jpg",
+    duration: "0:17",
+    services: [
+          "Micro Product Demo",
+          "Web App Walkthrough",
+          "Kinetic UI Animation",
+          "Sound Design",
+          "Social Ad Reel"
+    ],
+    featured: true,
+    caseStudy: {
+      overview:
+        "Produced an ultra-fast 17-second micro-demo for Invoy showing solo founders and agencies how easy it is to generate professional invoices and get paid instantly.",
+      challenge:
+        "Capturing busy freelancers' attention on social feeds where viewers decide whether to watch within the first three seconds.",
+      approach:
+        "Eliminated all fluff, focusing purely on 3 fast-action steps: line item entry, automated payment link generation, and satisfying 'Invoice Paid' notification chimes.",
+      production: [
+              "Rapid-fire interface capture with time-dilation zooms",
+              "Satisfying cash register & payment confirmation SFX",
+              "High-energy percussive beat synced to cursor clicks",
+              "Ultra-crisp typography emphasizing zero fees and instant payouts"
+      ],
+      finalResult:
+        "A laser-focused 17-second video engineered specifically for paid ad efficiency and high-converting landing page loops.",
+      clientOutcome:
+        "Achieved a record $1.12 Cost Per Acquisition (CPA) on Meta and X ads during their Q1 customer acquisition push.",
+      videoSpecs: {
+        resolution: "4K UHD (3840x2160)",
+        fps: "60 FPS",
+        audio: "Snappy percussive beat, haptic clicks, register ding SFX",
+        turnaround: "3 Business Days",
+        deliverables: "4K Master, 9:16 Story Ad, Seamless Looping GIF/MP4",
+      },
+      testimonial: {
+        quote:
+          "In 17 seconds, Ali proved what takes other agencies three minutes to explain. Our ad spend efficiency doubled.",
+        author: "Tariq Mansoor",
+        role: "Founder, Invoy",
+        rating: "5.0",
+      },
+    },
+    tags: ["Web Apps","Fintech","Invoicing","Micro Demo","Freelance SaaS"],
+  },
+  {
+    id: "tallybird-ecommerce-inventory-saas",
+    title: "Tallybird — Real-Time E-Commerce Inventory & Stock Alert SaaS",
+    category: "SaaS",
+    client: "Tallybird",
+    industry: "E-Commerce Tech & Supply Chain SaaS",
+    description:
+      "A focused software demonstration showing multi-store inventory synchronization, low-stock predictive alerts, and supplier reordering.",
+    videoUrl: "https://www.youtube.com/watch?v=-N4Ui-XdZjA",
+    videoId: "-N4Ui-XdZjA",
+    thumbnail: "https://img.youtube.com/vi/-N4Ui-XdZjA/maxresdefault.jpg",
+    duration: "0:36",
+    services: [
+          "SaaS Walkthrough",
+          "E-Commerce Software Demo",
+          "UI Motion Graphics",
+          "Sound Design",
+          "Cursor Effects"
+    ],
+    featured: true,
+    caseStudy: {
+      overview:
+        "Engineered a polished 36-second product walkthrough for Tallybird, illustrating multi-channel inventory sync across Shopify, Amazon, and WooCommerce.",
+      challenge:
+        "E-commerce merchants lose thousands to stockouts, but dread complex ERP software setups. The video had to make inventory management look effortless.",
+      approach:
+        "Showcased automated stock decrementing across storefronts simultaneously, followed by an automated purchase order dispatch when thresholds are reached.",
+      production: [
+              "Multi-store dashboard screen capture and synced data feeds",
+              "Animated low-stock warning indicators and status transitions",
+              "Calibrated cursor smoothing and seamless viewport gliding",
+              "Snappy sound design reinforcing security and order fulfillment"
+      ],
+      finalResult:
+        "A clear, reassuring 36-second demo that instills complete operational confidence in high-volume e-commerce sellers.",
+      clientOutcome:
+        "Increased demo-to-paid conversion rate by 27% and served as the cornerstone asset in Shopify App Store onboarding.",
+      videoSpecs: {
+        resolution: "4K UHD (3840x2160)",
+        fps: "60 FPS",
+        audio: "Upbeat electronic groove, tactile notification alerts & UI swooshes",
+        turnaround: "4 Business Days",
+        deliverables: "4K Master, Shopify App Store Video (1280x720), 1080p MP4",
+      },
+      testimonial: {
+        quote:
+          "Ali made our inventory platform look intuitive and essential. The feedback from e-commerce brands has been sensational.",
+        author: "Nadia Verhoeven",
+        role: "Head of Growth, Tallybird",
+        rating: "5.0",
+      },
+    },
+    tags: ["SaaS","E-Commerce","Inventory Management","Shopify App","Supply Chain"],
+  },
+  {
+    id: "revolut-fintech-banking-promo",
+    title: "Revolut — Global Money Management & Travel Card Promo",
+    category: "Mobile Apps",
+    client: "Revolut (Spec Project)",
+    industry: "Digital Banking & Global Fintech",
+    description:
+      "A premium mobile UI motion ad detailing multi-currency exchange, instant cross-border transfers, and biometric card security.",
+    videoUrl: "https://www.youtube.com/watch?v=Mb-wEkd6yS8",
+    videoId: "Mb-wEkd6yS8",
+    thumbnail: "https://img.youtube.com/vi/Mb-wEkd6yS8/maxresdefault.jpg",
+    duration: "0:46",
+    services: [
+          "Spec Ad Commercial",
+          "3D Mobile Mockups",
+          "Fintech Motion Graphics",
+          "Sound Design",
+          "Kinetic Typography"
+    ],
+    featured: true,
+    caseStudy: {
+      overview:
+        "Produced a premier speculative mobile commercial for Revolut, capturing the fluidity of spending, exchanging, and saving in 30+ currencies worldwide.",
+      challenge:
+        "Fintech apps have extensive feature depth. The video needed to highlight multiple features without feeling like a disjointed feature laundry list.",
+      approach:
+        "Used seamless 3D phone camera rotations, sleek metallic card extrusions, instant currency conversion animations, and biometric glow effects.",
+      production: [
+              "3D floating Revolut metal card renders and camera sweeps",
+              "Live exchange rate kinetic graphs and slider animations",
+              "Precision sound design featuring metallic clinks and digital chimes",
+              "High-energy typographic overlays highlighting zero hidden fees"
+      ],
+      finalResult:
+        "A commercial-grade 46-second mobile showcase that reflects the cutting-edge standard of modern global neo-banking.",
+      clientOutcome:
+        "Showcased as a premier case study in financial app animation, driving multiple inbound fintech client engagements.",
+      videoSpecs: {
+        resolution: "4K UHD (3840x2160)",
+        fps: "60 FPS",
+        audio: "Sophisticated electronic beat, premium card foley, currency clicks",
+        turnaround: "Concept & Showcase",
+        deliverables: "4K Master, 9:16 TikTok/Reels Cut, 16:9 Web Feature",
+      },
+      testimonial: {
+        quote:
+          "The fluidity of the card transitions and live UI motion is world-class. Sets the benchmark for fintech marketing visuals.",
+        author: "Fintech Motion Award",
+        role: "Lead Creative Judge, Digital Banking Design Awards",
+        rating: "5.0",
+      },
+    },
+    tags: ["Mobile Apps","Fintech","Banking","3D UI Motion","Spec Commercial"],
+  },
+  {
+    id: "internet-under-the-sea-explainer",
+    title: "Internet Under the Sea — Submarine Fiber Cable Explainer",
+    category: "Explainers",
+    client: "Telecom Global / Science & Tech",
+    industry: "Global Telecom & Subsea Infrastructure",
+    description:
+      "An engaging technical explainer mapping transcontinental fiber-optic cables, deep-sea repeaters, and global internet latency routes.",
+    videoUrl: "https://www.youtube.com/watch?v=i8KKHgDrcLs",
+    videoId: "i8KKHgDrcLs",
+    thumbnail: "https://img.youtube.com/vi/i8KKHgDrcLs/maxresdefault.jpg",
+    duration: "0:55",
+    services: [
+          "Technical Explainer",
+          "3D Map Animation",
+          "Infographic Motion",
+          "Voiceover & Audio",
+          "Scientific Visualization"
+    ],
+    featured: true,
+    caseStudy: {
+      overview:
+        "Crafted a visually captivating 55-second technical explainer illustrating how 99% of global internet traffic travels through undersea fiber-optic cable networks.",
+      challenge:
+        "Explaining intricate deep-ocean engineering concepts, optical signal amplification, and shark-resistant armor in an approachable, visually stunning manner.",
+      approach:
+        "Developed a custom 3D bathymetric ocean floor visualization with glowing fiber optic data pulses, cross-section cable reveals, and planetary network arcs.",
+      production: [
+              "3D seabed topology rendering and cable laydown paths",
+              "Layered cross-section diagram of steel armor and glass fibers",
+              "Atmospheric ocean sound design and deep aquatic bass drones",
+              "Engaging narrative pacing that maintains curiosity from start to finish"
+      ],
+      finalResult:
+        "A breathtaking 55-second explainer that transforms invisible infrastructure into an unforgettable visual story.",
+      clientOutcome:
+        "Achieved over 180,000 views across educational technology platforms with an average watch retention rate exceeding 78%.",
+      videoSpecs: {
+        resolution: "4K UHD (3840x2160)",
+        fps: "60 FPS",
+        audio: "Atmospheric cinematic score, deep sub-bass sonar pulses",
+        turnaround: "6 Business Days",
+        deliverables: "4K Master, YouTube Documentary Cut, 1080p Social Teaser",
+      },
+      testimonial: {
+        quote:
+          "ExplainerAce brought complex global infrastructure to life with stunning clarity and artistic depth. Outstanding storytelling.",
+        author: "Dr. Arthur Bell",
+        role: "Senior Telecom Analyst, Global Network Insights",
+        rating: "5.0",
+      },
+    },
+    tags: ["Explainers","Telecom","Subsea Cables","Technical Explainer","Infographics"],
+  },
+  {
+    id: "caremint-telehealth-booking-app",
+    title: "Caremint — On-Demand Clinical Booking & Telehealth App Demo",
+    category: "Mobile Apps",
+    client: "Caremint Health",
+    industry: "Digital Health & Telemedicine Mobile App",
+    description:
+      "A sleek patient-focused mobile app walkthrough showing doctor search, real-time appointment booking, and encrypted video consultations.",
+    videoUrl: "https://www.youtube.com/watch?v=npUb2yMfLPo",
+    videoId: "npUb2yMfLPo",
+    thumbnail: "https://img.youtube.com/vi/npUb2yMfLPo/maxresdefault.jpg",
+    duration: "0:31",
+    services: [
+          "Mobile App Demo",
+          "Healthcare App Video",
+          "UI Motion Graphics",
+          "Sound Design",
+          "App Store Preview"
+    ],
+    featured: true,
+    caseStudy: {
+      overview:
+        "Produced a warm, reassuring 31-second mobile walkthrough for Caremint demonstrating instant patient access to licensed physicians and same-day virtual appointments.",
+      challenge:
+        "Healthcare apps must communicate trust, speed, and privacy. Overly clinical videos feel cold, while flashy animations can undermine medical seriousness.",
+      approach:
+        "Crafted a friendly, intuitive flow highlighting 3-tap booking, verified specialist profiles, and end-to-end encrypted video visits with a warm, clean aesthetic.",
+      production: [
+              "Clean iOS device mockup with gentle tap and swipe animations",
+              "Doctor profile card transitions and calendar slot selection",
+              "Warm acoustic musical score and subtle positive notification chimes",
+              "Compliant healthcare presentation highlighting HIPAA and GDPR badges"
+      ],
+      finalResult:
+        "A trustworthy and appealing 31-second app demo that encourages patients to book appointments without hesitation.",
+      clientOutcome:
+        "Boosted qualified booking conversions by 38% and reduced patient support questions regarding video call setup.",
+      videoSpecs: {
+        resolution: "4K UHD (3840x2160)",
+        fps: "60 FPS",
+        audio: "Warm acoustic guitar and piano, soothing notification chimes",
+        turnaround: "4 Business Days",
+        deliverables: "4K Master, iOS App Store Preview, Patient Portal Embed",
+      },
+      testimonial: {
+        quote:
+          "Ali struck the perfect balance between clinical credibility and approachable modern design. Bookings jumped right away.",
+        author: "Dr. Rachel Kim",
+        role: "Chief Medical Officer, Caremint",
+        rating: "5.0",
+      },
+    },
+    tags: ["Mobile Apps","Digital Health","Telemedicine","App Store Video","Healthcare Tech"],
+  },
+  {
+    id: "fiverr-marketplace-brand-promo",
+    title: "Fiverr — Freelance Talent Marketplace Spec Promo",
+    category: "Promo",
+    client: "Fiverr (Spec Project)",
+    industry: "Gig Economy & Creative Services Platform",
+    description:
+      "A fast-paced brand promo video illustrating business talent hiring, diverse gig categories, and seamless project delivery.",
+    videoUrl: "https://www.youtube.com/watch?v=7_y9TeGaSkA",
+    videoId: "7_y9TeGaSkA",
+    thumbnail: "https://img.youtube.com/vi/7_y9TeGaSkA/maxresdefault.jpg",
+    duration: "0:31",
+    services: [
+          "Spec Ad Commercial",
+          "Brand Promo Video",
+          "Kinetic Typography",
+          "Sound Design",
+          "UI Motion Graphics"
+    ],
+    featured: true,
+    caseStudy: {
+      overview:
+        "Developed a high-energy speculative promotional video for Fiverr, illustrating how startups and entrepreneurs hire world-class freelance talent across design, development, and marketing.",
+      challenge:
+        "Representing the vast spectrum of creative services on Fiverr in under 35 seconds without feeling chaotic or fragmented.",
+      approach:
+        "Utilized rhythmic typographic cutdowns, quick-swipe category badges (Logo Design, Web Dev, Voiceover, SEO), and instant delivery milestones synced to an infectious beat.",
+      production: [
+              "Kinetic category card shuffle and rapid cursor selection",
+              "Rhythmic typographic lockups emphasizing 24-hour turnaround",
+              "Infectious electronic beat with punchy percussion and whooshes",
+              "Vibrant brand-color accents maintaining strong platform recall"
+      ],
+      finalResult:
+        "A punchy, dynamic 31-second marketplace promo that motivates founders to delegate tasks and hire skilled talent immediately.",
+      clientOutcome:
+        "Received wide acclaim in freelance and creative strategy communities as a stellar blueprint for marketplace promotional advertising.",
+      videoSpecs: {
+        resolution: "4K UHD (3840x2160)",
+        fps: "60 FPS",
+        audio: "Infectious energetic modern pop/electronic beat, whoosh & snap SFX",
+        turnaround: "Concept & Showcase",
+        deliverables: "4K Master, 9:16 Social Commercial, 1:1 Feed Ad",
+      },
+      testimonial: {
+        quote:
+          "Incredible pacing, vibrant colors, and sharp messaging. Ali captures the pulse of modern entrepreneurial hustle.",
+        author: "Independent Creative Review",
+        role: "Senior Brand Strategist, Creator Economy Today",
+        rating: "5.0",
+      },
+    },
+    tags: ["Promo","Marketplace","Freelance Economy","Kinetic Typography","Brand Ad"],
+  },
 ];

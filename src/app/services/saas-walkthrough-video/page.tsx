@@ -282,7 +282,7 @@ export default function SaasWalkthroughVideoPage() {
                 href="/work"
                 className="text-xs sm:text-sm font-semibold text-brand-400 hover:text-brand-300 transition-colors"
               >
-                View all 27 portfolio videos &rarr;
+                View all 41 portfolio videos &rarr;
               </Link>
             </div>
 

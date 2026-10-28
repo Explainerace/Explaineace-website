@@ -17,14 +17,14 @@ interface VideoGridProps {
 
 const CATEGORIES: CategoryFilter[] = [
   "All",
-  "Promo",
   "SaaS",
-  "AI UGC & Product Ads",
-  "Web Apps",
+  "Explainers",
+  "Promo",
   "Mobile Apps",
   "Tutorials",
+  "Web Apps",
   "Training",
-  "Explainers",
+  "AI UGC & Product Ads",
 ];
 
 export const VideoGrid: React.FC<VideoGridProps> = ({
@@ -101,7 +101,9 @@ export const VideoGrid: React.FC<VideoGridProps> = ({
 
         {/* Filter Tabs */}
         <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none">
-          {CATEGORIES.map((cat) => {
+          {CATEGORIES.filter(
+            (cat) => cat === "All" || projects.some((p) => p.category === cat)
+          ).map((cat) => {
             const isActive = selectedCategory === cat;
             const count =
               cat === "All"

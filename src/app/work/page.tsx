@@ -6,16 +6,16 @@ import { CTA } from "@/components/CTA";
 import { Layers, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Product Demo Video Portfolio | 27 Software Walkthroughs & Explainers",
+  title: "Product Demo Video Portfolio | 41 Software Walkthroughs & Explainers",
   description:
-    "Explore 27 verified product demo videos, SaaS walkthroughs, and screencast explainers by Ali. Watch real client case studies and request your video quote.",
+    "Explore 41 verified product demo videos, SaaS walkthroughs, and screencast explainers by Ali. Watch real client case studies and request your video quote.",
   alternates: {
     canonical: "https://explainerace.com/work",
   },
   openGraph: {
-    title: "Product Demo Video Portfolio | 27 Software Walkthroughs & Explainers | EXPLAINERACE",
+    title: "Product Demo Video Portfolio | 41 Software Walkthroughs & Explainers | EXPLAINERACE",
     description:
-      "Explore 27 verified product demo videos, SaaS walkthroughs, and screencast explainers by Ali. Watch real client case studies and request your video quote.",
+      "Explore 41 verified product demo videos, SaaS walkthroughs, and screencast explainers by Ali. Watch real client case studies and request your video quote.",
     url: "https://explainerace.com/work",
     type: "website",
     images: [
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Product Demo Video Portfolio | 27 Software Walkthroughs & Explainers | EXPLAINERACE",
+    title: "Product Demo Video Portfolio | 41 Software Walkthroughs & Explainers | EXPLAINERACE",
     description:
-      "Explore 27 verified product demo videos, SaaS walkthroughs, and screencast explainers by Ali. Watch real client case studies and request your video quote.",
+      "Explore 41 verified product demo videos, SaaS walkthroughs, and screencast explainers by Ali. Watch real client case studies and request your video quote.",
     images: ["https://img.youtube.com/vi/kqmPTZOBv9k/hqdefault.jpg"],
   },
 };
@@ -44,7 +44,7 @@ export default function WorkPage() {
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300 text-xs font-semibold uppercase tracking-wider mb-4">
             <Layers className="w-3.5 h-3.5" />
-            <span>27 Verified Portfolio Projects</span>
+            <span>41 Verified Portfolio Projects</span>
           </div>
           <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
             Software Tutorials, App Demos & SaaS Walkthroughs.

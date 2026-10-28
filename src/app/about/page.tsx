@@ -232,7 +232,7 @@ export default function AboutPage() {
                 href="/work"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 px-6 py-3.5 rounded-full shadow-glow transition-all"
               >
-                <span>Browse 27 Verified Case Studies</span>
+                <span>Browse 41 Verified Case Studies</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
