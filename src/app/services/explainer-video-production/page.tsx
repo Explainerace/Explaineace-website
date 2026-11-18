@@ -286,7 +286,7 @@ export default function ExplainerVideoProductionPage() {
                   <div className="text-xs text-slate-400">per 60 seconds finished runtime</div>
                 </div>
                 <p className="text-xs text-slate-300 leading-relaxed">
-                  A complete 60-second explainer video: script, storyboard, motion graphics or 4K capture, studio voiceover, captions, and full commercial rights.
+                  A complete 60-second explainer video: script, storyboard, motion graphics or 4K capture, studio voiceover, captions, and full commercial rights. This is our walkthrough-style tier — screen capture with dynamic zooms and studio voiceover. Bespoke custom UI-motion explainers with vector UI reconstruction are a separate tier at $800–$1,200.
                 </p>
 
                 <div className="space-y-2 pt-2 border-t border-white/[0.06]">

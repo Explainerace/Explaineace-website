@@ -165,6 +165,7 @@ export const blogPosts: BlogPost[] = [
             "List your top 3 'Aha!' moments: Don't try to cover every settings page. Highlight the single problem your software solves better than anyone else.",
             "Work directly with a specialist: Avoid middlemen agencies. Working directly with a video specialist who understands software UX ensures instant turnaround and zero miscommunication.",
             "Ready to see real examples and rates? Explore our dedicated [SaaS Walkthrough Video Service](/services/saas-walkthrough-video), check our transparent [SaaS Video Production Pricing](/pricing), or inspect the [Prim Automation Case Study](/work/prim-automation) to see exact production specs.",
+            "New to the format? Start with our [What Is an Explainer Video? guide](/blog/what-is-an-explainer-video) — definition, six types, length and 2026 costs — or go straight to our [Explainer Video Production Service](/services/explainer-video-production), fixed $220 for 60 seconds.",
           ],
         },
       ],
@@ -762,7 +763,7 @@ export const blogPosts: BlogPost[] = [
           heading: "What Is an Explainer Video?",
           body: [
             "An explainer video makes an idea or problem easy to grasp, frequently using animation, motion graphics, and storytelling. It answers the question: why does this matter?",
-            "Explainers suit launches, investor and pitch contexts, category-creating products, and abstract offerings where the product UI alone would not communicate the value.",
+            "Explainers suit launches, investor and pitch contexts, category-creating products, and abstract offerings where the product UI alone would not communicate the value. For the full definition, the six types, ideal length and 2026 costs, see our [What Is an Explainer Video? guide](/blog/what-is-an-explainer-video).",
           ],
           video: {
             videoId: "jzb-LpUo2i8",
@@ -1137,7 +1138,7 @@ export const blogPosts: BlogPost[] = [
       intro: [
         "Two explainer videos can say the exact same words and leave completely different impressions. The difference is style: the visual language that tells a visitor, before the script even lands, whether your product is playful or enterprise-grade, simple or powerful.",
         "Choosing a style is not a matter of taste alone. Each style has production strengths, honest limitations, and a budget range it lives in. Picking the wrong one means paying for character animation when your story needed clean data motion — or getting flat typography when your brand needed a human face.",
-        "This comparison covers the seven styles SaaS and app teams actually use, what each is best at, and a simple way to match a style to your goal.",
+        "This comparison covers the seven styles SaaS and app teams actually use, what each is best at, and a simple way to match a style to your goal. If you need the basics first — what an explainer is, the six types, how long it should run and what it costs — start with our [What Is an Explainer Video? guide](/blog/what-is-an-explainer-video).",
       ],
       summaryBox: {
         headline: "Quick Summary: The 7 Styles at a Glance",
@@ -1194,7 +1195,7 @@ export const blogPosts: BlogPost[] = [
           id: "comparison",
           heading: "Side-by-Side: Matching Style to Goal",
           body: [
-            "Start from the job the video must do, not from the style you personally like. Emotional persuasion points to characters. Feature clarity points to motion graphics or a hybrid. Teaching points to whiteboard. Premium launch impressions point to 3D. System explanation points to isometric. Brand personality on a budget points to collage.",
+            "Start from the job the video must do, not from the style you personally like. Emotional persuasion points to characters. Feature clarity points to motion graphics or a hybrid. Teaching points to whiteboard. Premium launch impressions point to 3D. System explanation points to isometric. Brand personality on a budget points to collage. Once the style is picked, our [Explainer Video Production Service](/services/explainer-video-production) produces a 60-second explainer for a fixed $220 in 48 to 72 hours.",
           ],
           table: {
             headers: ["Style", "Best for", "Budget level"],
@@ -1956,7 +1957,7 @@ export const blogPosts: BlogPost[] = [
           heading: "What Does an Explainer Video Cost in 2026?",
           body: [
             "Prices vary widely because providers vary widely. Studios that publish fixed prices give the clearest picture: ExplainerCue, a studio that lists its rates openly, charges $1,000 for 30 seconds, $2,000 for 60 seconds, and $3,000 for 90 seconds. Wyzowl reports an industry average near $10,983, with a median near $5,400. Full-service agencies typically quote $5,000 to $25,000 for a 60 to 90 second animated explainer, and take four to eight weeks.",
-            "Our rate is $220 fixed for a 60-second explainer, delivered in 48 to 72 hours, with studio voiceover, captions, two revision rounds, and full commercial rights. The difference is overhead: no account managers, no creative directors, no six-week pipeline. One specialist, direct, from script to finished video.",
+            "Our rate is $220 fixed for a 60-second explainer, delivered in 48 to 72 hours, with studio voiceover, captions, two revision rounds, and full commercial rights. The difference is overhead: no account managers, no creative directors, no six-week pipeline. One specialist, direct, from script to finished video. This is our walkthrough-style explainer — screen capture with dynamic zooms and studio voiceover. Bespoke custom UI-motion explainers with vector UI reconstruction are a separate tier at $800–$1,200; see the [Pricing Page](/pricing) for all four tiers.",
             "What moves the price up anywhere is length, custom illustration, 3D work, and revision rounds. What moves it down is a clear script, a single decision-maker, and realistic expectations about revisions. Our full breakdown of [SaaS explainer video costs](/blog/saas-explainer-video-cost-2026) compares agency, marketplace, and specialist rates in detail, and every format we offer is listed on the [Pricing Page](/pricing).",
           ],
         },
