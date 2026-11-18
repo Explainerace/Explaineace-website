@@ -17,6 +17,21 @@ export const metadata: Metadata = {
       "Privacy Policy for EXPLAINERACE by Ali. How we protect client project data, demo sandbox credentials, NDA agreements, and website analytics.",
     url: "https://explainerace.com/privacy",
     type: "website",
+    images: [
+      {
+        url: "https://img.youtube.com/vi/M5CJdH4k8wU/maxresdefault.jpg",
+        width: 1280,
+        height: 720,
+        alt: "Privacy Policy - EXPLAINERACE",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | EXPLAINERACE",
+    description:
+      "Privacy Policy for EXPLAINERACE by Ali. How we protect client project data, demo sandbox credentials, NDA agreements, and website analytics.",
+    images: ["https://img.youtube.com/vi/M5CJdH4k8wU/maxresdefault.jpg"],
   },
 };
 
