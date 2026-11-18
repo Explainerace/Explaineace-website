@@ -39,7 +39,7 @@ export default function HomePage() {
       {/* 5. How I Add Value (More than screen recording) */}
       <HowIAddValue />
 
-      {/* 6. Verified Trust Signals (Fiverr Level 2, 4.8★, 157 Reviews) */}
+      {/* 6. Verified Trust Signals (Fiverr Level 2, 4.8★, 160 Reviews) */}
       <TrustBlock />
 
       {/* 7. 4-Step Production Process */}

@@ -56,7 +56,7 @@ export const Hero: React.FC = () => {
             </div>
             <span className="text-xs text-slate-500">•</span>
             <span className="text-xs text-slate-300 font-medium whitespace-nowrap">
-              157 Fiverr Reviews
+              160 Fiverr Reviews
             </span>
             <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 whitespace-nowrap">
               Level 2
@@ -272,7 +272,7 @@ export const Hero: React.FC = () => {
             </div>
             <div className="p-2.5 sm:p-3 rounded-xl bg-surface-card/50 border border-white/[0.04]">
               <p className="text-[11px] text-slate-400">Platform Proof</p>
-              <p className="text-xs sm:text-sm font-semibold text-emerald-400 mt-0.5">157 Reviews (4.8★)</p>
+              <p className="text-xs sm:text-sm font-semibold text-emerald-400 mt-0.5">160 Reviews (4.8★)</p>
             </div>
           </div>
         </div>

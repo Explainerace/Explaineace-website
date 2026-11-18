@@ -26,7 +26,7 @@ export const siteConfig = {
       name: "Video Supremacy (Main Portfolio)",
       url: "https://www.fiverr.com/video_supermacy",
       rating: "4.8",
-      reviewsCount: "157",
+      reviewsCount: "160",
       sellerLevel: "Level 2 Seller",
     },
     {
@@ -44,7 +44,7 @@ export const siteConfig = {
     secondProfileUrl: "https://www.fiverr.com/explainerace",
     rating: "4.8",
     maxRating: "5.0",
-    reviewsCount: "157",
+    reviewsCount: "160",
     sellerLevel: "Level 2 Seller",
     statusText: "Top Rated Performance & Reliable Turnaround",
   },
@@ -70,7 +70,7 @@ export const siteConfig = {
   },
   stats: [
     { value: "4.8 / 5", label: "Client Rating", sub: "Based on verified feedback" },
-    { value: "157+", label: "Fiverr Reviews", sub: "100% genuine buyer feedback" },
+    { value: "160+", label: "Fiverr Reviews", sub: "100% genuine buyer feedback" },
     { value: "Level 2", label: "Fiverr Seller", sub: "Vetted platform ranking" },
     { value: "0% Fee", label: "Upwork Direct", sub: "Zero fee on client contract" },
   ],

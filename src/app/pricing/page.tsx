@@ -305,7 +305,7 @@ export default function PricingPage() {
             >
               <div className="flex items-center justify-between">
                 <span className="text-xs font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/20">
-                  4.8★ (157 Reviews)
+                  4.8★ (160 Reviews)
                 </span>
                 <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-emerald-400 transition-colors" />
               </div>
@@ -314,7 +314,7 @@ export default function PricingPage() {
                 <span className="text-[10px] uppercase font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">Level 2</span>
               </h3>
               <p className="text-xs text-slate-400 leading-relaxed">
-                Prefer standard freelance platform ordering with escrow protection? Hire directly through our active Fiverr Gig with 157+ verified 5-star reviews.
+                Prefer standard freelance platform ordering with escrow protection? Hire directly through our active Fiverr Gig with 160+ verified 5-star reviews.
               </p>
               <div className="pt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 group-hover:underline">
                 <span>Order on Fiverr Gig</span>

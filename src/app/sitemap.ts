@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services/screencast-tutorials",
     "/services/app-demo-video",
     "/services/ai-ugc-ads",
+    "/services/explainer-video-production",
     "/pricing",
     "/blog",
     "/about",

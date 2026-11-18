@@ -1820,4 +1820,204 @@ export const blogPosts: BlogPost[] = [
       ],
     },
   },
+  {
+    slug: "what-is-an-explainer-video",
+    title: "What Is an Explainer Video? Types, Length, Cost & Examples (2026 Guide)",
+    headline: "The plain-English guide: what an explainer video is, the six types, how long it should run, what it costs, and examples from real produced work.",
+    excerpt:
+      "An explainer video is a short video, usually 60 to 90 seconds, that makes one product or idea simple. This guide covers the definition, the six main types, ideal length, honest 2026 costs, and examples from 33 real projects.",
+    metaDescription:
+      "What is an explainer video? Definition, 6 types, ideal length (60-90s), real 2026 costs, and examples from produced SaaS and app videos.",
+    publishedAt: "2026-11-18",
+    updatedAt: "2026-11-18",
+    readingTime: "8 min read",
+    category: "Production Guides",
+    featuredImage: "https://img.youtube.com/vi/M5CJdH4k8wU/maxresdefault.jpg",
+    author: {
+      name: "Ali",
+      role: "Software Video Specialist & Founder of EXPLAINERACE",
+      avatar: "https://img.youtube.com/vi/2ZtQX_lXHOs/hqdefault.jpg",
+    },
+    tags: [
+      "Explainer Video",
+      "Video Production",
+      "SaaS Explainer",
+      "Motion Graphics",
+      "Product Demo",
+    ],
+    content: {
+      intro: [
+        "An explainer video is a short video, usually 60 to 90 seconds, that explains what a product, service, or idea does, who it is for, and why it matters. It uses plain language, visuals, and voiceover to make one thing simple enough to grasp on the first watch, and it ends with one clear next step.",
+        "The word explainer describes the video's job, not its look. It can be animated, a screen recording, live action, or a mix of styles. What makes it an explainer is that a stranger can watch it once and explain your offer back to you. If they cannot, the video did not do its job, however polished it looks.",
+        "This guide covers the definition in full, the six main types and when each one fits, how long an explainer should run, what one costs in 2026, how one gets made, and examples drawn from real projects in our portfolio of 33 videos.",
+      ],
+      summaryBox: {
+        headline: "Quick Summary: Explainer Videos in 30 Seconds",
+        points: [
+          "Definition: a 60 to 90 second video that explains one product or idea in plain language and ends with one next step",
+          "Six types: 2D animation, motion graphics, whiteboard, live-action, screencast, and hybrid. Pick by what you are explaining, not by what looks fashionable",
+          "Length: 60 seconds is about 140 to 150 spoken words; 90 seconds is about 225",
+          "Cost: studios that publish prices charge around $2,000 for 60 seconds; our fixed rate is $220 for 60 seconds",
+          "One video, one message: explainers sell the outcome, demos show the interface. Do not mix the two jobs",
+        ],
+      },
+      sections: [
+        {
+          id: "what-counts",
+          heading: "What Counts as an Explainer Video (and What Does Not)",
+          body: [
+            "The label gets stretched to cover almost any marketing video, but a true explainer has one job: take a viewer from 'I don't get it' to 'I get it, and I want to know more' in under two minutes. A brand film builds emotion. A testimonial builds trust. A product demo shows the interface. An explainer closes the gap between a complex offer and a first-time viewer's understanding.",
+            "The test is simple. Show the video to someone who has never heard of your product, then ask them what it does and who it is for. If they can answer in one sentence, the explainer worked. If they describe the animation style instead of the offer, it did not.",
+            "That test also explains what an explainer is not. It is not a feature tour: listing everything the product does is a demo's job. It is not an ad: ads assume the viewer already understands the category and just needs a reason to act. And it is not a company introduction: the viewer does not need your founding story before they understand what you sell.",
+          ],
+        },
+        {
+          id: "types",
+          heading: "The 6 Main Types of Explainer Video",
+          body: [
+            "Explainer video is a category, not a single format. The style should follow what you are explaining, not what looks fashionable. A software dashboard needs a different treatment from a physical product, and a training process needs a different one again.",
+            "Most software explainers are motion graphics, screencast, or a hybrid of the two: animation carries the story, and real interface footage proves the product works. Our guide to [Animated Explainer Video Styles](/blog/animated-explainer-video-styles) breaks down the animated styles in more detail, with examples of each.",
+          ],
+          table: {
+            headers: ["Type", "What it looks like", "Best for"],
+            rows: [
+              [
+                "2D animation",
+                "Illustrated characters and scenes, drawn and animated",
+                "Brand and concept stories, SaaS, startups",
+              ],
+              [
+                "Motion graphics",
+                "Animated text, icons, shapes, and UI elements set to voiceover",
+                "Data, software interfaces, statistics, product features",
+              ],
+              [
+                "Whiteboard",
+                "A hand drawing the explanation on a white surface as the narration runs",
+                "Education, training, step-by-step processes",
+              ],
+              [
+                "Live-action",
+                "Real people and real locations, filmed with a camera",
+                "Human stories, testimonials, physical products",
+              ],
+              [
+                "Screencast",
+                "The real product on screen, recorded and edited with zooms and narration",
+                "Software tutorials, walkthroughs, onboarding",
+              ],
+              [
+                "Hybrid",
+                "Two or more of the above combined in one video",
+                "Products that need both story and proof",
+              ],
+            ],
+          },
+        },
+        {
+          id: "length",
+          heading: "How Long Should an Explainer Video Be?",
+          body: [
+            "60 to 90 seconds is the range almost every working explainer lands in. The arithmetic decides it: natural voiceover pace runs at roughly 130 to 150 words per minute, so 60 seconds gives you about 140 words and 90 seconds gives you about 225. That is enough for one problem, one solution, three proof moments, and one call to action. It is not enough for a feature list, which is the point.",
+            "Shorter cuts have their place. A 15 to 30 second version works for paid ads and social posts, where the viewer did not ask for an explanation. Longer videos, two minutes and beyond, belong to demos and onboarding, where the viewer has already decided to learn. If your explainer needs more than 90 seconds, it usually needs two videos, not a longer one.",
+          ],
+          table: {
+            headers: ["Length", "Word budget", "Best use"],
+            rows: [
+              ["30 seconds", "About 70 words", "Paid ads and social cuts"],
+              ["60 seconds", "About 140 words", "Homepage explainers, the standard"],
+              ["90 seconds", "About 225 words", "Complex products, sales pages"],
+              ["2 minutes+", "300+ words", "Demos and onboarding, not explainers"],
+            ],
+          },
+          callout: {
+            type: "tip",
+            title: "Write to the word budget, not the clock",
+            text: "Draft the script first and count the words. If the script is over 170 words, the video will either run past 60 seconds or sound rushed. Cut setup and adjectives before you cut proof.",
+          },
+        },
+        {
+          id: "how-they-are-made",
+          heading: "How an Explainer Video Gets Made",
+          body: [
+            "Every explainer follows the same chain, whether it costs $220 or $20,000. The difference between providers is how much care each step gets, not which steps exist.",
+            "The script carries most of the result. A weak script with beautiful animation is still a weak video, which is why the script stage deserves more of your attention than any other step. If you would rather hand the whole chain over, our [Explainer Video Production Service](/services/explainer-video-production) runs from script to finished video in 48 to 72 hours.",
+          ],
+          listItems: [
+            "1. Script: the words come first. A 60-second script is about 140 words in five blocks: hook, problem, demo beats, proof, and call to action. Our guide to [writing a SaaS demo video script](/blog/how-to-write-saas-demo-video-script) gives the full structure and a fill-in template.",
+            "2. Storyboard: each script line gets a sketch of what appears on screen, so the story is approved before anything is animated or recorded.",
+            "3. Production: animation is built, or the real product is captured in 4K, depending on the type. This is where style frames, motion, zooms, and cursor work happen.",
+            "4. Voiceover and sound: studio narration is recorded to the locked script, then mixed with music and sound effects at levels that keep the words clear.",
+            "5. Review and delivery: you review a first cut, request revisions, and receive the finished master files with full commercial rights.",
+          ],
+        },
+        {
+          id: "cost",
+          heading: "What Does an Explainer Video Cost in 2026?",
+          body: [
+            "Prices vary widely because providers vary widely. Studios that publish fixed prices give the clearest picture: ExplainerCue, a studio that lists its rates openly, charges $1,000 for 30 seconds, $2,000 for 60 seconds, and $3,000 for 90 seconds. Wyzowl reports an industry average near $10,983, with a median near $5,400. Full-service agencies typically quote $5,000 to $25,000 for a 60 to 90 second animated explainer, and take four to eight weeks.",
+            "Our rate is $220 fixed for a 60-second explainer, delivered in 48 to 72 hours, with studio voiceover, captions, two revision rounds, and full commercial rights. The difference is overhead: no account managers, no creative directors, no six-week pipeline. One specialist, direct, from script to finished video.",
+            "What moves the price up anywhere is length, custom illustration, 3D work, and revision rounds. What moves it down is a clear script, a single decision-maker, and realistic expectations about revisions. Our full breakdown of [SaaS explainer video costs](/blog/saas-explainer-video-cost-2026) compares agency, marketplace, and specialist rates in detail, and every format we offer is listed on the [Pricing Page](/pricing).",
+          ],
+        },
+        {
+          id: "examples",
+          heading: "Explainer Video Examples From Real Projects",
+          body: [
+            "Definitions only go so far. These four explainers from our portfolio show how the types above work on real products, each in a different style and each under two minutes.",
+            "Notice what the four share: each one makes a single promise in its first five seconds, shows the product proving it, and ends with one next step. The styles differ; the structure does not.",
+          ],
+          listItems: [
+            "Zestbrief, AI meeting summaries (0:39): a SaaS walkthrough showing automated transcription, AI executive summaries, and action items syncing to Slack and Notion. Watch it in the [Zestbrief case study](/work/zestbrief-ai-meeting-saas).",
+            "Framer SaaS explainer (0:51): a motion graphics explainer with fluid UI choreography, animated feature cards, and 3D device framing. See the [Framer case study](/work/framer-saas-explainer).",
+            "Internet Under the Sea (0:55): a technical explainer mapping transcontinental fiber-optic cables, deep-sea repeaters, and global internet latency. See the [Internet Under the Sea case study](/work/internet-under-the-sea-explainer).",
+            "METRADE trading platform (1:50): a product explainer showing real-time market data charting, order placement, and portfolio analytics for active traders. See the [METRADE case study](/work/metrade-promo).",
+          ],
+          video: {
+            videoId: "M5CJdH4k8wU",
+            title: "Zestbrief — AI Meeting Summaries & Action Items SaaS Walkthrough",
+            subtitle: "A 39-second SaaS walkthrough explainer, produced by EXPLAINERACE.",
+            category: "SaaS Explainer",
+            duration: "0:39",
+            projectId: "zestbrief-ai-meeting-saas",
+          },
+        },
+        {
+          id: "when-to-use",
+          heading: "When to Use an Explainer (and When to Use Something Else)",
+          body: [
+            "Use an explainer when the viewer does not yet understand your offer: your homepage, a landing page, a sales email, a pitch deck, or the first minute of a demo call. It is the video that earns the next click, not the video that closes the deal.",
+            "Use a demo instead when the viewer already understands the category and wants to see the interface working. Use an ad when they understand the offer and need a reason to act now. Use a tutorial when they have already bought and need to complete a task. Our comparison of [product demo videos vs explainer videos](/blog/product-demo-video-vs-explainer-video) lays out the line between the two in detail.",
+            "One practical rule: if your homepage video spends more than half its runtime inside the product interface, it is a demo wearing an explainer's title. Move the interface tour to a second video and let the explainer do the explaining.",
+          ],
+        },
+        {
+          id: "getting-one-made",
+          heading: "Getting an Explainer Video Made",
+          body: [
+            "Before you commission one, have three things ready: access to the product (a staging account or a recorded walkthrough you can share), one sentence describing who the video is for, and the single action it should produce. The script, storyboard, and production can all be handled for you; those three inputs cannot be guessed.",
+            "Our [Explainer Video Production Service](/services/explainer-video-production) produces 60-second explainers for a fixed $220, delivered in 48 to 72 hours with studio voiceover, captions, two revision rounds, and full commercial rights. Rates for every format are on the [Pricing Page](/pricing).",
+          ],
+        },
+      ],
+      faqs: [
+        {
+          q: "How long should an explainer video be?",
+          a: "60 to 90 seconds for most products. Natural voiceover pace runs at roughly 130 to 150 words per minute, so 60 seconds gives you about 140 words: enough for a hook, a problem, three proof moments, and one call to action. Shorter 15 to 30 second cuts work for ads; longer videos belong to demos and onboarding.",
+        },
+        {
+          q: "How much does an explainer video cost?",
+          a: "It depends on the provider. Studios that publish fixed prices, such as ExplainerCue at $2,000 for 60 seconds, sit in the middle of the market; full-service agencies typically quote $5,000 to $25,000. Our fixed rate is $220 for a 60-second explainer, delivered in 48 to 72 hours with studio voiceover, captions, two revision rounds, and full commercial rights.",
+        },
+        {
+          q: "What is the difference between an explainer video and a product demo?",
+          a: "An explainer sells the outcome in a short story for someone who does not yet understand the offer. A demo shows the actual interface working for someone who is already evaluating the product. Explainers come first in the funnel; demos come after. Mixing the two jobs in one video usually weakens both.",
+        },
+        {
+          q: "What do I need before commissioning an explainer video?",
+          a: "Three things: access to the product (a staging or demo account), one sentence saying who the video is for, and the single action it should produce. You do not need a finished script. We draft narration from your website, feature documentation, or a sandbox account.",
+        },
+      ],
+    },
+  },
 ];
