@@ -17,6 +17,7 @@ import { VideoModal } from "@/components/VideoModal";
 
 export const Hero: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [heroPlaying, setHeroPlaying] = useState(false);
   const motionProject = projects.find((p) => p.id === "orbitra-one-saas-promo");
   const otherProjects = projects.filter((p) => p.id !== "orbitra-one-saas-promo");
   const galleryVideos = [motionProject, ...otherProjects].filter(Boolean).slice(0, 10) as typeof projects;
@@ -134,15 +135,40 @@ export const Hero: React.FC = () => {
             <div className="relative rounded-2xl sm:rounded-3xl p-1 sm:p-1.5 bg-gradient-to-b from-white/20 via-white/5 to-white/10 shadow-2xl w-full">
               {/* Seamless Video Frame */}
               <div className="relative rounded-xl sm:rounded-2xl overflow-hidden bg-[#0A0D14] border border-white/[0.1] w-full">
-                {/* Featured Project Video Stream (YouTube, seamless muted loop) */}
+                {/* Featured Project Video — click-to-play facade: the YouTube iframe
+                    loads only after the click, so a slow/blocked YouTube can no
+                    longer stall the homepage on load. */}
                 <div className="relative aspect-video w-full bg-[#0A0D14] overflow-hidden">
-                  <iframe
-                    src="https://www.youtube-nocookie.com/embed/M5CJdH4k8wU?autoplay=1&mute=1&loop=1&playlist=M5CJdH4k8wU&controls=0&playsinline=1&rel=0&modestbranding=1&disablekb=1"
-                    title="Zestbrief — AI Meeting Summaries & Action Items SaaS Walkthrough"
-                    className="absolute inset-0 w-full h-full pointer-events-none"
-                    allow="autoplay; encrypted-media; picture-in-picture"
-                    loading="eager"
-                  />
+                  {heroPlaying ? (
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/M5CJdH4k8wU?autoplay=1&mute=1&loop=1&playlist=M5CJdH4k8wU&controls=0&playsinline=1&rel=0&modestbranding=1&disablekb=1"
+                      title="Zestbrief — AI Meeting Summaries & Action Items SaaS Walkthrough"
+                      className="absolute inset-0 w-full h-full pointer-events-none"
+                      allow="autoplay; encrypted-media; picture-in-picture"
+                    />
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => setHeroPlaying(true)}
+                      className="absolute inset-0 w-full h-full group cursor-pointer"
+                      aria-label="Play the Zestbrief SaaS walkthrough video"
+                    >
+                      <Image
+                        src="https://img.youtube.com/vi/M5CJdH4k8wU/maxresdefault.jpg"
+                        alt="Zestbrief — AI Meeting Summaries & Action Items SaaS Walkthrough"
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 1024px"
+                        className="object-cover"
+                        priority
+                      />
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/95 text-slate-900 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+                          <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-slate-900 ml-1" />
+                        </div>
+                      </div>
+                    </button>
+                  )}
 
                   {/* Subtle edge vignette for polished SaaS contrast */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20 pointer-events-none" />
