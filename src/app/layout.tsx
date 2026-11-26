@@ -60,6 +60,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "wg_6qxRwz-Q9S7_d3SPwA7j6vmlHrxuZEX8v_fQuBMk",
+    other: {
+      "p:domain_verify": "ff232ba86b16a3b241cacb8c680f9841",
+    },
   },
   robots: {
     index: true,
@@ -134,6 +137,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <head>
+        <meta
+          name="p:domain_verify"
+          content="ff232ba86b16a3b241cacb8c680f9841"
+        />
         {/* Flag JS early so scroll-reveal styles never flash hidden content for no-JS/crawlers */}
         <script
           dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }}
