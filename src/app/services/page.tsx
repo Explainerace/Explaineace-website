@@ -6,6 +6,7 @@ import {
   Video,
   Smartphone,
   Bot,
+  Clapperboard,
   ArrowRight,
   CheckCircle2,
   Sparkles,
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://img.youtube.com/vi/W6-glP7Ct5o/maxresdefault.jpg",
+        url: "https://img.youtube.com/vi/M5CJdH4k8wU/maxresdefault.jpg",
         width: 1280,
         height: 720,
         alt: "Video Services for SaaS & Software Teams - EXPLAINERACE",
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
     title: "Video Services for SaaS & Software Teams | EXPLAINERACE",
     description:
       "Explore specialized software video production: SaaS walkthroughs, screencast tutorials, mobile app demos, and AI UGC product ads. Transparent pricing from $120/60s.",
-    images: ["https://img.youtube.com/vi/W6-glP7Ct5o/maxresdefault.jpg"],
+    images: ["https://img.youtube.com/vi/M5CJdH4k8wU/maxresdefault.jpg"],
   },
 };
 
@@ -109,6 +110,22 @@ const serviceCards = [
       "Dynamic 3D product motion & UI highlights",
       "3-second opening hook variations for A/B testing",
       "Vertical 9:16 & 16:9 deliverables with full ad rights",
+    ],
+  },
+  {
+    title: "Explainer Video Production Service",
+    slug: "/services/explainer-video-production",
+    icon: Clapperboard,
+    badge: "Fixed $220 / 60s",
+    price: "$220 / 60 seconds",
+    description:
+      "A 60 to 90 second animated explainer that makes one product or idea simple: script, storyboard, animation, studio voiceover, and captions, delivered in 48 to 72 hours.",
+    keywords: "Explainer video production service, animated explainer video service",
+    highlights: [
+      "Script and storyboard approved before animation starts",
+      "2D animation, motion graphics, or screencast hybrid",
+      "Studio voiceover narration & captions included",
+      "Fixed $220 price with 2 revision rounds & full rights",
     ],
   },
 ];

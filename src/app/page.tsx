@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "ExplainerAce — Product Films in Motion | SaaS Launch Promos & UI Walkthroughs",
   description:
     "Launch your software with a product film, show people how it works with clear tutorials, and get social cuts ready for every screen (16:9, 1:1, 9:16).",
+  alternates: { canonical: "/" },
   openGraph: {
     title: "ExplainerAce — Product Films in Motion",
     description:

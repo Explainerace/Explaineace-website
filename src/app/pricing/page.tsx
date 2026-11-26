@@ -323,7 +323,7 @@ export default function PricingPage() {
               >
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/20">
-                    4.8★ (157 Reviews)
+                    4.8★ (160 Reviews)
                   </span>
                   <ExternalLink className="w-4 h-4 text-warm-400 group-hover:text-accent-lime transition-colors" />
                 </div>
@@ -335,7 +335,7 @@ export default function PricingPage() {
                 </h3>
                 <p className="text-xs text-warm-400 leading-relaxed">
                   Prefer platform escrow? Hire directly through my active Fiverr
-                  Gig with 150+ verified client ratings.
+                  Gig with 160+ verified client ratings.
                 </p>
                 <div className="pt-1 inline-flex items-center gap-1.5 text-xs font-semibold text-accent-lime group-hover:underline">
                   <span>Order on Fiverr Gig</span>

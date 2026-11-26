@@ -95,14 +95,14 @@ export const TrustBlock: React.FC = () => {
                 </div>
               </div>
 
-              {/* Stat 2: 157 Reviews */}
+              {/* Stat 2: 160 Reviews */}
               <div className="p-6 rounded-2xl bg-surface/90 border border-white/[0.08] flex flex-col justify-between">
                 <div>
                   <div className="w-8 h-8 rounded-lg bg-accent-cyan/10 border border-accent-cyan/20 text-accent-cyan flex items-center justify-center mb-2">
                     <Users className="w-4 h-4" />
                   </div>
                   <div className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                    <CountUp to={157} />
+                    <CountUp to={160} />
                   </div>
                 </div>
                 <div className="mt-4 pt-3 border-t border-white/[0.06]">

@@ -18,6 +18,45 @@ import { blogPosts } from "@/data/blog";
 import { siteConfig } from "@/data/siteConfig";
 import { BlogVideoEmbed } from "@/components/BlogVideoEmbed";
 
+// Renders [text](url) markdown links inside blog body strings as real links.
+// Post content in blog.ts uses markdown link syntax; without this parser the
+// raw "[text](/url)" syntax shows to readers.
+function renderRichText(text: string, keyPrefix: string) {
+  const parts = text.split(/\[([^\]]+)\]\(([^)]+)\)/g);
+  const nodes: React.ReactNode[] = [];
+  for (let i = 0; i < parts.length; i += 3) {
+    if (parts[i]) {
+      nodes.push(
+        <React.Fragment key={`${keyPrefix}-t${i}`}>{parts[i]}</React.Fragment>
+      );
+    }
+    if (i + 2 < parts.length && parts[i + 1] !== undefined) {
+      const label = parts[i + 1];
+      const href = parts[i + 2];
+      const className =
+        "text-brand-300 hover:text-white underline underline-offset-2";
+      nodes.push(
+        href.startsWith("/") ? (
+          <Link key={`${keyPrefix}-l${i}`} href={href} className={className}>
+            {label}
+          </Link>
+        ) : (
+          <a
+            key={`${keyPrefix}-l${i}`}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={className}
+          >
+            {label}
+          </a>
+        )
+      );
+    }
+  }
+  return nodes;
+}
+
 interface BlogPostPageProps {
   params: {
     slug: string;
@@ -206,7 +245,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             </h1>
 
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-              {post.headline}
+              {renderRichText(post.headline, "headline")}
             </p>
 
             {/* Author Byline */}
@@ -219,7 +258,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                   {post.author.name}
                 </span>
                 <span className="block text-xs text-slate-400">
-                  {post.author.role} · 157+ Reviews (4.8★)
+                  {post.author.role} · 160+ Reviews (4.8★)
                 </span>
               </div>
             </div>
@@ -235,7 +274,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               {post.content.summaryBox.points.map((pt, i) => (
                 <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span>{pt}</span>
+                  <span>{renderRichText(pt, `summary-${i}`)}</span>
                 </li>
               ))}
             </ul>
@@ -244,7 +283,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           {/* Intro Paragraphs */}
           <div className="space-y-5 text-base sm:text-lg text-slate-200 leading-relaxed mb-14">
             {post.content.intro.map((p, i) => (
-              <p key={i}>{p}</p>
+              <p key={i}>{renderRichText(p, `intro-${i}`)}</p>
             ))}
           </div>
 
@@ -258,7 +297,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
                 <div className="space-y-4 text-sm sm:text-base text-slate-300 leading-relaxed">
                   {section.body.map((p, i) => (
-                    <p key={i}>{p}</p>
+                    <p key={i}>{renderRichText(p, `body-${section.id}-${i}`)}</p>
                   ))}
                 </div>
 
@@ -292,7 +331,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                           <tr key={rIdx} className="hover:bg-white/[0.02] transition-colors">
                             {row.map((cell, cIdx) => (
                               <td key={cIdx} className={`py-3.5 px-4 ${cIdx === 0 ? "font-semibold text-white" : "text-slate-300"}`}>
-                                {cell}
+                                {renderRichText(cell, `cell-${rIdx}-${cIdx}`)}
                               </td>
                             ))}
                           </tr>
@@ -308,7 +347,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                     {section.listItems.map((li, i) => (
                       <li key={i} className="flex items-start gap-3 text-sm sm:text-base text-slate-200">
                         <span className="w-1.5 h-1.5 rounded-full bg-brand-400 mt-2 shrink-0" />
-                        <span>{li}</span>
+                        <span>{renderRichText(li, `li-${i}`)}</span>
                       </li>
                     ))}
                   </ul>
@@ -323,7 +362,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                         {section.callout.title}
                       </span>
                       <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed">
-                        {section.callout.text}
+                        {renderRichText(section.callout.text, `callout-${section.id}`)}
                       </p>
                     </div>
                   </div>
@@ -356,7 +395,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                     </h4>
                   </div>
                   <p className="text-sm text-slate-300 leading-relaxed pl-8">
-                    {faq.a}
+                    {renderRichText(faq.a, `faq-${i}`)}
                   </p>
                 </div>
               ))}
@@ -376,7 +415,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 </span>
               </div>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Founder of EXPLAINERACE and dedicated software video specialist with over 157+ verified client engagements on Fiverr. Specializing in UI zooms, screen recording physics, and instructional SaaS tours.
+                Founder of EXPLAINERACE and dedicated software video specialist with over 160+ verified client engagements on Fiverr. Specializing in UI zooms, screen recording physics, and instructional SaaS tours.
               </p>
               <div className="pt-2 flex flex-wrap items-center justify-center sm:justify-start gap-4 text-xs font-semibold">
                 <Link href="/about" className="text-brand-300 hover:text-white underline">

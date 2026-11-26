@@ -348,6 +348,9 @@ export default function ScreencastTutorialsPage() {
               <Link href="/services/ai-ugc-ads" className="text-brand-300 hover:text-white underline">
                 AI UGC & Product Ads &rarr;
               </Link>
+              <Link href="/services/explainer-video-production" className="text-brand-300 hover:text-white underline">
+                Explainer Video Production Service &rarr;
+              </Link>
             </div>
           </div>
         </div>

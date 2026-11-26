@@ -17,6 +17,7 @@ import { VideoModal } from "@/components/VideoModal";
 
 export const Hero: React.FC = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [heroPlaying, setHeroPlaying] = useState(false);
   const motionProject = projects.find((p) => p.id === "orbitra-one-saas-promo");
   const otherProjects = projects.filter((p) => p.id !== "orbitra-one-saas-promo");
   const galleryVideos = [motionProject, ...otherProjects].filter(Boolean).slice(0, 10) as typeof projects;
@@ -56,7 +57,7 @@ export const Hero: React.FC = () => {
             </div>
             <span className="text-xs text-slate-500">•</span>
             <span className="text-xs text-slate-300 font-medium whitespace-nowrap">
-              157 Fiverr Reviews
+              160 Fiverr Reviews
             </span>
             <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 whitespace-nowrap">
               Level 2
@@ -64,32 +65,8 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Central Headline & Copy with Native Background Motion Graphics */}
+        {/* Central Headline & Copy */}
         <div className="relative text-center max-w-4xl mx-auto py-4 sm:py-6">
-          {/* Native Ambient Motion Graphics Video (Seamless, non-embedded) */}
-          <div
-            className="absolute inset-0 -inset-x-8 sm:-inset-x-24 -inset-y-6 sm:-inset-y-12 -z-10 overflow-hidden pointer-events-none rounded-3xl opacity-35 sm:opacity-45"
-            style={{
-              WebkitMaskImage: "radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 75%)",
-              maskImage: "radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 75%)",
-            }}
-          >
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-              className="w-full h-full object-cover scale-105 filter saturate-125"
-            >
-              <source src="/hero-motion.webm" type="video/webm" />
-              <source src="/hero-motion.mp4" type="video/mp4" />
-            </video>
-            {/* Dark vignette blending so text remains 100% crisp and readable */}
-            <div className="absolute inset-0 bg-gradient-to-t from-surface-bg via-transparent to-surface-bg pointer-events-none" />
-            <div className="absolute inset-0 bg-gradient-to-r from-surface-bg/70 via-transparent to-surface-bg/70 pointer-events-none" />
-          </div>
-
           <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-white leading-[1.15] sm:leading-[1.1] break-words">
             <span className="line-mask">
               <span className="line-rise" style={{ "--d": "80ms" } as React.CSSProperties}>
@@ -134,12 +111,12 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Hero Visual: Native 3D UI Motion Graphics Showcase (Seamless, non-embedded) */}
+        {/* Hero Visual: Featured Project Showcase */}
         <div className="stage-enter mt-10 sm:mt-14 max-w-5xl mx-auto w-full space-y-6 relative">
           {/* Floating Pro Badges */}
           <div className="hidden lg:flex items-center gap-2 absolute -top-4 -left-4 z-30 px-3.5 py-1.5 rounded-full bg-[#0A0D14]/90 border border-brand-500/30 backdrop-blur-md shadow-glow text-xs text-brand-300 font-semibold float-slow">
             <span className="w-2 h-2 rounded-full bg-accent-cyan animate-pulse" />
-            <span>✦ 3D UI Motion Graphics</span>
+            <span>✦ Featured Walkthrough</span>
           </div>
 
           <div
@@ -147,10 +124,10 @@ export const Hero: React.FC = () => {
             className="hidden lg:flex items-center gap-2 absolute -top-4 -right-4 z-30 px-3.5 py-1.5 rounded-full bg-[#0A0D14]/90 border border-emerald-500/30 backdrop-blur-md shadow-glow text-xs text-emerald-400 font-semibold float-slow"
           >
             <span className="w-2 h-2 rounded-full bg-emerald-400" />
-            <span>⚡ 60 FPS Native Playback</span>
+            <span>Zestbrief · AI Meeting SaaS</span>
           </div>
 
-          {/* Main Native Motion Graphics Video Container */}
+          {/* Main Showcase Video Container */}
           <div className="relative w-full">
             {/* Dynamic Ambient Motion Aura Glow */}
             <div className="absolute -inset-1.5 sm:-inset-3 bg-gradient-to-r from-brand-600/30 via-accent-cyan/25 to-accent-purple/30 rounded-3xl blur-2xl opacity-75 pointer-events-none -z-10" />
@@ -158,19 +135,40 @@ export const Hero: React.FC = () => {
             <div className="relative rounded-2xl sm:rounded-3xl p-1 sm:p-1.5 bg-gradient-to-b from-white/20 via-white/5 to-white/10 shadow-2xl w-full">
               {/* Seamless Video Frame */}
               <div className="relative rounded-xl sm:rounded-2xl overflow-hidden bg-[#0A0D14] border border-white/[0.1] w-full">
-                {/* 60 FPS Motion Graphics Video Stream */}
+                {/* Featured Project Video — click-to-play facade: the YouTube iframe
+                    loads only after the click, so a slow/blocked YouTube can no
+                    longer stall the homepage on load. */}
                 <div className="relative aspect-video w-full bg-[#0A0D14] overflow-hidden">
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
-                    className="w-full h-full object-cover"
-                  >
-                    <source src="/hero-motion.webm" type="video/webm" />
-                    <source src="/hero-motion.mp4" type="video/mp4" />
-                  </video>
+                  {heroPlaying ? (
+                    <iframe
+                      src="https://www.youtube-nocookie.com/embed/M5CJdH4k8wU?autoplay=1&mute=1&loop=1&playlist=M5CJdH4k8wU&controls=0&playsinline=1&rel=0&modestbranding=1&disablekb=1"
+                      title="Zestbrief — AI Meeting Summaries & Action Items SaaS Walkthrough"
+                      className="absolute inset-0 w-full h-full pointer-events-none"
+                      allow="autoplay; encrypted-media; picture-in-picture"
+                    />
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => setHeroPlaying(true)}
+                      className="absolute inset-0 w-full h-full group cursor-pointer"
+                      aria-label="Play the Zestbrief SaaS walkthrough video"
+                    >
+                      <Image
+                        src="https://img.youtube.com/vi/M5CJdH4k8wU/maxresdefault.jpg"
+                        alt="Zestbrief — AI Meeting Summaries & Action Items SaaS Walkthrough"
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 1024px"
+                        className="object-cover"
+                        priority
+                      />
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/95 text-slate-900 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+                          <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-slate-900 ml-1" />
+                        </div>
+                      </div>
+                    </button>
+                  )}
 
                   {/* Subtle edge vignette for polished SaaS contrast */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20 pointer-events-none" />
@@ -300,7 +298,7 @@ export const Hero: React.FC = () => {
             </div>
             <div className="p-2.5 sm:p-3 rounded-xl bg-surface-card/50 border border-white/[0.04]">
               <p className="text-[11px] text-slate-400">Platform Proof</p>
-              <p className="text-xs sm:text-sm font-semibold text-emerald-400 mt-0.5">157 Reviews (4.8★)</p>
+              <p className="text-xs sm:text-sm font-semibold text-emerald-400 mt-0.5">160 Reviews (4.8★)</p>
             </div>
           </div>
         </div>

@@ -348,6 +348,9 @@ export default function AiUgcAdsPage() {
               <Link href="/services/app-demo-video" className="text-brand-300 hover:text-white underline">
                 App Demo Video Service &rarr;
               </Link>
+              <Link href="/services/explainer-video-production" className="text-brand-300 hover:text-white underline">
+                Explainer Video Production Service &rarr;
+              </Link>
             </div>
           </div>
         </div>
