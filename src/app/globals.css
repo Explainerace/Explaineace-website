@@ -264,6 +264,64 @@ html.js .reveal.is-visible {
   50% { transform: translate3d(0, -6px, 0); }
 }
 
+/* Studio Sculpture Chrome Spin */
+.sculpture-spin {
+  animation: sculptureTurn 22s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  transform-style: preserve-3d;
+}
+.sculpture-spin.paused {
+  animation-play-state: paused;
+}
+@keyframes sculptureTurn {
+  0% {
+    transform: rotateX(14deg) rotateY(0deg) rotateZ(-6deg);
+  }
+  50% {
+    transform: rotateX(24deg) rotateY(180deg) rotateZ(8deg);
+  }
+  100% {
+    transform: rotateX(14deg) rotateY(360deg) rotateZ(-6deg);
+  }
+}
+
+/* Chrome Sheen with Soft Lime Catch */
+.chrome-surface {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(220, 225, 235, 0.6) 25%,
+    rgba(212, 255, 58, 0.35) 45%,
+    rgba(160, 175, 195, 0.5) 65%,
+    rgba(255, 255, 255, 0.85) 85%,
+    rgba(212, 255, 58, 0.25) 100%
+  );
+  background-size: 300% 300%;
+  animation: chromeSheen 12s ease-in-out infinite alternate;
+}
+.chrome-surface.paused {
+  animation-play-state: paused;
+}
+@keyframes chromeSheen {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Studio Lime Accent Glows */
+.shadow-lime-glow {
+  box-shadow: 0 0 35px -5px rgba(212, 255, 58, 0.25);
+}
+.shadow-lime-glow-lg {
+  box-shadow: 0 0 60px -10px rgba(212, 255, 58, 0.35);
+}
+
+/* Frame boundary animation for interactive showcase */
+.frame-morph {
+  transition: width 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              height 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              max-width 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              aspect-ratio 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 /* Respect users who prefer less motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -278,4 +336,6 @@ html.js .reveal.is-visible {
     filter: none;
   }
   .demo-cursor { display: none; }
+  .sculpture-spin { animation: none !important; }
+  .chrome-surface { animation: none !important; }
 }

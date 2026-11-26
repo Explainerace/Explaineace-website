@@ -33,6 +33,15 @@ module.exports = {
           cyan: "#38BDF8",
           purple: "#A855F7",
           emerald: "#10B981",
+          lime: "#D4FF3A",
+          limeHover: "#C2F028",
+        },
+        warm: {
+          50: "#FAF8F5",
+          100: "#F4F0EA",
+          200: "#E6E1D8",
+          300: "#C8C2B7",
+          400: "#A39C90",
         },
       },
       fontFamily: {

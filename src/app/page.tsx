@@ -1,53 +1,28 @@
 import React from "react";
-import { Hero } from "@/components/Hero";
-import { VideoGrid } from "@/components/VideoGrid";
-import { WhatICreate } from "@/components/WhatICreate";
-import { FeaturedVideo } from "@/components/FeaturedVideo";
-import { HowIAddValue } from "@/components/HowIAddValue";
-import { TrustBlock } from "@/components/TrustBlock";
-import { ProcessTimeline } from "@/components/ProcessTimeline";
-import { AboutPreview } from "@/components/AboutPreview";
-import { HomeFaq } from "@/components/HomeFaq";
-import { CTA } from "@/components/CTA";
-import { projects } from "@/data/projects";
+import type { Metadata } from "next";
+import StudioPageContent from "@/components/studio/StudioPageContent";
+
+export const metadata: Metadata = {
+  title: "ExplainerAce — Product Films in Motion | SaaS Launch Promos & UI Walkthroughs",
+  description:
+    "Launch your software with a product film, show people how it works with clear tutorials, and get social cuts ready for every screen (16:9, 1:1, 9:16).",
+  openGraph: {
+    title: "ExplainerAce — Product Films in Motion",
+    description:
+      "Launch your software with a product film, show people how it works with clear tutorials, and get social cuts ready for every screen.",
+    url: "https://explainerace.com",
+    siteName: "ExplainerAce",
+    images: [
+      {
+        url: "https://img.youtube.com/vi/ruSnnvafJdc/maxresdefault.jpg",
+        width: 1280,
+        height: 720,
+        alt: "ExplainerAce — Product Films in Motion",
+      },
+    ],
+  },
+};
 
 export default function HomePage() {
-  return (
-    <>
-      {/* 1. Hero Section */}
-      <Hero />
-
-      {/* 2. Selected Work (Data-Driven Video Grid with Filters) */}
-      <VideoGrid
-        projects={projects}
-        isHomeView={true}
-        title="Selected Work"
-        subtitle="A selection of software tutorials, app demos, walkthroughs and training videos."
-      />
-
-      {/* 3. What I Create (6 Service Categories) */}
-      <WhatICreate />
-
-      {/* 4. Featured Video (Immersive Cinematic Showcase) */}
-      <FeaturedVideo />
-
-      {/* 5. How I Add Value (More than screen recording) */}
-      <HowIAddValue />
-
-      {/* 6. Verified Trust Signals (Fiverr Level 2, 4.8★, 157 Reviews) */}
-      <TrustBlock />
-
-      {/* 7. 4-Step Production Process */}
-      <ProcessTimeline />
-
-      {/* 8. About Preview */}
-      <AboutPreview />
-
-      {/* 9. Frequently Asked Questions (Hiring, Cost & Screencast turnaround) */}
-      <HomeFaq />
-
-      {/* 10. Final Conversion CTA */}
-      <CTA />
-    </>
-  );
+  return <StudioPageContent />;
 }

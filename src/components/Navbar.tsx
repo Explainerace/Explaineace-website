@@ -80,13 +80,13 @@ export const Navbar: React.FC = () => {
           </a>
 
           <Link
-            href="/contact"
-            className="group relative inline-flex items-center gap-2 text-xs font-semibold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 px-4 py-2.5 rounded-full shadow-glow hover:shadow-glow-lg transition-all duration-200 active:scale-95"
+            href="/#inquiry"
+            className="group relative inline-flex items-center gap-2 text-xs font-bold text-black bg-accent-lime hover:bg-accent-limeHover px-4 py-2.5 rounded-full shadow-[0_0_20px_rgba(212,255,58,0.25)] transition-all duration-200 active:scale-95"
           >
             {/* Live Availability Radar Dot */}
             <span className="relative flex h-2 w-2 mr-0.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-40" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-black" />
             </span>
             <span>Start a Project</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
@@ -136,8 +136,8 @@ export const Navbar: React.FC = () => {
               </a>
 
               <Link
-                href="/contact"
-                className="w-full text-center py-3.5 rounded-xl text-white bg-gradient-to-r from-brand-600 to-indigo-600 font-semibold text-sm shadow-glow flex items-center justify-center gap-2"
+                href="/#inquiry"
+                className="w-full text-center py-3.5 rounded-xl text-black bg-accent-lime hover:bg-accent-limeHover font-bold text-sm shadow-[0_0_20px_rgba(212,255,58,0.25)] flex items-center justify-center gap-2"
               >
                 Start a Project
                 <ArrowRight className="w-4 h-4" />
